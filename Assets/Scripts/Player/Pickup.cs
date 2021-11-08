@@ -10,11 +10,11 @@ public class Pickup : MonoBehaviour
 
     private GameObject heldObj;
 
-    void update()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (heldObj != null)
+            if (heldObj == null)
             {
                 RaycastHit hit;
                 if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickUpRange))
