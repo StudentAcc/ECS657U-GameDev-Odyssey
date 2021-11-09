@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
  
-public class AutomaticDoor : MonoBehaviour
+public class AutomaticDoorRight : MonoBehaviour
 {
 
     public GameObject movingDoor;
@@ -25,16 +25,16 @@ public class AutomaticDoor : MonoBehaviour
     {
         if (playerIsHere)
         {
-            if (movingDoor.transform.position.z < maximumOpening)
+            if (movingDoor.transform.position.z > maximumOpening)
             {
-                movingDoor.transform.Translate(0f, 0f, movementSpeed * Time.deltaTime);
+                movingDoor.transform.Translate(0f, 0f, -movementSpeed * Time.deltaTime);
             }
         }
         else
         {
-            if (movingDoor.transform.position.z > maximumClosing)
+            if (movingDoor.transform.position.z < maximumClosing)
             {
-                movingDoor.transform.Translate(0f, 0f, -movementSpeed * Time.deltaTime);
+                movingDoor.transform.Translate(0f, 0f, movementSpeed * Time.deltaTime);
             }
         }
 
