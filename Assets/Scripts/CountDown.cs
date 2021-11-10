@@ -29,14 +29,10 @@ public class CountDown : MonoBehaviour
             yield return new WaitForSeconds(1f);
             currentTime--;
         }
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("LoseScreen");
     }
-
-    void OpenPanel()
-    {
-        timeText.text = "";
-    }
-
 
     // Update is called once per frame
     void Update()

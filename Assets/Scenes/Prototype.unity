@@ -2508,7 +2508,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &597771693
 GameObject:
@@ -12134,7 +12134,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &698035986
 GameObject:
@@ -29522,7 +29522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeImage: {fileID: 1307811320}
   timeText: {fileID: 2084279886}
-  duration: 60
+  duration: 5
   currentTime: 0
 --- !u!114 &1307811320
 MonoBehaviour:
