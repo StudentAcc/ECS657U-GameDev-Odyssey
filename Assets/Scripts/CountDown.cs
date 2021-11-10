@@ -28,6 +28,10 @@ public class CountDown : MonoBehaviour
             timeText.text = currentTime.ToString();
             yield return new WaitForSeconds(1f);
             currentTime--;
+            if (currentTime <= 20)
+            {
+                timeImage.GetComponent<Image>().color = new Color32(255, 0, 0, 225);
+            }
         }
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
