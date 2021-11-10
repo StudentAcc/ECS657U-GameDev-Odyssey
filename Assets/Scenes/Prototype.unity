@@ -1162,6 +1162,8 @@ GameObject:
   m_Component:
   - component: {fileID: 213291552}
   - component: {fileID: 213291553}
+  - component: {fileID: 213291555}
+  - component: {fileID: 213291554}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -1200,6 +1202,32 @@ MonoBehaviour:
   range: 100
   fpsCam: {fileID: 2138149394}
   muzzleFlash: {fileID: 756810974}
+--- !u!114 &213291554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213291551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53a80505b4abae9428a0a576ad4cd72e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &213291555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213291551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 520c0330399864f4bb10058e39b7a100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage:
+    baseValue: 10
 --- !u!1 &278666823
 GameObject:
   m_ObjectHideFlags: 0
@@ -1310,10 +1338,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 278666823}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc55ea1d99765144793aedd066ee4df3, type: 3}
+  m_Script: {fileID: 11500000, guid: f43207ff0a8b9b442801556af249db0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  maxHealth: 100
+  damage:
+    baseValue: 0
 --- !u!1 &285164305
 GameObject:
   m_ObjectHideFlags: 0
@@ -19398,12 +19428,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1038018860}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0be8d6edf2c9ea94cbde2aa1e934f46f, type: 3}
+  m_Script: {fileID: 11500000, guid: 356d81b12b2ed114e8456efbc814f126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
   damage:
-    baseValue: 0
+    baseValue: 10
 --- !u!1 &1129619755
 GameObject:
   m_ObjectHideFlags: 0

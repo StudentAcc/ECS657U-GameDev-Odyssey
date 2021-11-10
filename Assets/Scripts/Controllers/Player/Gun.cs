@@ -7,8 +7,17 @@ public class Gun : MonoBehaviour
 
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
+    GunCombat combat;
+    //PlayerManager playerManager;
 
     // Update is called once per frame
+
+    void Start()
+    {
+        //playerManager = playerManager.instance;
+        combat = GetComponent<GunCombat>();
+    }
+
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
@@ -26,11 +35,19 @@ public class Gun : MonoBehaviour
         {
             Debug.Log(hit.transform.name);
 
-            Target target = hit.transform.GetComponent<Target>();
-            if(target != null)
+            CharacterStats targetStats = hit.transform.GetComponent<CharacterStats>();
+            if (targetStats != null)
             {
-                target.TakeDamage(damage);
+                //combat.Attack(targetStats);
+                combat.Attack(targetStats);
             }
+
+
+            //Target target = hit.transform.GetComponent<Target>();
+            //if(target != null)
+            //{
+            //    target.TakeDamage(damage);
+            //}
         }
     }
 }
