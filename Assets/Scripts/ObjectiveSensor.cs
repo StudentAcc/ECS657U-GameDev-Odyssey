@@ -31,7 +31,7 @@ public class ObjectiveSensor : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "ShipParts")
+        if (col.gameObject.tag == "ShipPart")
         {
             partsDetected += 1;
         }
