@@ -8,6 +8,8 @@ public class Pickup : MonoBehaviour
     public float moveForce = 250;
     public Transform holdParent;
     private GameObject heldObj;
+    bool pickup;
+    public bool pickedup;
     PlayerInputActions controls;
 
     void Awake() {
@@ -16,7 +18,8 @@ public class Pickup : MonoBehaviour
 
     void Update()
     {
-        if (controls.Player.Pickup.triggered)
+        // if (controls.Player.Pickup.triggered
+        if(pickup)
         {
             if (heldObj == null)
             {
@@ -30,6 +33,7 @@ public class Pickup : MonoBehaviour
             {
                 DropObject();
             }
+            pickup = false;
         }
 
         if (heldObj != null)
@@ -57,6 +61,7 @@ public class Pickup : MonoBehaviour
 
             objRig.transform.parent = holdParent;
             heldObj = pickObj;
+            pickedup = true;
         }
     }
 
@@ -68,14 +73,20 @@ public class Pickup : MonoBehaviour
 
         heldObj.transform.parent = null;
         heldObj = null;
-    }
-    
-    private void OnEnable() {
-        controls.Player.Pickup.Enable();
+        pickedup = false;
     }
 
-    private void OnDisable() {
-        controls.Player.Pickup.Disable();
+    public void OnPickupPressed()
+    {
+        pickup = true;
     }
+    
+    // private void OnEnable() {
+    //     controls.Player.Pickup.Enable();
+    // }
+
+    // private void OnDisable() {
+    //     controls.Player.Pickup.Disable();
+    // }
 
 }

@@ -9,7 +9,9 @@ public class Gun : MonoBehaviour
     public ParticleSystem muzzleFlash;
     GunCombat combat;
     PlayerInputActions controls;
+    [SerializeField] Pickup pickup;
     //PlayerManager playerManager;
+    bool shoot;
 
     // Update is called once per frame
 
@@ -19,16 +21,19 @@ public class Gun : MonoBehaviour
         combat = GetComponent<GunCombat>();
     }
 
-    void Awake()
-    {
-        controls = new PlayerInputActions();
-    }
+    // void Awake()
+    // {
+    //     controls = new PlayerInputActions();
+    // }
 
     private void Update()
     {
-        if(controls.Player.Shoot.triggered)
+        // if(controls.Player.Shoot.triggered)
+        if(shoot)
         {
-            Shoot();
+            if(!pickup.pickedup)
+                Shoot();
+            shoot = false;
         }
     }
 
@@ -57,12 +62,17 @@ public class Gun : MonoBehaviour
         }
     }
 
-    public void OnEnable() {
-        controls.Player.Shoot.Enable();
+    public void OnShootPressed()
+    {
+        shoot = true;
     }
 
-    public void OnDisable() {
-        controls.Player.Shoot.Disable();
-    }
+    // public void OnEnable() {
+    //     controls.Player.Shoot.Enable();
+    // }
+
+    // public void OnDisable() {
+    //     controls.Player.Shoot.Disable();
+    // }
 
 }
