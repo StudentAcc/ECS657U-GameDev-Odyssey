@@ -8,6 +8,7 @@ public class Gun : MonoBehaviour
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
     GunCombat combat;
+    PlayerInputActions controls;
     //PlayerManager playerManager;
 
     // Update is called once per frame
@@ -18,15 +19,20 @@ public class Gun : MonoBehaviour
         combat = GetComponent<GunCombat>();
     }
 
-    void Update()
+    void Awake()
     {
-        if (Input.GetButtonDown("Fire1"))
+        controls = new PlayerInputActions();
+    }
+
+    private void Update()
+    {
+        if(controls.Player.Shoot.triggered)
         {
             Shoot();
         }
     }
 
-    void Shoot()
+    public void Shoot()
     {
         muzzleFlash.Play();
 
@@ -50,4 +56,13 @@ public class Gun : MonoBehaviour
             //}
         }
     }
+
+    public void OnEnable() {
+        controls.Player.Shoot.Enable();
+    }
+
+    public void OnDisable() {
+        controls.Player.Shoot.Disable();
+    }
+
 }

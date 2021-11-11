@@ -6,22 +6,6 @@
             "id": "87e7d64b-3447-4759-91f1-34559dcd5936",
             "actions": [
                 {
-                    "name": "Jump",
-                    "type": "Button",
-                    "id": "91dd28bc-00fb-4391-afd9-7024a056d7ac",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Movement",
-                    "type": "PassThrough",
-                    "id": "4653f63a-701b-4419-90bc-3b57d861aa33",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "MouseX",
                     "type": "PassThrough",
                     "id": "df1e3cf5-58c7-45ea-980c-b2893b4a3666",
@@ -34,6 +18,38 @@
                     "type": "PassThrough",
                     "id": "c1900a77-1cb9-4f3a-95ef-571b0d285dc9",
                     "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Movement",
+                    "type": "PassThrough",
+                    "id": "4653f63a-701b-4419-90bc-3b57d861aa33",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "91dd28bc-00fb-4391-afd9-7024a056d7ac",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Pickup",
+                    "type": "Button",
+                    "id": "c2246a16-119b-461c-a646-db54b7ade0dd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Shoot",
+                    "type": "Button",
+                    "id": "7db7ca58-777e-4d70-843b-13625af29acd",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 }
@@ -58,6 +74,50 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "46bc6621-07d9-4abc-932f-f5f1c212d6d2",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Pickup",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cc3ad7aa-321d-4b08-b4b6-3c067149c511",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Pickup",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f71b780d-6399-4b34-a395-4cf4bc40766d",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "04628b8c-165f-44ca-a954-2941c8f9ae96",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Shoot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -129,17 +189,6 @@
                 },
                 {
                     "name": "",
-                    "id": "38e01235-f673-46f1-b53d-7003c562faf9",
-                    "path": "<Mouse>/delta/x",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MouseX",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "70c61f6d-57bd-44b4-a08f-90bb647403b6",
                     "path": "<Mouse>/delta/y",
                     "interactions": "",
@@ -148,14 +197,19 @@
                     "action": "MouseY",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "38e01235-f673-46f1-b53d-7003c562faf9",
+                    "path": "<Mouse>/delta/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseX",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
-        },
-        {
-            "name": "UI",
-            "id": "3cd6b4b6-d7d1-4511-84a0-c6accc1c0177",
-            "actions": [],
-            "bindings": []
         }
     ],
     "controlSchemes": [
