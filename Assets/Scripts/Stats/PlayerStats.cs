@@ -20,6 +20,8 @@ public class PlayerStats : CharacterStats
     public override void Die()
     {
         base.Die();
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("LoseScreen");
     } 
 }

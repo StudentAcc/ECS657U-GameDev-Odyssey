@@ -21,6 +21,8 @@ public class ObjectiveSensor : MonoBehaviour
     {
         if (partsDetected == partsTotal)
         {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             SceneManager.LoadScene("WinScreen");
         }
         else
