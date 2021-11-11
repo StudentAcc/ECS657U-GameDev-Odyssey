@@ -283,7 +283,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 18084309}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.34, y: -0.29, z: 1.783}
+  m_LocalPosition: {x: -1.25, y: -0.29, z: 2.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2138149391}
@@ -35318,7 +35318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeImage: {fileID: 1307811320}
   timeText: {fileID: 2084279886}
-  duration: 100
+  duration: 20
   currentTime: 0
 --- !u!114 &1307811320
 MonoBehaviour:
@@ -35451,6 +35451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sliderUI: {fileID: 491216333}
+  FillSpeed: 0.5
 --- !u!1 &1372656103
 GameObject:
   m_ObjectHideFlags: 0
