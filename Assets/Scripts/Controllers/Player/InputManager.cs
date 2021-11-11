@@ -9,6 +9,7 @@ public class InputManager : MonoBehaviour {
 
     PlayerInputActions controls;
     PlayerInputActions.PlayerActions playerActions;
+    [SerializeField] Gun gun;
     
     Vector2 movementInput;
     Vector2 mouseInput;
@@ -23,6 +24,8 @@ public class InputManager : MonoBehaviour {
 
         playerActions.MouseX.performed += context => mouseInput.x = context.ReadValue<float>();
         playerActions.MouseY.performed += context => mouseInput.y = context.ReadValue<float>();
+
+        
     }
 
     private void Update() {
@@ -34,7 +37,7 @@ public class InputManager : MonoBehaviour {
         controls.Player.Enable();
     }
 
-    private void onDisable() {
+    private void OnDisable() {
         controls.Player.Disable();
     }
 

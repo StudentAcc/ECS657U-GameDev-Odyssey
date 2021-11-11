@@ -7,12 +7,16 @@ public class Pickup : MonoBehaviour
     public float pickUpRange = 5;
     public float moveForce = 250;
     public Transform holdParent;
-
     private GameObject heldObj;
+    PlayerInputActions controls;
+
+    void Awake() {
+        controls = new PlayerInputActions();
+    }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (controls.Player.Pickup.triggered)
         {
             if (heldObj == null)
             {
@@ -27,8 +31,6 @@ public class Pickup : MonoBehaviour
                 DropObject();
             }
         }
-
-
 
         if (heldObj != null)
         {
@@ -47,7 +49,7 @@ public class Pickup : MonoBehaviour
 
     void PickupObject(GameObject pickObj)
     {
-        if (pickObj.GetComponent<Rigidbody>()) 
+        if (pickObj.GetComponent<Rigidbody>() && pickObj.tag == "ShipParts") 
         {
             Rigidbody objRig = pickObj.GetComponent<Rigidbody>();
             objRig.useGravity = false;
@@ -67,4 +69,13 @@ public class Pickup : MonoBehaviour
         heldObj.transform.parent = null;
         heldObj = null;
     }
+    
+    private void OnEnable() {
+        controls.Player.Pickup.Enable();
+    }
+
+    private void OnDisable() {
+        controls.Player.Pickup.Disable();
+    }
+
 }
