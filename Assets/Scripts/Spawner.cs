@@ -25,7 +25,7 @@ public class Spawner : MonoBehaviour
             {
 				randomInt = Random.Range(0, spawnees.Length);
 			}
-			position = new Vector3(Random.Range(100F, 1000F), 70, Random.Range(100F, 1000F));
+			position = new Vector3(Random.Range(5, 200), 70, Random.Range(5, 300));
 			Instantiate(spawnees[randomInt], position, Quaternion.identity);
 			spawned++;
 		}
