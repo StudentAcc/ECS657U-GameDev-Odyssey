@@ -47,7 +47,7 @@ public class Pickup : MonoBehaviour
 
     void PickupObject(GameObject pickObj)
     {
-        if (pickObj.GetComponent<Rigidbody>() && pickObj.tag == "ShipParts") 
+        if (pickObj.GetComponent<Rigidbody>() && pickObj.tag == "ShipPart") 
         {
             Rigidbody objRig = pickObj.GetComponent<Rigidbody>();
             objRig.useGravity = false;
