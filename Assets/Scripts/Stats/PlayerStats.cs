@@ -22,6 +22,6 @@ public class PlayerStats : CharacterStats
         base.Die();
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-        SceneManager.LoadScene("LoseScreen");
+        SceneManager.LoadScene("DiedScreen");
     } 
 }
