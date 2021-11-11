@@ -28,18 +28,27 @@ public class EnemyController : MonoBehaviour
         if (distance <= lookRadius)
         {
             agent.SetDestination(target.position);
-
-            if (distance <= agent.stoppingDistance)
+            //Debug.Log("2");
+            if (distance - 1 <= agent.stoppingDistance)
             {
                 // Face the arget
                 FaceTarget();
 
                 //Attack the target
+                //Debug.Log("1");
                 CharacterStats targetStats = target.GetComponent<CharacterStats>();
+                //if (combat == null)
+                //{
+                //    Debug.Log(combat);
+                //} else
+                //{
+                //    Debug.Log(combat);
+                //}
                 if (targetStats != null)
                 {
                     combat.Attack(targetStats);
-                }           
+                }
+
             }
         }
     }
