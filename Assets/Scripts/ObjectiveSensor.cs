@@ -12,7 +12,6 @@ public class ObjectiveSensor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        partsTotal = 4;
         partsDetected = 0;
     }
 
@@ -25,10 +24,7 @@ public class ObjectiveSensor : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             SceneManager.LoadScene("WinScreen");
         }
-        else
-        {
-            Debug.Log("Currently detected: " + partsDetected + " ; Total parts: " + partsTotal);
-        }
+
     }
 
     private void OnTriggerEnter(Collider col)
