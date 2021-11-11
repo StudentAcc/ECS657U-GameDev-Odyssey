@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - ShipPart
+  - Terrain
   layers:
   - Default
   - TransparentFX

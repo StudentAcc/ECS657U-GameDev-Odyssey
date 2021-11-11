@@ -8,6 +8,7 @@ public class Spawner : MonoBehaviour
 
 	public GameObject[] spawnees;
 	public int[] spawnAmount;
+	public string[] spawnParent;
 	public Vector3 position;
 	int randomInt;
 
@@ -17,17 +18,32 @@ public class Spawner : MonoBehaviour
 	{
 		int spawned = 0;
 		int numToSpawn = spawnAmount.Sum();
+		int posx;
+		int posz;
+		int maxHeight = 500;
+		int layerMask = LayerMask.GetMask("Ground");
+		Debug.Log(numToSpawn);
+		randomInt = 0;
 
 		while (spawned < numToSpawn)
 		{
-			randomInt = 0;
-			while (spawnAmount[randomInt] != 0)
-            {
+			Debug.Log(spawnees.Length);
+			Debug.Log(numToSpawn);
+			while (spawnAmount[randomInt] == 0)
+			{
 				randomInt = Random.Range(0, spawnees.Length);
 			}
-			position = new Vector3(Random.Range(5, 200), 70, Random.Range(5, 300));
-			Instantiate(spawnees[randomInt], position, Quaternion.identity);
-			spawned++;
+			posx = Random.Range(5, 200);
+			posz = Random.Range(5, 300);
+			RaycastHit hit;
+			Ray ray = new Ray(new Vector3(posx, maxHeight, posz), Vector3.down);
+			if (Physics.Raycast(ray, out hit, maxHeight, layerMask))
+			{
+				//position = new Vector3(Random.Range(5, 200), 70, Random.Range(5, 300));
+				Instantiate(spawnees[randomInt], hit.point + new Vector3(0, 2, 0), Quaternion.identity, GameObject.Find(spawnParent[randomInt]).GetComponent<Transform>());
+				spawnAmount[randomInt]--;
+				spawned++;
+			}
 		}
 	}
 }
