@@ -16,5 +16,15 @@ public class MenuButtons : MonoBehaviour
         Application.Quit();
     }
 
+    public void Controls()
+    {
+        SceneManager.LoadScene("Controls");
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
 
 }
