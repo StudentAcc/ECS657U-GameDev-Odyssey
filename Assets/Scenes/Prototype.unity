@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1621,8 +1621,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 698035986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.04, y: -1.66, z: 57.72}
-  m_LocalScale: {x: 9.787, y: 4.30596, z: -5.449905}
+  m_LocalPosition: {x: 0.0364, y: -1.66, z: 57.72}
+  m_LocalScale: {x: 18.055202, y: 4.30596, z: -5.449905}
   m_Children: []
   m_Father: {fileID: 2110143629}
   m_RootOrder: 2
@@ -1656,8 +1656,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movingDoor: {fileID: 1755631497}
-  maximumOpening: 65
-  maximumClosing: 59.1
+  maximumOpening: 62
+  maximumClosing: 59
   movementSpeed: 12
 --- !u!65 &698035990
 BoxCollider:
@@ -1735,8 +1735,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movingDoor: {fileID: 982589146}
-  maximumOpening: 50.03
-  maximumClosing: 55.93
+  maximumOpening: 53
+  maximumClosing: 56
   movementSpeed: 12
 --- !u!1 &756810971
 GameObject:
@@ -39066,8 +39066,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 982589146}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1952, y: 0.3741, z: 55.93}
-  m_LocalScale: {x: 0.98489064, y: 11.149367, z: 3.1714187}
+  m_LocalPosition: {x: -0.09, y: 0.3741, z: 55.93}
+  m_LocalScale: {x: 0.02, y: 11.149367, z: 3.616036}
   m_Children: []
   m_Father: {fileID: 2110143629}
   m_RootOrder: 1
@@ -45059,8 +45059,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1755631497}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1952, y: 0.3741, z: 59.1}
-  m_LocalScale: {x: 0.98489064, y: 11.149367, z: 3.1714187}
+  m_LocalPosition: {x: -0.08999988, y: 0.3741, z: 59.3224}
+  m_LocalScale: {x: 0.02, y: 11.149367, z: 3.6160362}
   m_Children: []
   m_Father: {fileID: 2110143629}
   m_RootOrder: 0
@@ -45265,7 +45265,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-197406
+  m_Name: pb_Mesh75614
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
