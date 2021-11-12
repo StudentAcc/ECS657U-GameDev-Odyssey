@@ -8,9 +8,9 @@ Note, the firearm runs on oxygen which makes reloading unecessary. But shoot spa
 You are not expected to survive.
 
 **Keyboard + Mouse**
-Esc - Pause Menu
-WASD - Move
-Mouse - Look
+\nEsc - Pause Menu
+\nWASD - Move
+\nMouse - Look
 Spacebar - Jump
 E - Pick up / Drop
 Left Mouse Button - Shoot
