@@ -33,8 +33,8 @@ public class Spawner : MonoBehaviour
 			{
 				randomInt = Random.Range(0, spawnees.Length);
 			}
-			posx = Random.Range(5, 200);
-			posz = Random.Range(5, 300);
+			posx = Random.Range(0, 2000);
+			posz = Random.Range(0, 2000);
 			RaycastHit hit;
 			Ray ray = new Ray(new Vector3(posx, maxHeight, posz), Vector3.down);
 			if (Physics.Raycast(ray, out hit, maxHeight, layerMask))
