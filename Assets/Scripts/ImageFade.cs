@@ -13,6 +13,7 @@ public class ImageFade : MonoBehaviour
     public float fadeDelay = 3f;
     public Image image;
     private IEnumerator coroutine;
+    public Button primaryButton;
 
     void Awake()
     {
@@ -23,6 +24,7 @@ public class ImageFade : MonoBehaviour
     {
         StopCoroutine(coroutine);
         image.color = endColour;
+        primaryButton.Select();
     }
 
     void Start ()
@@ -42,5 +44,6 @@ public class ImageFade : MonoBehaviour
             image.color = Color.Lerp(startColour, endColour, t / fadeInTime);
             yield return null;
         }
+        primaryButton.Select();
     }
 }
