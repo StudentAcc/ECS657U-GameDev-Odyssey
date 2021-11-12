@@ -31,6 +31,13 @@ public class CountDown : MonoBehaviour
             yield return new WaitForSeconds(1f);
             currentTime--;
 
+            if (GameObject.Find("Gun").GetComponent<Gun>().OnShootPressed())
+            {
+                yield return new WaitForSeconds(1f);
+                currentTime--;
+            }
+
+
             if (currentTime <= 20)
             {
                 timeImage.GetComponent<Image>().color = new Color32(255, 0, 0, 225);
