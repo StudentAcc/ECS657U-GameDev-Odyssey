@@ -12,22 +12,25 @@ public class ImageFade : MonoBehaviour
     public float fadeInTime = 1f;
     public float fadeDelay = 3f;
     public Image image;
-    PlayerInputActions controls;
+    private IEnumerator coroutine;
 
     void Awake()
     {
         image = GetComponent<Image>();
     }
 
-    public void OnShootPressed()
+    public void skipFade()
     {
+        StopCoroutine(coroutine);
         image.color = endColour;
     }
 
     void Start ()
     {
+
         image.color = startColour;
-        StartCoroutine(imageFadeLerpIn());
+        coroutine = imageFadeLerpIn();
+        StartCoroutine(coroutine);
     }
 
 

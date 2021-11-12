@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MenuButtons : MonoBehaviour
 {
+    public void StartGame()
+    {
+        SceneManager.LoadScene("Intro");
+    }
+
     public void RestartGame()
     {
         SceneManager.LoadScene("Prototype");
@@ -25,6 +30,4 @@ public class MenuButtons : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
-
-
 }
