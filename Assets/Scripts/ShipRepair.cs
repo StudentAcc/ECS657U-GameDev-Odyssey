@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
-public class SliderValueToText : MonoBehaviour
+public class ShipRepair : MonoBehaviour
 {
     public Slider sliderUI;
 
