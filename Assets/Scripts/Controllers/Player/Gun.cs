@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Gun : MonoBehaviour
 {
@@ -9,31 +10,26 @@ public class Gun : MonoBehaviour
     GunCombat combat;
     PlayerInputActions controls;
     [SerializeField] Pickup pickup;
-    //PlayerManager playerManager;
-    bool shoot;
+    public GameObject PauseMenu;
 
-    // Update is called once per frame
+    bool shoot;
 
     void Start()
     {
-        //playerManager = playerManager.instance;
         combat = GetComponent<GunCombat>();
     }
 
-    // void Awake()
-    // {
-    //     controls = new PlayerInputActions();
-    // }
-
     private void Update()
     {
-        // if(controls.Player.Shoot.triggered)
         if(shoot)
         {
             if (!pickup.pickedup)
             {
-                GameObject.Find("OxygenBackground").GetComponent<CountDown>().onShootDecreaseOxygen();
-                Shoot();
+                if(!PauseMenu.activeInHierarchy)
+                {
+                    GameObject.Find("OxygenBackground").GetComponent<CountDown>().onShootDecreaseOxygen();
+                    Shoot();
+                }
             }
             shoot = false;
         }
@@ -53,13 +49,6 @@ public class Gun : MonoBehaviour
             {
                 combat.Attack(targetStats);
             }
-
-
-            //Target target = hit.transform.GetComponent<Target>();
-            //if(target != null)
-            //{
-            //    target.TakeDamage(damage);
-            //}
         }
     }
 
@@ -67,13 +56,5 @@ public class Gun : MonoBehaviour
     {
         shoot = true;
     }
-
-    // public void OnEnable() {
-    //     controls.Player.Shoot.Enable();
-    // }
-
-    // public void OnDisable() {
-    //     controls.Player.Shoot.Disable();
-    // }
 
 }

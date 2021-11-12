@@ -10,15 +10,9 @@ public class Pickup : MonoBehaviour
     private GameObject heldObj;
     bool pickup;
     public bool pickedup;
-    PlayerInputActions controls;
-
-    void Awake() {
-        controls = new PlayerInputActions();
-    }
-
+    
     void Update()
     {
-        // if (controls.Player.Pickup.triggered
         if(pickup)
         {
             if (heldObj == null)
@@ -80,13 +74,5 @@ public class Pickup : MonoBehaviour
     {
         pickup = true;
     }
-    
-    // private void OnEnable() {
-    //     controls.Player.Pickup.Enable();
-    // }
-
-    // private void OnDisable() {
-    //     controls.Player.Pickup.Disable();
-    // }
 
 }
