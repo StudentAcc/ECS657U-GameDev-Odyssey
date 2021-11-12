@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    public float damage = 10f;
-    public float range = 100f;
+    public float range = 500f;
 
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
@@ -31,8 +30,11 @@ public class Gun : MonoBehaviour
         // if(controls.Player.Shoot.triggered)
         if(shoot)
         {
-            if(!pickup.pickedup)
+            if (!pickup.pickedup)
+            {
+                GameObject.Find("OxygenBackground").GetComponent<CountDown>().onShootDecreaseOxygen();
                 Shoot();
+            }
             shoot = false;
         }
     }
@@ -49,7 +51,6 @@ public class Gun : MonoBehaviour
             CharacterStats targetStats = hit.transform.GetComponent<CharacterStats>();
             if (targetStats != null)
             {
-                //combat.Attack(targetStats);
                 combat.Attack(targetStats);
             }
 

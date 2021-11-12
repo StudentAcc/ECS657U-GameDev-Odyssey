@@ -694,7 +694,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a1598d3d9aa7b438a8d9c6580b188b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
   range: 100
   fpsCam: {fileID: 2138149394}
   muzzleFlash: {fileID: 756810974}
@@ -16691,7 +16690,7 @@ GameObject:
   - component: {fileID: 1307811320}
   - component: {fileID: 1307811319}
   m_Layer: 5
-  m_Name: Background
+  m_Name: OxygenBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16730,8 +16729,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeImage: {fileID: 1307811320}
   timeText: {fileID: 2084279886}
-  duration: 100
+  duration: 200
   currentTime: 0
+  decreaseByShooting: 1
 --- !u!114 &1307811320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53437,7 +53437,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 200
 --- !u!222 &2084279887
 CanvasRenderer:
   m_ObjectHideFlags: 0
