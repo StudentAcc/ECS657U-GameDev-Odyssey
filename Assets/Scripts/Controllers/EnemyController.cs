@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
 {
 
     public float lookRadius = 10f;
+    public ParticleSystem attackAnimationParticles;
 
     Transform target;
     NavMeshAgent agent;
@@ -30,9 +31,7 @@ public class EnemyController : MonoBehaviour
             agent.SetDestination(target.position);
             //Debug.Log("2");
             if (distance - 1 <= agent.stoppingDistance)
-            {
-                // Face the arget
-                FaceTarget();
+            { 
 
                 //Attack the target
                 //Debug.Log("1");
@@ -46,8 +45,12 @@ public class EnemyController : MonoBehaviour
                 //}
                 if (targetStats != null)
                 {
+                    attackAnimationParticles.Play();
                     combat.Attack(targetStats);
                 }
+
+                // Face the arget
+                FaceTarget();
 
             }
         }

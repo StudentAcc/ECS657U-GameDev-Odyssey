@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyStats : CharacterStats
 {
 
-    public ParticleSystem takeDamageAnimation;
+    //public ParticleSystem takeDamageAnimation;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,8 @@ public class EnemyStats : CharacterStats
     public override void TakeDamage (int damage)
     {
         base.TakeDamage(damage);
-        takeDamageAnimation.Play();
+        GetComponentInChildren<ColourLerper>().ColourChangeActivate();
+        //takeDamageAnimation.Play();
     }
 
 }
