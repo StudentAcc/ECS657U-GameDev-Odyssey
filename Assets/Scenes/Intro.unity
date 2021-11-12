@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 81409304}
   - component: {fileID: 81409303}
   m_Layer: 5
-  m_Name: IntroText (1)
+  m_Name: 2ndPara
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -258,8 +258,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColour: {r: 1, g: 1, b: 1, a: 0}
   endColour: {r: 1, g: 1, b: 1, a: 1}
-  fadeInTime: 10
-  fadeDelay: 3
+  fadeInTime: 20
+  fadeDelay: 11
   text: {fileID: 0}
 --- !u!114 &81409304
 MonoBehaviour:
@@ -283,7 +283,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 20
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
@@ -294,10 +294,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "As the player ventures outside the ship cautiously with their standard
+  m_Text: As the player ventures outside the ship cautiously with their standard
     issue firearm, they discover there are hostile creatures lurking amongst the
-    land. Can they repair the ship and return home safe and sound before their last
-    reserves of oxygen run out? \r"
+    land. Can they find the fuel rods to repair the ship and return home safe before
+    their last reserves of oxygen run out?
 --- !u!222 &81409305
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 402015830}
   - component: {fileID: 402015832}
   m_Layer: 5
-  m_Name: IntroText
+  m_Name: 1stPara
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -484,7 +484,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 20
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
@@ -495,9 +495,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "After their spaceship crashed onto an unknown planet, the player wakes
-    up as the only survivor. The ship took some damage, unable to fly, but it looks
-    fixable with resources (cubes) from the planet. \r"
+  m_Text: 'After their spaceship crashed onto an unknown planet, the player wakes
+    up as the only survivor. The ship took some damage, unable to fly, but some of
+    the reserved fuel rods powering the ship has scattered across the planet. '
 --- !u!222 &402015831
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -520,8 +520,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColour: {r: 1, g: 1, b: 1, a: 0}
   endColour: {r: 1, g: 1, b: 1, a: 1}
-  fadeInTime: 10
-  fadeDelay: 2
+  fadeInTime: 20
+  fadeDelay: 4
   text: {fileID: 0}
 --- !u!1 &492893023
 GameObject:
@@ -617,8 +617,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColour: {r: 0.19607845, g: 0.19607845, b: 0.19607845, a: 0}
   endColour: {r: 0.19607845, g: 0.19607845, b: 0.19607845, a: 1}
-  fadeInTime: 10
-  fadeDelay: 5
+  fadeInTime: 20
+  fadeDelay: 26
   text: {fileID: 0}
 --- !u!1 &851765586
 GameObject:
@@ -714,7 +714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColour: {r: 1, g: 1, b: 1, a: 0}
   endColour: {r: 1, g: 1, b: 1, a: 1}
-  fadeInTime: 10
+  fadeInTime: 25
   fadeDelay: 1
   text: {fileID: 0}
 --- !u!1 &1208790562
@@ -957,9 +957,107 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColour: {r: 1, g: 1, b: 1, a: 0}
   endColour: {r: 1, g: 1, b: 1, a: 1}
-  fadeInTime: 10
-  fadeDelay: 5
+  fadeInTime: 20
+  fadeDelay: 26
   image: {fileID: 0}
+--- !u!1 &1464887892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1464887893}
+  - component: {fileID: 1464887896}
+  - component: {fileID: 1464887895}
+  - component: {fileID: 1464887894}
+  m_Layer: 5
+  m_Name: 3rdPara
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1464887893
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464887892}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1762478281}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -81}
+  m_SizeDelta: {x: 749.892, y: 183.3465}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1464887894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464887892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1fc4b3ab0abbd14eaecabf98afb80df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startColour: {r: 1, g: 1, b: 1, a: 0}
+  endColour: {r: 1, g: 1, b: 1, a: 1}
+  fadeInTime: 20
+  fadeDelay: 18
+  text: {fileID: 0}
+--- !u!114 &1464887895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464887892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 20
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 80
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: Note, the firearm runs on oxygen which makes reloading unecessary. But
+    shoot sparingly - your oxygen levels will go down considerably.
+--- !u!222 &1464887896
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464887892}
+  m_CullTransparentMesh: 1
 --- !u!1 &1510563448
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,7 +1428,7 @@ GameObject:
   - component: {fileID: 2060373955}
   - component: {fileID: 2060373954}
   m_Layer: 5
-  m_Name: IntroText (2)
+  m_Name: LastLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1368,9 +1466,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startColour: {r: 1, g: 1, b: 1, a: 0}
-  endColour: {r: 1, g: 1, b: 1, a: 1}
-  fadeInTime: 10
-  fadeDelay: 4
+  endColour: {r: 1, g: 0, b: 0, a: 1}
+  fadeInTime: 25
+  fadeDelay: 23
   text: {fileID: 0}
 --- !u!114 &2060373955
 MonoBehaviour:
@@ -1394,7 +1492,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 20
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
@@ -1405,7 +1503,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\nYou be the judge!\r"
+  m_Text: You are not expected to survive.
 --- !u!222 &2060373956
 CanvasRenderer:
   m_ObjectHideFlags: 0

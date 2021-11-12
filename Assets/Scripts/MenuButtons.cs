@@ -49,5 +49,10 @@ public class MenuButtons : MonoBehaviour
         MainMenuCanvas.SetActive(true);
     }
 
+    public void StartGame()
+    {
+        SceneManager.LoadScene("Intro");
+    }
+
 
 }
