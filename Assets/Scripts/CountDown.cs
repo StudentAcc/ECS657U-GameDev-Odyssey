@@ -48,9 +48,4 @@ public class CountDown : MonoBehaviour
         currentTime -= decreaseByShooting;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
