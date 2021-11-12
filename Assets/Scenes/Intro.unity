@@ -497,7 +497,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'After their spaceship crashed onto an unknown planet, the player wakes
     up as the only survivor. The ship took some damage, unable to fly, but some of
-    the reserved fuel rods powering the ship has scattered across the planet. '
+    the reserved fuel rods powering the ship have scattered across the planet. '
 --- !u!222 &402015831
 CanvasRenderer:
   m_ObjectHideFlags: 0
