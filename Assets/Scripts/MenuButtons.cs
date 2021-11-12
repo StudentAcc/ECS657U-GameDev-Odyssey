@@ -27,6 +27,7 @@ public class MenuButtons : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1f;
             // Cursor.visible = true;
             // Cursor.lockState = CursorLockMode.None;
     }
