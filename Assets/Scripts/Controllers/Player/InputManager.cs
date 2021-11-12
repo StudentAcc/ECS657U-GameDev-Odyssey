@@ -23,7 +23,7 @@ public class InputManager : MonoBehaviour {
 
         playerActions.Jump.performed += _ => movement.OnJumpPressed();
         playerActions.Pickup.performed += _ => pickup.OnPickupPressed();
-        playerActions.Shoot.performed += _ => gun.OnShootPressed();
+        playerActions.Shoot.started += _ => gun.OnShootPressed();
 
         playerActions.MouseX.performed += context => mouseInput.x = context.ReadValue<float>();
         playerActions.MouseY.performed += context => mouseInput.y = context.ReadValue<float>();
