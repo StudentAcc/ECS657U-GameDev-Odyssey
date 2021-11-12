@@ -47,6 +47,7 @@ public class EnemyController : MonoBehaviour
                 {
                     attackAnimationParticles.Play();
                     combat.Attack(targetStats);
+                    attackAnimationParticles.Play();
                 }
 
                 // Face the arget
