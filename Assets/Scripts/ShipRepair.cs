@@ -17,14 +17,14 @@ public class ShipRepair : MonoBehaviour
 
     void Update()
     {
-        string sliderMessage = "Ship repair: " + GameObject.Find("Detector").GetComponent<ObjectiveSensor>().partsDetected + " / " + sliderUI.maxValue;
+        string sliderMessage = "Spaceship Repairs: " + GameObject.Find("Detector").GetComponent<ObjectiveSensor>().partsDetected + " / " + sliderUI.maxValue;
         sliderUI.value = GameObject.Find("Detector").GetComponent<ObjectiveSensor>().partsDetected;
         textSliderValue.text = sliderMessage;
     }
 
     public void ShowSliderValue()
     {
-        string sliderMessage = "Ship repair: " + GameObject.Find("Detector").GetComponent<ObjectiveSensor>().partsDetected + " / " + sliderUI.maxValue;
+        string sliderMessage = "Spaceship Repairs: " + GameObject.Find("Detector").GetComponent<ObjectiveSensor>().partsDetected + " / " + sliderUI.maxValue;
         sliderUI.value = GameObject.Find("Detector").GetComponent<ObjectiveSensor>().partsDetected;
         textSliderValue.text = sliderMessage;
     }
