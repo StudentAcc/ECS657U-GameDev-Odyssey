@@ -296,8 +296,8 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: As the player ventures outside the ship cautiously with their standard
     issue firearm, they discover there are hostile creatures lurking amongst the
-    land. Can they find the fuel rods to repair the ship and return home safe before
-    their last reserves of oxygen run out?
+    land. Bring the cubic fuel rods back to the ship and drop it to the lighted up
+    square before oxygen runs out!
 --- !u!222 &81409305
 CanvasRenderer:
   m_ObjectHideFlags: 0
