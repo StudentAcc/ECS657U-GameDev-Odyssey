@@ -1603,7 +1603,7 @@ GameObject:
   - component: {fileID: 446240512}
   - component: {fileID: 446240511}
   m_Layer: 5
-  m_Name: QuitButton
+  m_Name: MainMenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1641,6 +1641,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a420fa607a2fe1b42b720f3bfda574fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainMenuCanvas: {fileID: 0}
+  ControlsMenuCanvas: {fileID: 0}
+  MainCanvasFirstButton: {fileID: 0}
+  ControlsCanvasFirstButton: {fileID: 0}
+  ControlsCanvasClosedButton: {fileID: 0}
 --- !u!114 &446240512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1919,7 +1924,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Quit
+  m_Text: Main Menu
 --- !u!222 &487923515
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16222,7 +16227,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Resume
+  m_Text: Resume Game
 --- !u!222 &1124010750
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19872,7 +19877,7 @@ MonoBehaviour:
   m_ScrollWheelAction: {fileID: 4502412055082496612, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_TrackedDevicePositionAction: {fileID: 4754684134866288074, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_TrackedDeviceOrientationAction: {fileID: 1025543830046995696, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_DeselectOnBackgroundClick: 1
+  m_DeselectOnBackgroundClick: 0
   m_PointerBehavior: 0
 --- !u!114 &1713233992
 MonoBehaviour:
@@ -36906,7 +36911,7 @@ GameObject:
   - component: {fileID: 1994126109}
   - component: {fileID: 1994126108}
   m_Layer: 5
-  m_Name: ResumeButton
+  m_Name: ResumeGameButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class MenuButtons : MonoBehaviour
 {
-    public GameObject MainMenuCanvas, MenuFirstButton;
+    public GameObject MainMenuCanvas, ControlsMenuCanvas, MainCanvasFirstButton, ControlsCanvasFirstButton, ControlsCanvasClosedButton;
 
     public void RestartGame()
     {
@@ -19,16 +19,34 @@ public class MenuButtons : MonoBehaviour
         Application.Quit();
     }
 
-    public void Controls()
-    {
-        SceneManager.LoadScene("Controls");
-    }
+    // public void Controls()
+    // {
+    //     SceneManager.LoadScene("Controls");
+    // }
 
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+            // Cursor.visible = true;
+            // Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void OpenControlsCanvas()
+    {
+        ControlsMenuCanvas.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(MenuFirstButton);
+        EventSystem.current.SetSelectedGameObject(ControlsCanvasFirstButton);
+        MainMenuCanvas.SetActive(false);
+        // Cursor.visible = true;
+        // Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void CloseControlsCanvas()
+    {
+        ControlsMenuCanvas.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(ControlsCanvasClosedButton);
+        MainMenuCanvas.SetActive(true);
     }
 
 
