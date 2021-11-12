@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro.unity
     guid: 913ee689237f1154e96a41e4684ee9c2
   - enabled: 1
-    path: Assets/Scenes/Controls.unity
-    guid: ddf7c98e52fb2b74b9fc9c3483f223af
-  - enabled: 1
     path: Assets/Scenes/Prototype.unity
     guid: b20915083c061f045b3bdc11953ff9cf
   - enabled: 1

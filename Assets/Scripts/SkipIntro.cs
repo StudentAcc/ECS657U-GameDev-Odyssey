@@ -12,7 +12,7 @@ public class SkipIntro : MonoBehaviour
         GameObject.Find("2ndPara").GetComponent<TextFade>().skipFade();
         GameObject.Find("3rdPara").GetComponent<TextFade>().skipFade();
         GameObject.Find("LastLine").GetComponent<TextFade>().skipFade();
-        GameObject.Find("StartButton").GetComponent<ImageFade>().skipFade();
-        GameObject.Find("ButtonText").GetComponent<TextFade>().skipFade();
+        GameObject.Find("StartGameButton").GetComponent<ImageFade>().skipFade();
+        GameObject.Find("Text").GetComponent<TextFade>().skipFade();
     }
 }
