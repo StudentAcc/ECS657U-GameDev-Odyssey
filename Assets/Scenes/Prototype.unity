@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 11288403}
   m_Layer: 0
-  m_Name: ShipParts
+  m_Name: SpaceshipParts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2298,7 +2298,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh174562
+  m_Name: pb_Mesh194338
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2466,7 +2466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 547999769}
   m_Layer: 0
-  m_Name: PickupDetection
+  m_Name: RepairPod
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16423,7 +16423,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh64484
+  m_Name: pb_Mesh194500
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19536,7 +19536,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh174628
+  m_Name: pb_Mesh194388
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19858,7 +19858,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh174380
+  m_Name: pb_Mesh194156
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -36308,7 +36308,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh174312
+  m_Name: pb_Mesh194072
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

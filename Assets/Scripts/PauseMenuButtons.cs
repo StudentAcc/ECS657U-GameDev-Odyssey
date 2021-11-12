@@ -37,8 +37,6 @@ public class PauseMenuButtons : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(ControlsFirstButton);
         PauseMenu.SetActive(false);
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
     }
 
     public void CloseControls()
