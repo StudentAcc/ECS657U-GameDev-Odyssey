@@ -15,6 +15,9 @@ public class PauseMenuButtons : MonoBehaviour
             PauseMenu.SetActive(true);
             Time.timeScale = 0f;
 
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+
             EventSystem.current.SetSelectedGameObject(null);
             EventSystem.current.SetSelectedGameObject(PauseFirstButton);
         }
@@ -23,6 +26,8 @@ public class PauseMenuButtons : MonoBehaviour
             PauseMenu.SetActive(false);
             Time.timeScale = 1f;
             ControlsMenu.SetActive(false);
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 
@@ -32,6 +37,8 @@ public class PauseMenuButtons : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(ControlsFirstButton);
         PauseMenu.SetActive(false);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void CloseControls()
