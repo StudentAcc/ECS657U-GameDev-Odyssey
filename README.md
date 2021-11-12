@@ -7,18 +7,18 @@ Note, the firearm runs on oxygen which makes reloading unecessary. But shoot spa
 
 You are not expected to survive.
 
-**Keyboard + Mouse**
-\nEsc - Pause Menu
-\nWASD - Move
-\nMouse - Look
-Spacebar - Jump
-E - Pick up / Drop
-Left Mouse Button - Shoot
+**Keyboard + Mouse**  
+Esc - Pause Menu  
+WASD - Move  
+Mouse - Look  
+Spacebar - Jump  
+E - Pick up / Drop  
+Left Mouse Button - Shoot  
 
-**Controller (Xbox / PlayStation)**
-Start Button - Pause Menu
-Left Stick - Move
-Right Stick - Look
-A / X - Jump
-Left Trigger - Pick up / Drop
-Right Trigger - Shoot
+**Controller (Xbox / PlayStation)**  
+Start Button - Pause Menu  
+Left Stick - Move   
+Right Stick - Look  
+A / X - Jump  
+Left Trigger - Pick up / Drop  
+Right Trigger - Shoot  
