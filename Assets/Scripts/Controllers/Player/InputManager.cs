@@ -8,6 +8,7 @@ public class InputManager : MonoBehaviour {
     [SerializeField] MouseLook mouseLook;
     [SerializeField] Pickup pickup;
     [SerializeField] Gun gun;
+    [SerializeField] PauseMenuButtons pauseMenuButtons;
 
     PlayerInputActions controls;
     PlayerInputActions.PlayerActions playerActions;
@@ -22,8 +23,9 @@ public class InputManager : MonoBehaviour {
         playerActions.Movement.performed += context => movementInput = context.ReadValue<Vector2>();
 
         playerActions.Jump.performed += _ => movement.OnJumpPressed();
-        playerActions.Pickup.performed += _ => pickup.OnPickupPressed();
+        playerActions.Pickup.started += _ => pickup.OnPickupPressed();
         playerActions.Shoot.started += _ => gun.OnShootPressed();
+        playerActions.Pause.performed += _ => pauseMenuButtons.PauseUnpause();
 
         playerActions.MouseX.performed += context => mouseInput.x = context.ReadValue<float>();
         playerActions.MouseY.performed += context => mouseInput.y = context.ReadValue<float>();
