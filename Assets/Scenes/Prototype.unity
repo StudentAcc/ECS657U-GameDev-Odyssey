@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -540,7 +540,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5695904020f064fdab5ad265b274a616, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1044,7 +1044,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 397836800}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 1.9435143, y: 4.025847, z: -1.4481049}
+  m_LocalPosition: {x: 1.9435143, y: 3.61, z: -1.4481049}
   m_LocalScale: {x: 0.5, y: 2, z: 5}
   m_Children: []
   m_Father: {fileID: 547999769}
@@ -1083,7 +1083,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d7b6e21b959f1bf43a6edb0b5023b140, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1285,7 +1285,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-349808
+  m_Name: pb_Mesh75482
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1467,7 +1467,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 547999768}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.68, y: -3.415847, z: 38.1}
+  m_LocalPosition: {x: -23.68, y: -4.29, z: 45.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 245555043}
@@ -2048,7 +2048,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
+  m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -13896,7 +13896,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
+  m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -14573,7 +14573,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1002096793}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.85648584, y: 4.025847, z: 1.3018951}
+  m_LocalPosition: {x: -0.85648584, y: 3.61, z: 1.3018951}
   m_LocalScale: {x: 0.5, y: 2, z: 5}
   m_Children: []
   m_Father: {fileID: 547999769}
@@ -14612,7 +14612,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d7b6e21b959f1bf43a6edb0b5023b140, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19689,7 +19689,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh60482
+  m_Name: pb_Mesh75554
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20227,7 +20227,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1372656103}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 1.9435153, y: 4.025847, z: 4.051895}
+  m_LocalPosition: {x: 1.9435153, y: 3.61, z: 4.051895}
   m_LocalScale: {x: 0.5, y: 2, z: 5}
   m_Children: []
   m_Father: {fileID: 547999769}
@@ -20266,7 +20266,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d7b6e21b959f1bf43a6edb0b5023b140, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20558,7 +20558,7 @@ GameObject:
   - component: {fileID: 1421360331}
   - component: {fileID: 1421360330}
   - component: {fileID: 1421360329}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: InsideExterior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22363,7 +22363,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-326858
+  m_Name: pb_Mesh75500
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -22527,7 +22527,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-464046
+  m_Name: pb_Mesh75348
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -22699,7 +22699,7 @@ GameObject:
   - component: {fileID: 1735528146}
   - component: {fileID: 1735528145}
   - component: {fileID: 1735528144}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SpaceshipInterior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22762,7 +22762,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d9347f475a363b44e8ce38da64ef51a3, type: 2}
+  - {fileID: 2100000, guid: 62ec8ad79138dac4fa4eb81ae4a21b90, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -38903,7 +38903,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-450480
+  m_Name: pb_Mesh75280
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -39125,7 +39125,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1822107181}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.6935143, y: 4.025847, z: 1.3018951}
+  m_LocalPosition: {x: 4.6935143, y: 3.61, z: 1.3018951}
   m_LocalScale: {x: 0.5, y: 2, z: 5}
   m_Children: []
   m_Father: {fileID: 547999769}
@@ -39164,7 +39164,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d7b6e21b959f1bf43a6edb0b5023b140, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -39382,7 +39382,7 @@ GameObject:
   - component: {fileID: 2051216432}
   - component: {fileID: 2051216431}
   - component: {fileID: 2051216430}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SpaceshipExterior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
