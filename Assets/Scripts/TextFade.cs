@@ -27,7 +27,6 @@ public class TextFade : MonoBehaviour
 
     void Start()
     {
-
         text.color = startColour;
         coroutine = textFadeLerpIn();
         StartCoroutine(coroutine);
