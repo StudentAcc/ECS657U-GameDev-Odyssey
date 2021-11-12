@@ -31,11 +31,6 @@ public class CountDown : MonoBehaviour
             yield return new WaitForSeconds(1f);
             currentTime--;
 
-            if (GameObject.Find("Gun").GetComponent<Gun>().OnShootPressed())
-            {
-                yield return new WaitForSeconds(1f);
-                currentTime--;
-            }
 
 
             if (currentTime <= 20)

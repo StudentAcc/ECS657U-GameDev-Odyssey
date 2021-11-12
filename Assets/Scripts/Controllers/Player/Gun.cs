@@ -63,10 +63,9 @@ public class Gun : MonoBehaviour
         }
     }
 
-    public bool OnShootPressed()
+    public void OnShootPressed()
     {
         shoot = true;
-        return true;
     }
 
     // public void OnEnable() {
