@@ -11,6 +11,7 @@ public class HealthBar : MonoBehaviour
     void Start()
     {
         textSliderValue = GetComponent<Text>();
+        sliderUI.maxValue = GameObject.Find("Player").GetComponent<CharacterStats>().maxHealth;
     }
 
     void Update()

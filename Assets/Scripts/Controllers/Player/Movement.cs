@@ -16,7 +16,7 @@ public class Movement : MonoBehaviour {
 
     [SerializeField] LayerMask groundMask;
     bool isGrounded;
-    [SerializeField] float stamina;
+    [SerializeField] public float stamina;
     [SerializeField] float staminaRegenRate;
     [SerializeField] float staminaRegenWaitTime;
     public float staminaCode;
@@ -34,7 +34,6 @@ public class Movement : MonoBehaviour {
         if (isGrounded) {
             verticalVelocity.y = 0;
         }
-
         
         if (sprinting)
         {
