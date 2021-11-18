@@ -12,6 +12,7 @@ public class CountDown : MonoBehaviour
     [SerializeField] float duration;
     public float currentTime;
     [SerializeField] float decreaseByShooting;
+    [SerializeField] float decreaseBySprinting;
 
 
     // Start is called before the first frame update
@@ -46,6 +47,11 @@ public class CountDown : MonoBehaviour
     public void onShootDecreaseOxygen()
     {
         currentTime -= decreaseByShooting;
+    }
+
+    public void onSprintDecreaseOxygen()
+    {
+        currentTime -= decreaseBySprinting;
     }
 
 }

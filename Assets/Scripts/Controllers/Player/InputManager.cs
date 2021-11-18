@@ -30,7 +30,8 @@ public class InputManager : MonoBehaviour {
         playerActions.MouseX.performed += context => mouseInput.x = context.ReadValue<float>();
         playerActions.MouseY.performed += context => mouseInput.y = context.ReadValue<float>();
 
-        
+        playerActions.Sprint.started += _ => movement.SprintStarted();
+        playerActions.Sprint.canceled += _ => movement.SprintReleased();
     }
 
     private void Update() {
