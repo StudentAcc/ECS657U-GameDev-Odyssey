@@ -401,7 +401,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 270.01385, y: -5.694191}
+  m_AnchoredPosition: {x: 270.01385, y: -36.446842}
   m_SizeDelta: {x: 136.2863, y: 26.0911}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &97414770
@@ -1059,7 +1059,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 217.88437, y: 79.36269}
+  m_AnchoredPosition: {x: 217.88437, y: 48.610043}
   m_SizeDelta: {x: 136.2863, y: 26.0911}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &266445497
@@ -1848,7 +1848,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 185.51631, y: 29.96359}
+  m_AnchoredPosition: {x: 185.51631, y: -19}
   m_SizeDelta: {x: 136.2863, y: 26.0911}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &411802296
@@ -1884,7 +1884,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Pause Menu
+  m_Text: Pause
 --- !u!222 &411802297
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2037,9 +2037,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 0, b: 0, a: 1}
-    m_PressedColor: {r: 0, g: 0, b: 0, a: 1}
-    m_SelectedColor: {r: 1, g: 0, b: 0, a: 1}
+    m_HighlightedColor: {r: 0.7921569, g: 0.30980393, b: 0.30980393, a: 1}
+    m_PressedColor: {r: 1, g: 0, b: 0, a: 1}
+    m_SelectedColor: {r: 1, g: 0.37254903, b: 0.3529412, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -2323,7 +2323,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: -15}
+  m_AnchoredPosition: {x: 4, y: -28}
   m_SizeDelta: {x: 609.6849, y: 343.428}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &499675645
@@ -2367,7 +2367,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh39358
+  m_Name: pb_Mesh26168
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2639,7 +2639,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -185.94919, y: 25.18029}
+  m_AnchoredPosition: {x: -185.94919, y: -5.572361}
   m_SizeDelta: {x: 136.2863, y: 26.0911}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &601363060
@@ -14759,7 +14759,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 115.75479, y: 89.19033}
+  m_AnchoredPosition: {x: 115.75479, y: 58.43768}
   m_SizeDelta: {x: 136.2863, y: 26.0911}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &885892536
@@ -14840,7 +14840,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -257.3291, y: 70.752655}
+  m_AnchoredPosition: {x: -239, y: 60}
   m_SizeDelta: {x: 136.2863, y: 26.0911}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &891038756
@@ -14876,7 +14876,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Pause Menu
+  m_Text: Pause
 --- !u!222 &891038757
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16338,9 +16338,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 0, b: 0, a: 1}
-    m_PressedColor: {r: 0, g: 0, b: 0, a: 1}
-    m_SelectedColor: {r: 1, g: 0, b: 0, a: 1}
+    m_HighlightedColor: {r: 0.7921569, g: 0.30980393, b: 0.30980393, a: 1}
+    m_PressedColor: {r: 1, g: 0, b: 0, a: 1}
+    m_SelectedColor: {r: 1, g: 0.37254903, b: 0.3529412, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -16666,7 +16666,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh39518
+  m_Name: pb_Mesh26336
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -17157,7 +17157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -85.94908, y: 35.52969}
+  m_AnchoredPosition: {x: -85.94908, y: 4.7770386}
   m_SizeDelta: {x: 136.2863, y: 26.0911}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1254095826
@@ -17236,7 +17236,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -59.88428, y: -82.83678}
+  m_AnchoredPosition: {x: -59.88428, y: -113.58943}
   m_SizeDelta: {x: 136.2863, y: 26.0911}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1281903191
@@ -19858,7 +19858,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh39408
+  m_Name: pb_Mesh26218
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20050,7 +20050,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -259.03268, y: -1.1717091}
+  m_AnchoredPosition: {x: -259.03268, y: -31.92436}
   m_SizeDelta: {x: 136.2863, y: 26.0911}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1504739825
@@ -20129,7 +20129,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 182.3647, y: -61.703003}
+  m_AnchoredPosition: {x: 182.3647, y: -92.45566}
   m_SizeDelta: {x: 136.2863, y: 26.0911}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1550521477
@@ -20180,7 +20180,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh39158
+  m_Name: pb_Mesh25956
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -36630,7 +36630,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh39074
+  m_Name: pb_Mesh25872
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -37570,9 +37570,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 0, b: 0, a: 1}
-    m_PressedColor: {r: 0, g: 0, b: 0, a: 1}
-    m_SelectedColor: {r: 1, g: 0, b: 0, a: 1}
+    m_HighlightedColor: {r: 0.7921569, g: 0.30980393, b: 0.30980393, a: 1}
+    m_PressedColor: {r: 1, g: 0, b: 0, a: 1}
+    m_SelectedColor: {r: 1, g: 0.37254903, b: 0.3529412, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -37713,7 +37713,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -154.77362, y: -73.53095}
+  m_AnchoredPosition: {x: -154.77362, y: -104.2836}
   m_SizeDelta: {x: 136.2863, y: 26.0911}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2025561729
@@ -37792,7 +37792,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 69.16191, y: 16.04839}
+  m_AnchoredPosition: {x: 69.16191, y: -14.704262}
   m_SizeDelta: {x: 136.2863, y: 26.0911}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2038436892
