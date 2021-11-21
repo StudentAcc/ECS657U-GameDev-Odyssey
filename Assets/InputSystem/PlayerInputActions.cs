@@ -20,7 +20,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
             ""actions"": [
                 {
                     ""name"": ""MouseX"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Value"",
                     ""id"": ""df1e3cf5-58c7-45ea-980c-b2893b4a3666"",
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
@@ -28,7 +28,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""MouseY"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Value"",
                     ""id"": ""c1900a77-1cb9-4f3a-95ef-571b0d285dc9"",
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
@@ -36,7 +36,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Movement"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Value"",
                     ""id"": ""4653f63a-701b-4419-90bc-3b57d861aa33"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
@@ -76,11 +76,11 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Sprint"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Button"",
                     ""id"": ""0446115d-662a-4018-b297-f9074045b969"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Hold""
                 }
             ],
             ""bindings"": [
@@ -284,9 +284,20 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""2a864278-48bb-46a7-9d80-3baa09605736"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""e01b9487-cee9-4136-8f18-470c585d3cbc"",
                     ""path"": ""<Keyboard>/shift"",
-                    ""interactions"": ""Press"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
                     ""action"": ""Sprint"",
