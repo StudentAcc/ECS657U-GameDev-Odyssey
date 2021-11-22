@@ -38,16 +38,15 @@ public class Movement : MonoBehaviour {
         Vector3 horizontalVelocity = (transform.right * movementInput.x + transform.forward * movementInput.y) * speed;
         controller.Move(horizontalVelocity * Time.deltaTime);
 
-        verticalVelocity.y += gravity * Time.deltaTime;
-        controller.Move(verticalVelocity * Time.deltaTime);
-        
-
         if (jump) {
             if (isGrounded) {
                 verticalVelocity.y = Mathf.Sqrt(-2f * jumpHeight * gravity);
             }
             jump = false;
         }
+        
+        verticalVelocity.y += gravity * Time.deltaTime;
+        controller.Move(verticalVelocity * Time.deltaTime);
 
         if (sprinting && (movementInput.x!=0 || movementInput.y!=0))
         {
