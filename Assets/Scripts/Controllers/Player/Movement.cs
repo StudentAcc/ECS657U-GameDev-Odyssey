@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour {
     [SerializeField] CharacterController controller;
@@ -23,9 +24,12 @@ public class Movement : MonoBehaviour {
     float elapsed = 0f;
 
 
+    private PlayerInput playerInput;
+
     private void Start(){
         speed = walkSpeed;
         staminaCode = stamina;
+        playerInput = GetComponent<PlayerInput>();
     }
 
     private void Update() {
@@ -34,14 +38,16 @@ public class Movement : MonoBehaviour {
         if (isGrounded) {
             verticalVelocity.y = 0;
         }
-        
-        Vector3 horizontalVelocity = (transform.right * movementInput.x + transform.forward * movementInput.y) * speed;
+
+
+        Vector2 input = playerInput.actions["Move"].ReadValue<Vector2>();
+        Vector3 horizontalVelocity = new Vector3(input.x, 0, input.y);
+
+        horizontalVelocity = (transform.right * movementInput.x + transform.forward * movementInput.y) * speed;
         controller.Move(horizontalVelocity * Time.deltaTime);
 
-        if (jump) {
-            if (isGrounded) {
-                verticalVelocity.y = Mathf.Sqrt(-2f * jumpHeight * gravity);
-            }
+        if (playerInput.actions["Jump"].triggered && isGrounded) {
+            verticalVelocity.y = Mathf.Sqrt(-2f * jumpHeight * gravity);
             jump = false;
         }
         

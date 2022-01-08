@@ -1,8 +1,8 @@
 {
-    "name": "PlayerInputActions",
+    "name": "Controls",
     "maps": [
         {
-            "name": "Player",
+            "name": "Game",
             "id": "87e7d64b-3447-4759-91f1-34559dcd5936",
             "actions": [
                 {
@@ -22,10 +22,10 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Movement",
-                    "type": "Value",
+                    "name": "Move",
+                    "type": "Button",
                     "id": "4653f63a-701b-4419-90bc-3b57d861aa33",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 },
@@ -144,18 +144,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement",
+                    "action": "Move",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "up",
                     "id": "0a077fc8-d9c0-41b7-9ef3-b68fa4bf01a4",
-                    "path": "<Keyboard>/w",
+                    "path": "<Keyboard>/b",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Movement",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -166,7 +166,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Movement",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -177,7 +177,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Movement",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -188,7 +188,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Movement",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -199,7 +199,7 @@
                     "interactions": "",
                     "processors": "StickDeadzone,NormalizeVector2",
                     "groups": "Gamepad",
-                    "action": "Movement",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -283,7 +283,7 @@
                 {
                     "name": "",
                     "id": "e01b9487-cee9-4136-8f18-470c585d3cbc",
-                    "path": "<Keyboard>/shift",
+                    "path": "<Keyboard>/ctrl",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -303,6 +303,12 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Menu",
+            "id": "61150a35-b6e9-4a12-af94-fcbeed72f3c2",
+            "actions": [],
+            "bindings": []
         }
     ],
     "controlSchemes": [

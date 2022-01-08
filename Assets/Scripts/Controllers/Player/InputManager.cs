@@ -41,7 +41,6 @@ public class InputManager : MonoBehaviour {
         playerActions.Sprint.started += _ => movement.SprintStarted();
         playerActions.Sprint.canceled += _ => movement.SprintReleased();
 
-        
     }
 
     private void Update() {

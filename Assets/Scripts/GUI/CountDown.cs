@@ -33,7 +33,6 @@ public class CountDown : MonoBehaviour
             currentTime--;
 
 
-
             if (currentTime <= 20)
             {
                 timeImage.GetComponent<Image>().color = new Color32(255, 0, 0, 225);
@@ -54,4 +53,12 @@ public class CountDown : MonoBehaviour
         currentTime -= decreaseBySprinting;
     }
 
+    public void onCollisionOxygenPodsReplenishOxygen(int increase)
+    {
+        currentTime += increase;
+        if (currentTime > duration)
+        {
+            currentTime = duration;
+        }
+    }
 }
