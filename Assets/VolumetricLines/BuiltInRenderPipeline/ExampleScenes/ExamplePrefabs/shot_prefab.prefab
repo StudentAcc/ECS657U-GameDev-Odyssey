@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 2356442}
   - component: {fileID: 3370324}
   - component: {fileID: 11489952}
+  - component: {fileID: -3268879723651414646}
   - component: {fileID: 11468384}
   - component: {fileID: 10825254}
+  - component: {fileID: -8188662753501575306}
   m_Layer: 0
   m_Name: shot_prefab
   m_TagString: Untagged
@@ -104,6 +106,18 @@ MonoBehaviour:
   m_lineColor: {r: 0.034482718, g: 1, b: 0, a: 0}
   m_lineWidth: 66
   m_lightSaberFactor: 0.747
+--- !u!114 &-3268879723651414646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53a80505b4abae9428a0a576ad4cd72e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11468384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,3 +195,17 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &-8188662753501575306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 520c0330399864f4bb10058e39b7a100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage:
+    baseValue: 0

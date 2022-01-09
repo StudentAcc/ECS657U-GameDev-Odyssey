@@ -7,6 +7,13 @@ public class ShotBehavior : MonoBehaviour
     public GameObject collisionExplosion;
     public float speed;
 
+    GunCombat combat;
+    RaycastHit hit;
+
+    void Start()
+    {
+        combat = GetComponent<GunCombat>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -19,6 +26,23 @@ public class ShotBehavior : MonoBehaviour
             if (transform.position == m_target)
             {
                 explode();
+                Ray ray = new Ray(transform.position, Vector3.up);
+
+                if (Physics.Raycast(ray, out hit))
+                {
+                    Debug.Log("Clicked on " + hit.transform.name);
+                }
+                else
+                {
+                    Debug.Log("Nothing hit");
+                }
+
+                CharacterStats targetStats = hit.transform.GetComponent<CharacterStats>();
+
+                if (targetStats != null)
+                {
+                    combat.Attack(targetStats);
+                }
                 return;
             }
             transform.position = Vector3.MoveTowards(transform.position, m_target, step);
