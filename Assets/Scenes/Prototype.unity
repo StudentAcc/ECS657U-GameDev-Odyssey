@@ -1258,7 +1258,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh43730
+  m_Name: pb_Mesh35158
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2503,7 +2503,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh43540
+  m_Name: pb_Mesh35086
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11486,6 +11486,7 @@ MonoBehaviour:
   mouseLook: {fileID: 1038018863}
   pickup: {fileID: 2138149392}
   gun: {fileID: 1656666394}
+  lasers: {fileID: 1518008899}
   pauseMenuButtons: {fileID: 171493837}
 --- !u!143 &1038018865
 CharacterController:
@@ -12028,7 +12029,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh44032
+  m_Name: pb_Mesh35322
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15515,7 +15516,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh43156
+  m_Name: pb_Mesh34878
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -32110,7 +32111,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh43024
+  m_Name: pb_Mesh34800
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
