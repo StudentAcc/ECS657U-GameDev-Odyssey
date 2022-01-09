@@ -6,17 +6,20 @@ public class Gun : MonoBehaviour
     public float range = 500f;
 
     public Camera fpsCam;
-    public ParticleSystem muzzleFlash;
+
     GunCombat combat;
     PlayerInputActions controls;
     [SerializeField] Pickup pickup;
     public GameObject PauseMenu;
+
+    Animator m_animator;
 
     bool shoot;
 
     void Start()
     {
         combat = GetComponent<GunCombat>();
+        m_animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -29,6 +32,7 @@ public class Gun : MonoBehaviour
                 {
                     GameObject.Find("OxygenBackground").GetComponent<CountDown>().onShootDecreaseOxygen();
                     Shoot();
+                    m_animator.SetTrigger("Shoot");
                 }
             }
             shoot = false;
@@ -37,8 +41,6 @@ public class Gun : MonoBehaviour
 
     public void Shoot()
     {
-        muzzleFlash.Play();
-
         RaycastHit hit;
         if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {

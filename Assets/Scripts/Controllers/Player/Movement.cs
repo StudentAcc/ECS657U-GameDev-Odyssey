@@ -40,7 +40,7 @@ public class Movement : MonoBehaviour {
         }
 
 
-        Vector2 input = playerInput.actions["Move"].ReadValue<Vector2>();
+        Vector2 input = playerInput.actions["Movement"].ReadValue<Vector2>();
         Vector3 horizontalVelocity = new Vector3(input.x, 0, input.y);
 
         horizontalVelocity = (transform.right * movementInput.x + transform.forward * movementInput.y) * speed;
