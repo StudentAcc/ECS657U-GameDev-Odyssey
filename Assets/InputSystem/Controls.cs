@@ -295,17 +295,6 @@ public class @Controls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""2a864278-48bb-46a7-9d80-3baa09605736"",
-                    ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""Pause"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""e01b9487-cee9-4136-8f18-470c585d3cbc"",
                     ""path"": ""<Keyboard>/leftShift"",
                     ""interactions"": """",
