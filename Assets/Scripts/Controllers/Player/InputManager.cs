@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour {
 
@@ -13,6 +14,7 @@ public class InputManager : MonoBehaviour {
 
     PlayerInputActions controls;
     PlayerInputActions.PlayerActions playerActions;
+    private PlayerInput playerInput;
     
     Vector2 movementInput;
     Vector2 mouseInput;
@@ -20,16 +22,23 @@ public class InputManager : MonoBehaviour {
     private void Awake() {
         controls = new PlayerInputActions();
         playerActions = controls.Player;
+        playerInput = GetComponent<PlayerInput>();
 
-        playerActions.Movement.started += context => movementInput = context.ReadValue<Vector2>();
-        playerActions.Movement.performed += context => movementInput = context.ReadValue<Vector2>();
-        playerActions.Movement.canceled += context => movementInput = context.ReadValue<Vector2>();
+        // playerActions.Movement.started += context => movementInput = context.ReadValue<Vector2>();
+        playerInput.actions["Movement"].started += context => movementInput = context.ReadValue<Vector2>();
+        // playerActions.Movement.performed += context => movementInput = context.ReadValue<Vector2>();
+        playerInput.actions["Movement"].performed += context => movementInput = context.ReadValue<Vector2>();
+        // playerActions.Movement.canceled += context => movementInput = context.ReadValue<Vector2>();
+        playerInput.actions["Movement"].canceled += context => movementInput = context.ReadValue<Vector2>();
 
-        playerActions.Jump.performed += _ => movement.OnJumpPressed();
-        playerActions.Pickup.started += _ => pickup.OnPickupPressed();
         playerActions.Shoot.started += _ => gun.OnShootPressed();
         playerActions.Shoot.started += _ => lasers.OnShootPressed();
-        playerActions.Pause.performed += _ => pauseMenuButtons.PauseUnpause();
+        // playerActions.Jump.performed += _ => movement.OnJumpPressed();
+        playerInput.actions["Jump"].performed += _ => movement.OnJumpPressed();
+        // playerActions.Pickup.started += _ => pickup.OnPickupPressed();
+        playerInput.actions["Pickup"].started += _ => pickup.OnPickupPressed();
+        // playerActions.Pause.performed += _ => pauseMenuButtons.PauseUnpause();
+        playerInput.actions["Pause"].performed += _ => pauseMenuButtons.PauseUnpause();
 
         playerActions.MouseX.started += context => mouseInput.x = context.ReadValue<float>();
         playerActions.MouseX.performed += context => mouseInput.x = context.ReadValue<float>();
@@ -39,9 +48,10 @@ public class InputManager : MonoBehaviour {
         playerActions.MouseY.performed += context => mouseInput.y = context.ReadValue<float>();
         playerActions.MouseY.canceled += context => mouseInput.y = context.ReadValue<float>();
         
-        
-        playerActions.Sprint.started += _ => movement.SprintStarted();
-        playerActions.Sprint.canceled += _ => movement.SprintReleased();
+        // playerActions.Sprint.started += _ => movement.SprintStarted();
+        playerInput.actions["Sprint"].started += _ => movement.SprintStarted();
+        // playerActions.Sprint.canceled += _ => movement.SprintReleased();
+        playerInput.actions["Sprint"].canceled += _ => movement.SprintReleased();
 
     }
 
