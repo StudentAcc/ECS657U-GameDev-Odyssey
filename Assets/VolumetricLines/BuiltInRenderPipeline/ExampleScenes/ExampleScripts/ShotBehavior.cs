@@ -37,12 +37,12 @@ public class ShotBehavior : MonoBehaviour
                     Debug.Log("Nothing hit");
                 }
 
-                CharacterStats targetStats = hit.transform.GetComponent<CharacterStats>();
-
-                if (targetStats != null)
-                {
-                    combat.Attack(targetStats);
-                }
+                //CharacterStats targetStats = hit.transform.GetComponent<CharacterStats>();
+                //
+                //if (targetStats != null)
+                //{
+                //    combat.Attack(targetStats);
+                //}
                 return;
             }
             transform.position = Vector3.MoveTowards(transform.position, m_target, step);

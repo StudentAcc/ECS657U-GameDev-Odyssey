@@ -162,7 +162,7 @@
                 {
                     "name": "up",
                     "id": "16759078-35ac-4f0c-854f-fad198a272fe",
-                    "path": "<Keyboard>/y",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -173,7 +173,7 @@
                 {
                     "name": "down",
                     "id": "d3f2d021-42a2-4d5f-9c6e-fd4b4ae4f8d1",
-                    "path": "<Keyboard>/h",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -184,7 +184,7 @@
                 {
                     "name": "left",
                     "id": "3ba6fa34-d203-491c-89eb-663f4ad5a645",
-                    "path": "<Keyboard>/g",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -195,7 +195,7 @@
                 {
                     "name": "right",
                     "id": "855eff8f-a4b3-42a6-b42b-23880c863c1f",
-                    "path": "<Keyboard>/j",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -303,12 +303,6 @@
                     "isPartOfComposite": false
                 }
             ]
-        },
-        {
-            "name": "Menu",
-            "id": "61150a35-b6e9-4a12-af94-fcbeed72f3c2",
-            "actions": [],
-            "bindings": []
         }
     ],
     "controlSchemes": [
