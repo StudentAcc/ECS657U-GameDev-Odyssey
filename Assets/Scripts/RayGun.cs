@@ -13,6 +13,7 @@ public class RayGun : MonoBehaviour
     public Camera fpsCam;
 
     public GameObject PauseMenu;
+    public GameObject ControlsMenu;
     bool shoot;
 
 
@@ -20,12 +21,16 @@ public class RayGun : MonoBehaviour
     {
         if(shoot)
         {
-            if(!PauseMenu.activeInHierarchy)
+            if (!PauseMenu.activeInHierarchy && !ControlsMenu.activeInHierarchy)
             {
-                Shoot();
-                m_shootRateTimeStamp = Time.time + shootRate;
-                shoot = false;
+                if (Time.time > m_shootRateTimeStamp)
+                {
+                    Shoot();
+                    m_shootRateTimeStamp = Time.time + shootRate;
+                    GameObject.Find("OxygenBackground").GetComponent<CountDown>().onShootDecreaseOxygen();
+                }
             }
+            shoot = false;
         }
     }
 

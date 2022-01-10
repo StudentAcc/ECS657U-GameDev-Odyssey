@@ -5,6 +5,7 @@ public class GunController : MonoBehaviour
 {
 
     public GameObject PauseMenu;
+    public GameObject ControlsMenu;
 
     Animator m_animator;
 
@@ -19,12 +20,11 @@ public class GunController : MonoBehaviour
     {
         if (shoot)
         {
-            if (!PauseMenu.activeInHierarchy)
+            if (!PauseMenu.activeInHierarchy && !ControlsMenu.activeInHierarchy)
             {
                 m_animator.SetTrigger("Shoot");
-                GameObject.Find("OxygenBackground").GetComponent<CountDown>().onShootDecreaseOxygen();
-                shoot = false;
             }
+            shoot = false;
         }
     }
 
