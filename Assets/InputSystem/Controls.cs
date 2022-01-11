@@ -81,6 +81,14 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Hold""
+                },
+                {
+                    ""name"": ""Inventory"",
+                    ""type"": ""Button"",
+                    ""id"": ""cef641b6-3653-49f3-ad5a-ef83547fb8b3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -314,6 +322,17 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""Sprint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e79f25b8-372a-4a18-87f8-3aaefc069669"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Inventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -353,6 +372,7 @@ public class @Controls : IInputActionCollection, IDisposable
         m_Game_Shoot = m_Game.FindAction("Shoot", throwIfNotFound: true);
         m_Game_Pause = m_Game.FindAction("Pause", throwIfNotFound: true);
         m_Game_Sprint = m_Game.FindAction("Sprint", throwIfNotFound: true);
+        m_Game_Inventory = m_Game.FindAction("Inventory", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -410,6 +430,7 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_Game_Shoot;
     private readonly InputAction m_Game_Pause;
     private readonly InputAction m_Game_Sprint;
+    private readonly InputAction m_Game_Inventory;
     public struct GameActions
     {
         private @Controls m_Wrapper;
@@ -422,6 +443,7 @@ public class @Controls : IInputActionCollection, IDisposable
         public InputAction @Shoot => m_Wrapper.m_Game_Shoot;
         public InputAction @Pause => m_Wrapper.m_Game_Pause;
         public InputAction @Sprint => m_Wrapper.m_Game_Sprint;
+        public InputAction @Inventory => m_Wrapper.m_Game_Inventory;
         public InputActionMap Get() { return m_Wrapper.m_Game; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -455,6 +477,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Sprint.started -= m_Wrapper.m_GameActionsCallbackInterface.OnSprint;
                 @Sprint.performed -= m_Wrapper.m_GameActionsCallbackInterface.OnSprint;
                 @Sprint.canceled -= m_Wrapper.m_GameActionsCallbackInterface.OnSprint;
+                @Inventory.started -= m_Wrapper.m_GameActionsCallbackInterface.OnInventory;
+                @Inventory.performed -= m_Wrapper.m_GameActionsCallbackInterface.OnInventory;
+                @Inventory.canceled -= m_Wrapper.m_GameActionsCallbackInterface.OnInventory;
             }
             m_Wrapper.m_GameActionsCallbackInterface = instance;
             if (instance != null)
@@ -483,6 +508,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Sprint.started += instance.OnSprint;
                 @Sprint.performed += instance.OnSprint;
                 @Sprint.canceled += instance.OnSprint;
+                @Inventory.started += instance.OnInventory;
+                @Inventory.performed += instance.OnInventory;
+                @Inventory.canceled += instance.OnInventory;
             }
         }
     }
@@ -515,5 +543,6 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnShoot(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
+        void OnInventory(InputAction.CallbackContext context);
     }
 }
