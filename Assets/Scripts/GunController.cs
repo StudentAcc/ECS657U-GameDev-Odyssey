@@ -7,10 +7,12 @@ public class GunController : MonoBehaviour
     public int damage = 10;
     public float range = 100f;
     public float fireRate;
+    private bool check;
 
     private float nextTimeToFire = 0f;
 
     public Camera fpsCam;
+    public ParticleSystem muzzleFlash;
 
     public GameObject PauseMenu;
     public GameObject ControlsMenu;
@@ -28,12 +30,15 @@ public class GunController : MonoBehaviour
     {
         if (shoot && Time.time >= nextTimeToFire)
         {
-            if (m_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle") == true) //allows shooting only when the gun is in "idle" animation
-            {
+            //if (m_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle") == true) //allows shooting only when the gun is in "idle" animation
+            //{
                 if (!PauseMenu.activeInHierarchy && !ControlsMenu.activeInHierarchy)
                 {
-                    nextTimeToFire = Time.time + 1f / fireRate;
+                    muzzleFlash.Play();
+                    
                     m_animator.SetTrigger("Shoot");
+                    check = false;
+                    nextTimeToFire = Time.time + 1f / fireRate;
                     GameObject.Find("OxygenBackground").GetComponent<CountDown>().onShootDecreaseOxygen();
                 }
 
@@ -49,9 +54,8 @@ public class GunController : MonoBehaviour
                     }
                 }
                 shoot = false;
-            }
+            //}
         }
-
 
     }
 
