@@ -18,6 +18,7 @@ public class Movement : MonoBehaviour {
     [SerializeField] public float stamina;
     [SerializeField] float staminaRegenRate;
     [SerializeField] float staminaRegenWaitTime;
+
     public float staminaCode;
     float timerCode;
     float elapsed = 0f;

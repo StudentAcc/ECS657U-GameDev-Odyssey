@@ -9,7 +9,6 @@ public class RayGun : MonoBehaviour
     public GameObject m_shotPrefab;
 
     RaycastHit hit;
-    float range = 1000.0f;
     public Camera fpsCam;
 
     public GameObject PauseMenu;
@@ -27,7 +26,6 @@ public class RayGun : MonoBehaviour
                 {
                     Shoot();
                     m_shootRateTimeStamp = Time.time + shootRate;
-                    GameObject.Find("OxygenBackground").GetComponent<CountDown>().onShootDecreaseOxygen();
                 }
             }
             shoot = false;
@@ -36,8 +34,7 @@ public class RayGun : MonoBehaviour
 
     public void Shoot()
     {
-
-        if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+        if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit))
         {
             GameObject laser = GameObject.Instantiate(m_shotPrefab, transform.position, transform.rotation) as GameObject;
             laser.GetComponent<ShotBehavior>().setTarget(hit.point);
