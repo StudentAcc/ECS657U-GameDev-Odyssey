@@ -7,7 +7,7 @@ public class GunController : MonoBehaviour
     public int damage = 10;
     public float range = 100f;
     public float fireRate;
-    private bool check;
+    public float impactForce = 30f;
 
     private float nextTimeToFire = 0f;
 
@@ -33,30 +33,36 @@ public class GunController : MonoBehaviour
         {
             //if (m_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle") == true) //allows shooting only when the gun is in "idle" animation
             //{
-                if (!PauseMenu.activeInHierarchy && !ControlsMenu.activeInHierarchy)
-                {
-                    muzzleFlash.Play();
+            if (!PauseMenu.activeInHierarchy && !ControlsMenu.activeInHierarchy)
+            {
+                muzzleFlash.Play();
                     
-                    m_animator.SetTrigger("Shoot");
-                    check = false;
-                    nextTimeToFire = Time.time + 1f / fireRate;
-                    GameObject.Find("OxygenBackground").GetComponent<CountDown>().onShootDecreaseOxygen();
-                }
+                m_animator.SetTrigger("Shoot");
+                nextTimeToFire = Time.time + 1f / fireRate;
+                GameObject.Find("OxygenBackground").GetComponent<CountDown>().onShootDecreaseOxygen();
+            }
 
-                RaycastHit hit;
-                if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+            RaycastHit hit;
+            if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+            {
+                Debug.Log(hit.transform.name);
+
+                EnemyStats enemy = hit.transform.GetComponent<EnemyStats>();
+                if (enemy != null)
                 {
-                    Debug.Log(hit.transform.name);
-
-                    EnemyStats enemy = hit.transform.GetComponent<EnemyStats>();
-                    if (enemy != null)
-                    {
-                        enemy.TakeDamage(damage);
-                    }
-                    GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-                Destroy(impactGO, 2f);
+                    enemy.TakeDamage(damage);
                 }
-                shoot = false;
+
+                if (hit.rigidbody != null)
+                {
+                    hit.rigidbody.AddForce(-hit.normal * impactForce);
+                }
+
+                GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                Destroy(impactGO, 2f);
+
+            }
+            shoot = false;
             //}
         }
 
