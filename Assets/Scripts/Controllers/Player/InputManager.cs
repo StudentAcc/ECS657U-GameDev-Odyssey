@@ -25,10 +25,11 @@ public class InputManager : MonoBehaviour {
         playerInput = GetComponent<PlayerInput>();
 
         // playerActions.Movement.started += context => movementInput = context.ReadValue<Vector2>();
-        playerInput.actions["Movement"].started += context => movementInput = context.ReadValue<Vector2>();
         // playerActions.Movement.performed += context => movementInput = context.ReadValue<Vector2>();
-        playerInput.actions["Movement"].performed += context => movementInput = context.ReadValue<Vector2>();
         // playerActions.Movement.canceled += context => movementInput = context.ReadValue<Vector2>();
+
+        playerInput.actions["Movement"].started += context => movementInput = context.ReadValue<Vector2>();
+        playerInput.actions["Movement"].performed += context => movementInput = context.ReadValue<Vector2>();
         playerInput.actions["Movement"].canceled += context => movementInput = context.ReadValue<Vector2>();
 
         playerActions.Shoot.started += _ => gun.OnShootPressed();

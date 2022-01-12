@@ -26,23 +26,23 @@ public class ShotBehavior : MonoBehaviour
             if (transform.position == m_target)
             {
                 explode();
-                Ray ray = new Ray(transform.position, Vector3.up);
+                //Ray ray = new Ray(transform.position, Vector3.up);
 
-                if (Physics.Raycast(ray, out hit))
-                {
-                    Debug.Log("Clicked on " + hit.transform.name);
-                }
-                else
-                {
-                    Debug.Log("Nothing hit");
-                }
+                //if (Physics.Raycast(ray, out hit))
+                //{
+                //    Debug.Log("Clicked on " + hit.transform.name);
+                //}
+                //else
+                //{
+                //    Debug.Log("Nothing hit");
+                //}
 
-                CharacterStats targetStats = hit.transform.GetComponent<CharacterStats>();
+                //CharacterStats targetStats = hit.transform.GetComponent<CharacterStats>();
                 
-                if (targetStats != null)
-                {
-                    combat.Attack(targetStats);
-                }
+                //if (targetStats != null)
+                //{
+                //    combat.Attack(targetStats);
+                //}
                 return;
             }
             transform.position = Vector3.MoveTowards(transform.position, m_target, step);
@@ -57,15 +57,13 @@ public class ShotBehavior : MonoBehaviour
 
     void explode()
     {
-        if (collisionExplosion != null)
-        {
+        //if (collisionExplosion != null)
+        //{
             GameObject explosion = (GameObject)Instantiate(
                 collisionExplosion, transform.position, transform.rotation);
             Destroy(gameObject);
             Destroy(explosion, 1f);
-        }
-
-
+        //}
     }
 
 }
