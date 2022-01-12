@@ -14,6 +14,8 @@ public class GunController : MonoBehaviour
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
+    public AudioClip fireClip;
+    public AudioSource fireSource;
 
     public GameObject PauseMenu;
     public GameObject ControlsMenu;
@@ -25,6 +27,7 @@ public class GunController : MonoBehaviour
     void Start()
     {
         m_animator = GetComponent<Animator>();
+        InstantiateAudio(fireClip);
     }
 
     private void Update()
@@ -66,6 +69,25 @@ public class GunController : MonoBehaviour
             //}
         }
 
+    }
+
+    private void InstantiateAudio(AudioClip clip)
+    {
+        fireSource = gameObject.AddComponent<AudioSource>();
+        fireSource.clip = clip;
+    }
+
+    public void playSound()
+    {
+        if (fireSource.isPlaying)
+        {
+            fireSource.Stop();
+            fireSource.Play();
+        }
+        else
+        {
+            fireSource.Play();
+        }
     }
 
     public void OnShootPressed()
