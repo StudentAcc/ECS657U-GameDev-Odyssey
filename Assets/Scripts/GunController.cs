@@ -94,4 +94,9 @@ public class GunController : MonoBehaviour
     {
         shoot = true;
     }
+
+    public void increaseFireRate()
+    {
+        fireRate += 1;
+    }
 }
