@@ -19,6 +19,7 @@ public class GunController : MonoBehaviour
     public AudioSource fireSource;
     public GameObject Audio;
 
+    public GameObject VolumeMenu;
     public GameObject PauseMenu;
     public GameObject ControlsMenu;
 
@@ -38,34 +39,33 @@ public class GunController : MonoBehaviour
         {
             if (m_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle") == true) //allows shooting only when the gun is in "idle" animation
             {
-                if (!PauseMenu.activeInHierarchy && !ControlsMenu.activeInHierarchy)
+                if (!PauseMenu.activeInHierarchy && !ControlsMenu.activeInHierarchy && !VolumeMenu.activeInHierarchy)
                 {
                     muzzleFlash.Play();
                 
                     m_animator.SetTrigger("Shoot");
                     nextTimeToFire = Time.time + 1f / fireRate;
                     GameObject.Find("OxygenBackground").GetComponent<CountDown>().onShootDecreaseOxygen();
-                }
-
-                RaycastHit hit;
-                if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
-                {
-                    Debug.Log(hit.transform.name);
-
-                    EnemyStats enemy = hit.transform.GetComponent<EnemyStats>();
-                    if (enemy != null)
+                    RaycastHit hit;
+                    if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
                     {
-                        enemy.TakeDamage(damage);
+                        Debug.Log(hit.transform.name);
+
+                        EnemyStats enemy = hit.transform.GetComponent<EnemyStats>();
+                        if (enemy != null)
+                        {
+                            enemy.TakeDamage(damage);
+                        }
+
+                        if (hit.rigidbody != null)
+                        {
+                            hit.rigidbody.AddForce(-hit.normal * impactForce);
+                        }
+
+                        GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                        Destroy(impactGO, 2f);
+
                     }
-
-                    if (hit.rigidbody != null)
-                    {
-                        hit.rigidbody.AddForce(-hit.normal * impactForce);
-                    }
-
-                    GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-                    Destroy(impactGO, 2f);
-
                 }
                 shoot = false;
             }
