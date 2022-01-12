@@ -4801,10 +4801,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2138149395}
-        m_TargetAssemblyTypeName: MasterVolumeScript, Assembly-CSharp
-        m_MethodName: SetVolume
-        m_Mode: 0
+      - m_Target: {fileID: 1285736079}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: UpdateSound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -17626,8 +17626,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1285736080}
-  - component: {fileID: 1285736079}
   - component: {fileID: 1285736081}
+  - component: {fileID: 1285736079}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -17650,7 +17650,6 @@ MonoBehaviour:
   masterSlider: {fileID: 609414206}
   backgroundSlider: {fileID: 843929552}
   soundEffectsSlider: {fileID: 1008968727}
-  AudioListener: {fileID: 2138149390}
   backgroundAudio: {fileID: 1240648422}
   soundEffectsAudio:
   - {fileID: 1871887}
@@ -17679,7 +17678,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1285736078}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!1 &1307811317
 GameObject:
   m_ObjectHideFlags: 0
@@ -27205,6 +27204,7 @@ MonoBehaviour:
   fireSound: {fileID: 1871886}
   fireSource: {fileID: 0}
   Audio: {fileID: 1285736078}
+  VolumeMenu: {fileID: 1350257332}
   PauseMenu: {fileID: 1898115508}
   ControlsMenu: {fileID: 541815054}
 --- !u!95 &1656666395
@@ -64329,7 +64329,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138149390}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &2138149394
 Camera:
   m_ObjectHideFlags: 0
@@ -64380,7 +64380,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138149390}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1d4854421c87144e853af0df05192e2, type: 3}
   m_Name: 

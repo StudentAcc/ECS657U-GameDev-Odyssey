@@ -16,11 +16,8 @@ public class AudioManager : MonoBehaviour
     public Slider masterSlider, backgroundSlider, soundEffectsSlider;
     private float masterFloat, backgroundFloat, soundEffectsFloat;
 
-    public GameObject AudioListener;
     public AudioSource backgroundAudio;
     public AudioSource[] soundEffectsAudio;
-
-    
 
     // Start is called before the first frame update
     void Start()
@@ -79,16 +76,11 @@ public class AudioManager : MonoBehaviour
         {
             soundEffectsAudio[i].volume = soundEffectsSlider.value;
         }
+        AudioListener.volume = masterSlider.value;
     }
 
     public float getSoundEffectsVolume()
     {
         return soundEffectsSlider.value;
-    }
-
-    public void setMasterVolume(float vol)
-    {
-        
-        //masterVolume = vol;
     }
 }
