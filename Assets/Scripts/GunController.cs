@@ -13,6 +13,7 @@ public class GunController : MonoBehaviour
 
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
+    public GameObject impactEffect;
 
     public GameObject PauseMenu;
     public GameObject ControlsMenu;
@@ -52,6 +53,8 @@ public class GunController : MonoBehaviour
                     {
                         enemy.TakeDamage(damage);
                     }
+                    GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                Destroy(impactGO, 2f);
                 }
                 shoot = false;
             //}
