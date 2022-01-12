@@ -14,8 +14,10 @@ public class GunController : MonoBehaviour
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
-    public AudioClip fireClip;
+
+    public GameObject fireSound;
     public AudioSource fireSource;
+    public GameObject Audio;
 
     public GameObject PauseMenu;
     public GameObject ControlsMenu;
@@ -27,49 +29,52 @@ public class GunController : MonoBehaviour
     void Start()
     {
         m_animator = GetComponent<Animator>();
-        InstantiateAudio(fireClip);
+        InstantiateAudio(fireSound.GetComponent<AudioSource>().clip);
     }
 
     private void Update()
     {
         if (shoot && Time.time >= nextTimeToFire)
         {
-            //if (m_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle") == true) //allows shooting only when the gun is in "idle" animation
-            //{
-            if (!PauseMenu.activeInHierarchy && !ControlsMenu.activeInHierarchy)
+            if (m_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle") == true) //allows shooting only when the gun is in "idle" animation
             {
-                muzzleFlash.Play();
-                    
-                m_animator.SetTrigger("Shoot");
-                nextTimeToFire = Time.time + 1f / fireRate;
-                GameObject.Find("OxygenBackground").GetComponent<CountDown>().onShootDecreaseOxygen();
-            }
-
-            RaycastHit hit;
-            if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
-            {
-                Debug.Log(hit.transform.name);
-
-                EnemyStats enemy = hit.transform.GetComponent<EnemyStats>();
-                if (enemy != null)
+                if (!PauseMenu.activeInHierarchy && !ControlsMenu.activeInHierarchy)
                 {
-                    enemy.TakeDamage(damage);
+                    muzzleFlash.Play();
+                
+                    m_animator.SetTrigger("Shoot");
+                    nextTimeToFire = Time.time + 1f / fireRate;
+                    GameObject.Find("OxygenBackground").GetComponent<CountDown>().onShootDecreaseOxygen();
                 }
 
-                if (hit.rigidbody != null)
+                RaycastHit hit;
+                if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
                 {
-                    hit.rigidbody.AddForce(-hit.normal * impactForce);
+                    Debug.Log(hit.transform.name);
+
+                    EnemyStats enemy = hit.transform.GetComponent<EnemyStats>();
+                    if (enemy != null)
+                    {
+                        enemy.TakeDamage(damage);
+                    }
+
+                    if (hit.rigidbody != null)
+                    {
+                        hit.rigidbody.AddForce(-hit.normal * impactForce);
+                    }
+
+                    GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                    Destroy(impactGO, 2f);
+
                 }
-
-                GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-                Destroy(impactGO, 2f);
-
+                shoot = false;
             }
-            shoot = false;
-            //}
         }
 
     }
+
+
+
 
     private void InstantiateAudio(AudioClip clip)
     {
@@ -79,6 +84,7 @@ public class GunController : MonoBehaviour
 
     public void playSound()
     {
+        fireSource.volume = Audio.GetComponent<AudioManager>().getSoundEffectsVolume();
         if (fireSource.isPlaying)
         {
             fireSource.Stop();
@@ -99,4 +105,5 @@ public class GunController : MonoBehaviour
     {
         fireRate += 1;
     }
+
 }
