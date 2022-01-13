@@ -8,17 +8,25 @@ public class EnemyController : MonoBehaviour
 
     public float lookRadius = 10f;
     public ParticleSystem attackAnimationParticles;
+    public bool wandering = true;
+    public Vector3 centrePoint = new Vector3(1000f, 150f, 1000f);
+    public Vector3 boundaryPoint = new Vector3(0, 150f, 2000);
 
+    Vector3 wanderPoint;
+    Vector3 lastTargetPoint;
     Transform target;
     NavMeshAgent agent;
     CharacterCombat combat;
+    bool idle;
 
     // Start is called before the first frame update
     void Start()
     {
+        wanderPoint = new Vector3(Random.Range(centrePoint.x, boundaryPoint.x), 150, Random.Range(centrePoint.z, boundaryPoint.z));
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
         combat = GetComponent<CharacterCombat>();
+        idle = true;
     }
 
     // Update is called once per frame
@@ -28,7 +36,9 @@ public class EnemyController : MonoBehaviour
 
         if (distance <= lookRadius)
         {
-            agent.SetDestination(target.position);
+            lastTargetPoint = target.position;
+            SetDestination(lastTargetPoint);
+            idle = false;
             //Debug.Log("2");
             if (distance - 1 <= agent.stoppingDistance)
             { 
@@ -54,6 +64,44 @@ public class EnemyController : MonoBehaviour
                 FaceTarget();
 
             }
+        } else if (wandering) {
+
+            if (idle == false && (Vector3.Distance(lastTargetPoint, transform.position) - 1 <= agent.stoppingDistance))
+            {
+                idle = true;
+                SetDestination(wanderPoint);
+                Debug.Log("log1" + idle.ToString());
+            }
+            else if (idle)
+            {
+                float distanceWander = Vector3.Distance(wanderPoint, transform.position);
+
+                if (distanceWander - 1 <= agent.stoppingDistance)
+                {
+                    Debug.Log("log2");
+                    wanderPoint = new Vector3(Random.Range(centrePoint.x, boundaryPoint.x), 150, Random.Range(centrePoint.z, boundaryPoint.z));
+                    SetDestination(wanderPoint);
+                    //Debug.Log(wanderPoint);
+                }
+                else if (!(agent.hasPath))
+                {
+                    SetDestination(wanderPoint);
+                    Debug.Log("log3");
+                    Debug.Log(wanderPoint);
+                    Debug.Log(transform.position);
+                }
+            }
+        }
+    }
+
+    void SetDestination(Vector3 targetDestination)
+    {
+        NavMeshHit hit;
+        Debug.Log(targetDestination);
+        if (NavMesh.SamplePosition(targetDestination, out hit, 1000f, NavMesh.AllAreas))
+        {
+            agent.SetDestination(hit.position);
+            wanderPoint = hit.position;
         }
     }
 
