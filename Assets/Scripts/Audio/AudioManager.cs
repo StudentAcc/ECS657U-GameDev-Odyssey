@@ -83,4 +83,26 @@ public class AudioManager : MonoBehaviour
     {
         return soundEffectsSlider.value;
     }
+
+    public void playMenuClick()
+    {
+        soundEffectsAudio[2].Play(0);
+    }
+
+    public void pauseMusic()
+    {
+        backgroundAudio.Pause();
+    }
+
+    public void unpauseMusic()
+    {
+        backgroundAudio.UnPause();
+    }
+
+    public void playPauseSFX()
+    {
+        soundEffectsAudio[3].Play(0);
+    }
+
+
 }

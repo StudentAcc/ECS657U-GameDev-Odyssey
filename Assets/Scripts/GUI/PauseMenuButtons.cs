@@ -6,11 +6,15 @@ using UnityEngine.EventSystems;
 public class PauseMenuButtons : MonoBehaviour
 {
     public GameObject PauseMenu, ControlsMenu, VolumeMenu, PauseFirstButton, ControlsFirstButton, ControlsClosedButton, VolumeFirstButton, VolumeClosedButton;
+    public AudioManager Audio;
 
     public void PauseUnpause()
     {
         if (!PauseMenu.activeInHierarchy)
         {
+            Audio.pauseMusic();
+            Audio.playPauseSFX();
+            
             ControlsMenu.SetActive(false);
             VolumeMenu.SetActive(false);
             PauseMenu.SetActive(true);
@@ -24,6 +28,7 @@ public class PauseMenuButtons : MonoBehaviour
         }
         else
         {
+            Audio.unpauseMusic();
             PauseMenu.SetActive(false);
             Time.timeScale = 1f;
             ControlsMenu.SetActive(false);
