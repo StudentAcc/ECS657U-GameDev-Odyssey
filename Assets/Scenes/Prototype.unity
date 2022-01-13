@@ -521,6 +521,7 @@ MonoBehaviour:
   ControlsClosedButton: {fileID: 1054168739}
   VolumeFirstButton: {fileID: 0}
   VolumeClosedButton: {fileID: 0}
+  Audio: {fileID: 0}
 --- !u!114 &171493838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,9 +536,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainMenuCanvas: {fileID: 0}
   ControlsMenuCanvas: {fileID: 0}
+  VolumeMenuCanvas: {fileID: 0}
   MainCanvasFirstButton: {fileID: 0}
   ControlsCanvasFirstButton: {fileID: 0}
   ControlsCanvasClosedButton: {fileID: 0}
+  VolumeCanvasFirstButton: {fileID: 0}
+  VolumeCanvasClosedButton: {fileID: 0}
 --- !u!1 &177280938 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8391222552659086748, guid: 27b2364d689f95644927acffd0a69c8c, type: 3}
@@ -2515,9 +2519,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainMenuCanvas: {fileID: 0}
   ControlsMenuCanvas: {fileID: 0}
+  VolumeMenuCanvas: {fileID: 0}
   MainCanvasFirstButton: {fileID: 0}
   ControlsCanvasFirstButton: {fileID: 0}
   ControlsCanvasClosedButton: {fileID: 0}
+  VolumeCanvasFirstButton: {fileID: 0}
+  VolumeCanvasClosedButton: {fileID: 0}
 --- !u!114 &446240512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12953,6 +12960,7 @@ MonoBehaviour:
   gun: {fileID: 1656666394}
   lasers: {fileID: 1518008899}
   pauseMenuButtons: {fileID: 171493837}
+  inventoryButtons: {fileID: 0}
 --- !u!143 &1038018865
 CharacterController:
   m_ObjectHideFlags: 0
@@ -15145,7 +15153,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh152846
+  m_Name: pb_Mesh217304
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15791,7 +15799,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh152654
+  m_Name: pb_Mesh217112
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16719,7 +16727,7 @@ Terrain:
   m_TreeCrossFadeLength: 124
   m_TreeMaximumFullLODCount: 50
   m_DetailObjectDistance: 250
-  m_DetailObjectDensity: 0.037
+  m_DetailObjectDensity: 0.329
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
   m_HeightmapMaximumLOD: 0
@@ -16786,7 +16794,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1092dd21af768cb499771bf88709dbbd, type: 2}
+  - {fileID: 2100000, guid: 6d543e1689a4c77498373d1c079b52b9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20114,6 +20122,7 @@ MonoBehaviour:
   fireSound: {fileID: 0}
   fireSource: {fileID: 0}
   Audio: {fileID: 0}
+  VolumeMenu: {fileID: 0}
   PauseMenu: {fileID: 1898115508}
   ControlsMenu: {fileID: 541815054}
 --- !u!95 &1656666397
@@ -20191,7 +20200,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh152238
+  m_Name: pb_Mesh216696
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20355,7 +20364,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh152498
+  m_Name: pb_Mesh216956
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -37073,7 +37082,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh152140
+  m_Name: pb_Mesh216598
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -56608,9 +56617,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpRange: 5
-  moveForce: 250
-  holdParent: {fileID: 18084310}
-  pickedup: 0
+  batteryImage: {fileID: 0}
+  batteryStatus: {fileID: 0}
+  generatorImage: {fileID: 0}
+  generatorStatus: {fileID: 0}
+  rotorImage: {fileID: 0}
+  rotorStatus: {fileID: 0}
+  fusionCoreImage: {fileID: 0}
+  fusionCoreStatus: {fileID: 0}
 --- !u!81 &2138149393
 AudioListener:
   m_ObjectHideFlags: 0
