@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     public bool wandering = true;
     public Vector3 centrePoint = new Vector3(1000f, 150f, 1000f);
     public Vector3 boundaryPoint = new Vector3(0, 150f, 2000);
+    public float agroTimeLimit = 5f;
 
     float baseLookRadius;
     Vector3 wanderPoint;
@@ -77,22 +78,16 @@ public class EnemyController : MonoBehaviour
             else if (idle)
             {
                 float distanceWander = Vector3.Distance(wanderPoint, transform.position);
-
-                if (distanceWander - 1 <= agent.stoppingDistance)
+                if (distanceWander - 1 <= agent.stoppingDistance || !(agent.hasPath))
                 {
-                    Debug.Log("log2");
+                    //Debug.Log("log2");
                     wanderPoint = new Vector3(Random.Range(centrePoint.x, boundaryPoint.x), 150, Random.Range(centrePoint.z, boundaryPoint.z));
                     SetDestination(wanderPoint);
-                    Debug.Log(wanderPoint);
+                    //Debug.Log(wanderPoint);
                 }
-                else if (!(agent.hasPath))
-                {
-                    wanderPoint = new Vector3(Random.Range(centrePoint.x, boundaryPoint.x), 150, Random.Range(centrePoint.z, boundaryPoint.z));
-                    SetDestination(wanderPoint);
-                    Debug.Log("log3");
-                    Debug.Log(wanderPoint);
-                    Debug.Log(transform.position);
-                }
+                //Debug.Log("log3");
+                //Debug.Log(wanderPoint);
+                //Debug.Log(transform.position);
             }
         }
     }
@@ -103,10 +98,10 @@ public class EnemyController : MonoBehaviour
         Debug.Log(targetDestination);
         if (NavMesh.SamplePosition(targetDestination, out hit, 1000f, NavMesh.AllAreas))
         {
-            Debug.Log("hit");
+            //Debug.Log("hit");
             agent.SetDestination(hit.position);
-            Debug.Log(agent.pathPending);
-            Debug.Log(agent.hasPath);
+            //Debug.Log(agent.pathPending);
+            //Debug.Log(agent.hasPath);
             wanderPoint = hit.position;
         }
     }
@@ -121,7 +116,7 @@ public class EnemyController : MonoBehaviour
     public void DamageTaken()
     {
         //lookRadius = 2000f;
-        StartCoroutine(LookRadiusBuff(2000, 5));
+        StartCoroutine(LookRadiusBuff(2000, agroTimeLimit));
         //lookRadius = baseLookRadius;
     }
 
