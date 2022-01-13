@@ -6,12 +6,16 @@ public class Pickup : MonoBehaviour {
     bool pickup;
     public GameObject batteryImage;
     public GameObject batteryStatus;
+    public GameObject batteryFinal;
     public GameObject generatorImage;
     public GameObject generatorStatus;
+    public GameObject generatorFinal;
     public GameObject rotorImage;
     public GameObject rotorStatus;
+    public GameObject rotorFinal;
     public GameObject fusionCoreImage;
     public GameObject fusionCoreStatus;
+    public GameObject fusionCoreFinal;
     
     void Update() {
         if(pickup) {
@@ -20,7 +24,7 @@ public class Pickup : MonoBehaviour {
             {
                 GameObject obj = hit.transform.gameObject;
                 if (obj.tag == "ShipPart") {
-                    Destroy (obj);
+                    Destroy(obj);
                     if(obj.name == "Battery") {
                         batteryImage.GetComponent<RawImage>().color = new Color32(255, 255, 255, 255);
                         batteryStatus.GetComponent<Text>().text = "Collected";
@@ -36,6 +40,36 @@ public class Pickup : MonoBehaviour {
                     if(obj.name == "FusionCore") {
                         fusionCoreImage.GetComponent<RawImage>().color = new Color32(255, 255, 255, 255);
                         fusionCoreStatus.GetComponent<Text>().text = "Collected";
+                    }
+                }
+                if (obj.tag == "ShipPartDark") {
+                    if(obj.name == "BatteryDark") {
+                        if(batteryStatus.GetComponent<Text>().text == "Collected") {
+                            Destroy(obj);
+                            batteryStatus.GetComponent<Text>().text = "Stashed";
+                            batteryFinal.SetActive(true);
+                        }
+                    }
+                    if(obj.name == "GeneratorDark") {
+                        if(generatorStatus.GetComponent<Text>().text == "Collected") {
+                            Destroy(obj);
+                            generatorStatus.GetComponent<Text>().text = "Stashed";
+                            generatorFinal.SetActive(true);
+                        }
+                    }
+                    if(obj.name == "RotorDark") {
+                        if(rotorStatus.GetComponent<Text>().text == "Collected") {
+                            Destroy(obj);
+                            rotorStatus.GetComponent<Text>().text = "Stashed";
+                            rotorFinal.SetActive(true);
+                        }
+                    }
+                    if(obj.name == "FusionCoreDark") {
+                        if(fusionCoreStatus.GetComponent<Text>().text == "Collected") {
+                            Destroy(obj);
+                            fusionCoreStatus.GetComponent<Text>().text = "Stashed";
+                            fusionCoreFinal.SetActive(true);
+                        }
                     }
                 }
             }
