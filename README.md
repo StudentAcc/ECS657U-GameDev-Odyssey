@@ -8,14 +8,14 @@ Note, the firearm runs on oxygen which makes reloading unecessary. But shoot spa
 You are not expected to survive.
 
 **Keyboard + Mouse (Keyboard keys can be rebinded)** 
-Shoot - Left Mouse Button
-Look - Mouse
-Movement - w/a/s/d
-Jump - Space
-Sprint - Left Shift
-Pickup - e
-Inventory - Tab
-Pause - p
+Shoot - Left Mouse Button  
+Look - Mouse  
+Movement - w/a/s/d  
+Jump - Space  
+Sprint - Left Shift  
+Pickup - e  
+Inventory - Tab  
+Pause - p  
 
 **Controller (Xbox / PlayStation)**  
 Start Button - Pause Menu  
