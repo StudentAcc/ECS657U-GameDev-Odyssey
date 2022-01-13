@@ -7,7 +7,7 @@ Note, the firearm runs on oxygen which makes reloading unecessary. But shoot spa
 
 You are not expected to survive.
 
-**Keyboard + Mouse (Keyboard keys can be rebinded)** 
+**Keyboard + Mouse (Keyboard keys can be rebinded)**   
 Shoot - Left Mouse Button  
 Look - Mouse  
 Movement - w/a/s/d  
