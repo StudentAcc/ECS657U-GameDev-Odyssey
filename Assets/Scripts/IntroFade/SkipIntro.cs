@@ -14,5 +14,6 @@ public class SkipIntro : MonoBehaviour
         GameObject.Find("LastLine").GetComponent<TextFade>().skipFade();
         GameObject.Find("StartGameButton").GetComponent<ImageFade>().skipFade();
         GameObject.Find("Text").GetComponent<TextFade>().skipFade();
+        GameObject.Find("Audio").GetComponent<AudioScriptReading>().stopNarration();
     }
 }
