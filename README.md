@@ -1,7 +1,7 @@
 # Odyssey
-After their spaceship crashed onto an unknown planet, the player wakes up as the only survivor. The ship took some damage, unable to fly, but some of the reserved fuel rods powering the ship have scattered across the planet. 
+After their spaceship crashed onto an unknown planet, the player wakes up as the only survivor. The ship took some damage, unable to fly, but some of the oxygen tanks as well as the ship parts powering the ship have scattered across the planet. 
 
-As the player ventures outside the ship cautiously with their standard issue firearm, they discover there are hostile creatures lurking amongst the land. Find and collect the ship parts back to the ship before oxygen runs out!
+As the player ventures outside the ship cautiously with their standard issue firearm, they discover there are hostile creatures lurking amongst the land. Find and collect the ship parts back to the ship before oxygen runs out! Don't forget, there are oxygen tanks from the ship's debris to increase your oxygen levels...
 
 Note, the firearm runs on oxygen which makes reloading unecessary. But shoot sparingly - your oxygen levels will go down considerably.
 
