@@ -1,77 +1,49 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Pickup : MonoBehaviour
-{
+public class Pickup : MonoBehaviour {
     public float pickUpRange = 5;
-    public float moveForce = 250;
-    public Transform holdParent;
-    private GameObject heldObj;
     bool pickup;
-    public bool pickedup;
+    public GameObject batteryImage;
+    public GameObject batteryStatus;
+    public GameObject generatorImage;
+    public GameObject generatorStatus;
+    public GameObject rotorImage;
+    public GameObject rotorStatus;
+    public GameObject fusionCoreImage;
+    public GameObject fusionCoreStatus;
     
-    void Update()
-    {
-        if(pickup)
-        {
-            if (heldObj == null)
+    void Update() {
+        if(pickup) {
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickUpRange))
             {
-                RaycastHit hit;
-                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickUpRange))
-                {
-                    PickupObject(hit.transform.gameObject);
+                GameObject obj = hit.transform.gameObject;
+                if (obj.tag == "ShipPart") {
+                    Destroy (obj);
+                    if(obj.name == "Battery") {
+                        batteryImage.GetComponent<RawImage>().color = new Color32(255, 255, 255, 255);
+                        batteryStatus.GetComponent<Text>().text = "Collected";
+                    }
+                    if(obj.name == "Generator") {
+                        generatorImage.GetComponent<RawImage>().color = new Color32(255, 255, 255, 255);
+                        generatorStatus.GetComponent<Text>().text = "Collected";
+                    }
+                    if(obj.name == "Rotor") {
+                        rotorImage.GetComponent<RawImage>().color = new Color32(255, 255, 255, 255);
+                        rotorStatus.GetComponent<Text>().text = "Collected";
+                    }
+                    if(obj.name == "FusionCore") {
+                        fusionCoreImage.GetComponent<RawImage>().color = new Color32(255, 255, 255, 255);
+                        fusionCoreStatus.GetComponent<Text>().text = "Collected";
+                    }
                 }
-            }
-            else
-            {
-                DropObject();
             }
             pickup = false;
         }
-
-        if (heldObj != null)
-        {
-            MoveObject(); 
-        }
     }
 
-    void MoveObject()
-    {
-        if (Vector3.Distance(heldObj.transform.position, holdParent.position) > 0.1f)
-        {
-            Vector3 moveDirection = (holdParent.position - heldObj.transform.position);
-            heldObj.GetComponent<Rigidbody>().AddForce(moveDirection * moveForce);
-        }
-    }
-
-    void PickupObject(GameObject pickObj)
-    {
-        if (pickObj.GetComponent<Rigidbody>() && pickObj.tag == "ShipPart") 
-        {
-            Rigidbody objRig = pickObj.GetComponent<Rigidbody>();
-            objRig.useGravity = false;
-            objRig.drag = 10;
-
-            objRig.transform.parent = holdParent;
-            heldObj = pickObj;
-            pickedup = true;
-        }
-    }
-
-    void DropObject()
-    {
-        Rigidbody heldRig = heldObj.GetComponent<Rigidbody>();
-        heldRig.useGravity = true;
-        heldRig.drag = 1;
-
-        heldObj.transform.parent = null;
-        heldObj = null;
-        pickedup = false;
-    }
-
-    public void OnPickupPressed()
-    {
+    public void OnPickupPressed() {
         pickup = true;
     }
 

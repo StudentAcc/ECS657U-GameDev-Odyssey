@@ -11,6 +11,7 @@ public class InputManager : MonoBehaviour {
     [SerializeField] GunController gun;
     [SerializeField] RayGun lasers;
     [SerializeField] PauseMenuButtons pauseMenuButtons;
+    [SerializeField] InventoryButtons inventoryButtons;
 
     PlayerInputActions controls;
     PlayerInputActions.PlayerActions playerActions;
@@ -40,6 +41,8 @@ public class InputManager : MonoBehaviour {
         playerInput.actions["Pickup"].started += _ => pickup.OnPickupPressed();
         // playerActions.Pause.performed += _ => pauseMenuButtons.PauseUnpause();
         playerInput.actions["Pause"].performed += _ => pauseMenuButtons.PauseUnpause();
+        // playerActions.Inventory.performed += _ => inventoryButtons.OpenClose();
+        playerInput.actions["Inventory"].performed += _ => inventoryButtons.OpenClose();
 
         playerActions.MouseX.started += context => mouseInput.x = context.ReadValue<float>();
         playerActions.MouseX.performed += context => mouseInput.x = context.ReadValue<float>();

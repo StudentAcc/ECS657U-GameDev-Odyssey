@@ -8,6 +8,8 @@ TagManager:
   - Terrain
   - PauseMenu
   - Fire
+  - ShipPartFinal
+  - ShipPartDark
   layers:
   - Default
   - TransparentFX
