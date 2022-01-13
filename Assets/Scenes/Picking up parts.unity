@@ -427,6 +427,11 @@ Transform:
   m_Father: {fileID: 2138149391}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &22087067 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 139876, guid: 98f508b556c380a4e89204f95af2d3da, type: 3}
+  m_PrefabInstance: {fileID: 632385190}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &38415282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1279,6 +1284,7 @@ MonoBehaviour:
   ControlsClosedButton: {fileID: 1054168739}
   VolumeFirstButton: {fileID: 447145977}
   VolumeClosedButton: {fileID: 1480100528}
+  Audio: {fileID: 0}
 --- !u!114 &171493838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1293,9 +1299,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainMenuCanvas: {fileID: 0}
   ControlsMenuCanvas: {fileID: 0}
+  VolumeMenuCanvas: {fileID: 0}
   MainCanvasFirstButton: {fileID: 0}
   ControlsCanvasFirstButton: {fileID: 0}
   ControlsCanvasClosedButton: {fileID: 0}
+  VolumeCanvasFirstButton: {fileID: 0}
+  VolumeCanvasClosedButton: {fileID: 0}
 --- !u!1 &177280938 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8391222552659086748, guid: 27b2364d689f95644927acffd0a69c8c, type: 3}
@@ -3066,9 +3075,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainMenuCanvas: {fileID: 0}
   ControlsMenuCanvas: {fileID: 0}
+  VolumeMenuCanvas: {fileID: 0}
   MainCanvasFirstButton: {fileID: 0}
   ControlsCanvasFirstButton: {fileID: 0}
   ControlsCanvasClosedButton: {fileID: 0}
+  VolumeCanvasFirstButton: {fileID: 0}
+  VolumeCanvasClosedButton: {fileID: 0}
 --- !u!114 &446240512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3296,6 +3308,11 @@ RectTransform:
   m_AnchoredPosition: {x: 79, y: -127}
   m_SizeDelta: {x: 59.6467, y: 40.9153}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &457073581 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 130254, guid: 562f0bb8ba91fe844baf976e5806516d, type: 3}
+  m_PrefabInstance: {fileID: 1753534752}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &466348117
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14189,6 +14206,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1131392130}
   m_CullTransparentMesh: 1
+--- !u!1 &1142593055 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 185476, guid: cd918f355f278d740a893b9a8b49a85c, type: 3}
+  m_PrefabInstance: {fileID: 1359526649}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1168611783
 GameObject:
   m_ObjectHideFlags: 0
@@ -27836,12 +27858,16 @@ MonoBehaviour:
   pickUpRange: 5
   batteryImage: {fileID: 704552821}
   batteryStatus: {fileID: 851338852}
+  batteryFinal: {fileID: 22087067}
   generatorImage: {fileID: 1704690019}
   generatorStatus: {fileID: 38415282}
+  generatorFinal: {fileID: 457073581}
   rotorImage: {fileID: 979164433}
   rotorStatus: {fileID: 635450183}
+  rotorFinal: {fileID: 1142593055}
   fusionCoreImage: {fileID: 586402951}
   fusionCoreStatus: {fileID: 1045531225}
+  fusionCoreFinal: {fileID: 1354498566}
 --- !u!81 &2138149393
 AudioListener:
   m_ObjectHideFlags: 0
