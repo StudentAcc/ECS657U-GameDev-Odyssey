@@ -29,6 +29,7 @@ public class EnemyStats : CharacterStats
     {
         base.TakeDamage(damage);
         GetComponentInChildren<ColourLerper>().ColourChangeActivate();
+        this.gameObject.GetComponent<EnemyController>().DamageTaken();
         //takeDamageAnimation.Play();
     }
 

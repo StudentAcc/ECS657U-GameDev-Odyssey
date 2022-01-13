@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
     public Vector3 centrePoint = new Vector3(1000f, 150f, 1000f);
     public Vector3 boundaryPoint = new Vector3(0, 150f, 2000);
 
+    float baseLookRadius;
     Vector3 wanderPoint;
     Vector3 lastTargetPoint;
     Transform target;
@@ -22,6 +23,7 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        baseLookRadius = lookRadius;
         wanderPoint = new Vector3(Random.Range(centrePoint.x, boundaryPoint.x), 150, Random.Range(centrePoint.z, boundaryPoint.z));
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
@@ -81,10 +83,11 @@ public class EnemyController : MonoBehaviour
                     Debug.Log("log2");
                     wanderPoint = new Vector3(Random.Range(centrePoint.x, boundaryPoint.x), 150, Random.Range(centrePoint.z, boundaryPoint.z));
                     SetDestination(wanderPoint);
-                    //Debug.Log(wanderPoint);
+                    Debug.Log(wanderPoint);
                 }
                 else if (!(agent.hasPath))
                 {
+                    wanderPoint = new Vector3(Random.Range(centrePoint.x, boundaryPoint.x), 150, Random.Range(centrePoint.z, boundaryPoint.z));
                     SetDestination(wanderPoint);
                     Debug.Log("log3");
                     Debug.Log(wanderPoint);
@@ -100,7 +103,10 @@ public class EnemyController : MonoBehaviour
         Debug.Log(targetDestination);
         if (NavMesh.SamplePosition(targetDestination, out hit, 1000f, NavMesh.AllAreas))
         {
+            Debug.Log("hit");
             agent.SetDestination(hit.position);
+            Debug.Log(agent.pathPending);
+            Debug.Log(agent.hasPath);
             wanderPoint = hit.position;
         }
     }
@@ -110,6 +116,20 @@ public class EnemyController : MonoBehaviour
         Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+    }
+
+    public void DamageTaken()
+    {
+        //lookRadius = 2000f;
+        StartCoroutine(LookRadiusBuff(2000, 5));
+        //lookRadius = baseLookRadius;
+    }
+
+    IEnumerator LookRadiusBuff(float lookRadiusBuff, float Duration)
+    {
+        lookRadius = lookRadiusBuff;
+        yield return new WaitForSeconds(Duration);
+        lookRadius = baseLookRadius;
     }
 
     void OnDrawGizmosSelected() 
