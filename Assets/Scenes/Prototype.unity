@@ -15145,7 +15145,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh32918
+  m_Name: pb_Mesh152846
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15791,7 +15791,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh32726
+  m_Name: pb_Mesh152654
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16715,11 +16715,11 @@ Terrain:
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: ba46651acb87e914993d15cee1b596b4, type: 2}
   m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
-  m_TreeCrossFadeLength: 5
+  m_TreeBillboardDistance: 513
+  m_TreeCrossFadeLength: 124
   m_TreeMaximumFullLODCount: 50
   m_DetailObjectDistance: 250
-  m_DetailObjectDensity: 0.043
+  m_DetailObjectDensity: 0.037
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
   m_HeightmapMaximumLOD: 0
@@ -20111,8 +20111,9 @@ MonoBehaviour:
   fpsCam: {fileID: 0}
   muzzleFlash: {fileID: 0}
   impactEffect: {fileID: 0}
-  fireClip: {fileID: 0}
+  fireSound: {fileID: 0}
   fireSource: {fileID: 0}
+  Audio: {fileID: 0}
   PauseMenu: {fileID: 1898115508}
   ControlsMenu: {fileID: 541815054}
 --- !u!95 &1656666397
@@ -20190,7 +20191,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh32316
+  m_Name: pb_Mesh152238
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20354,7 +20355,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh32572
+  m_Name: pb_Mesh152498
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -37072,7 +37073,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh32218
+  m_Name: pb_Mesh152140
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

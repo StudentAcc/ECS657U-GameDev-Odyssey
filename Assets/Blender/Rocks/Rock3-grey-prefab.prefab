@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -5754084199372789682}
   - component: {fileID: -7511558181221131132}
   - component: {fileID: 5338786469383821652}
+  - component: {fileID: -2761194572496916504}
   m_Layer: 0
   m_Name: Rock3-grey-prefab
   m_TagString: Untagged
@@ -97,3 +98,17 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 9210220926252573025, guid: 7fff65de8b1cdde46b36a2c7d90646e5, type: 3}
+--- !u!136 &-2761194572496916504
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966469459721225754}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.41
+  m_Height: 0.8
+  m_Direction: 1
+  m_Center: {x: 0.0002147546, y: -0.000661024, z: 0.0003426624}
