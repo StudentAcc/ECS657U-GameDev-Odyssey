@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MouseLook : MonoBehaviour {
 
-    [SerializeField] float sensitivityX = 10f;
-    [SerializeField] float sensitivityY = 10f;
+    public float sensitivityX;
+    public float sensitivityY;
     float mouseX, mouseY;
+
+    public Slider sensitivitySlider;
 
     [SerializeField] Transform playerCamera;
     [SerializeField] float xClamp = 85f;
@@ -17,6 +20,8 @@ public class MouseLook : MonoBehaviour {
     }
 
     private void Update() {
+        sensitivityX = sensitivitySlider.value;
+        sensitivityY = sensitivitySlider.value;
         transform.Rotate(Vector3.up, mouseX);
 
         xRotation -= mouseY;
