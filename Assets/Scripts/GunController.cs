@@ -74,8 +74,6 @@ public class GunController : MonoBehaviour
     }
 
 
-
-
     private void InstantiateAudio(AudioClip clip)
     {
         fireSource = gameObject.AddComponent<AudioSource>();

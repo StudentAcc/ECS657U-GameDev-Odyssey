@@ -7,9 +7,24 @@ public class Movement : MonoBehaviour {
     float speed;
     bool sprinting = false;
     Vector2 movementInput;
-    
+
+    public GameObject walkingSound;
+    public AudioSource walkingSource;
+
+    public GameObject sprintingSound;
+    public AudioSource sprintingSource;
+
+    public GameObject jumpStartSound;
+    public AudioSource jumpStartSource;
+
+    public GameObject jumpLandSound;
+    public AudioSource jumpLandSource;
+    public AudioManager Audio;
+
     [SerializeField] float jumpHeight;
     bool jump;
+    bool previouslyTouchingGround;
+
     [SerializeField] float gravity; // Gravity is -9.81f
     Vector3 verticalVelocity = Vector3.zero;
 
@@ -26,6 +41,18 @@ public class Movement : MonoBehaviour {
     private void Start(){
         speed = walkSpeed;
         staminaCode = stamina;
+
+        walkingSource = gameObject.AddComponent<AudioSource>();
+        walkingSource.clip = walkingSound.GetComponent<AudioSource>().clip;
+
+        sprintingSource = gameObject.AddComponent<AudioSource>();
+        sprintingSource.clip = sprintingSound.GetComponent<AudioSource>().clip;
+
+        jumpStartSource = gameObject.AddComponent<AudioSource>();
+        jumpStartSource.clip = jumpStartSound.GetComponent<AudioSource>().clip;
+
+        jumpLandSource = gameObject.AddComponent<AudioSource>();
+        jumpLandSource.clip = jumpLandSound.GetComponent<AudioSource>().clip;
     }
 
     private void Update() {
@@ -38,13 +65,37 @@ public class Movement : MonoBehaviour {
         Vector3 horizontalVelocity = (transform.right * movementInput.x + transform.forward * movementInput.y) * speed;
         controller.Move(horizontalVelocity * Time.deltaTime);
 
+        if (controller.isGrounded == true)
+        {
+            if (controller.velocity.magnitude < 14f && walkingSource.isPlaying == false)
+            {
+                playWalkingSound();
+            }
+            if (controller.velocity.magnitude > 14f && controller.velocity.magnitude < 21f && sprintingSource.isPlaying == false)
+            {
+                playSprintingSound();
+            }
+        }
+
+
+
+        if (isGrounded && previouslyTouchingGround == false)
+        {
+            playJumpLandSound();
+            previouslyTouchingGround = true;
+        }
+
+
         if (jump) {
-            if (isGrounded) {
+            if (isGrounded) 
+            {
+                playJumpStartSound();
+                previouslyTouchingGround = false;
                 verticalVelocity.y = Mathf.Sqrt(-2f * jumpHeight * gravity);
             }
             jump = false;
         }
-        
+
         verticalVelocity.y += gravity * Time.deltaTime;
         controller.Move(verticalVelocity * Time.deltaTime);
 
@@ -91,7 +142,63 @@ public class Movement : MonoBehaviour {
 
     }
 
+    
 
+    public void playWalkingSound()
+    {
+        walkingSource.volume = Audio.GetComponent<AudioManager>().getSoundEffectsVolume();
+        if (walkingSource.isPlaying)
+        {
+            walkingSource.Stop();
+            walkingSource.Play();
+        }
+        else
+        {
+            walkingSource.Play();
+        }
+    }        
+    
+    public void playSprintingSound()
+    {
+        sprintingSource.volume = Audio.GetComponent<AudioManager>().getSoundEffectsVolume();
+        if (sprintingSource.isPlaying)
+        {
+            sprintingSource.Stop();
+            sprintingSource.Play();
+        }
+        else
+        {
+            sprintingSource.Play();
+        }
+    }    
+    
+    public void playJumpLandSound()
+    {
+        jumpLandSource.volume = Audio.GetComponent<AudioManager>().getSoundEffectsVolume();
+        if (jumpLandSource.isPlaying)
+        {
+            jumpLandSource.Stop();
+            jumpLandSource.Play();
+        }
+        else
+        {
+            jumpLandSource.Play();
+        }
+    }    
+    
+    public void playJumpStartSound()
+    {
+        jumpStartSource.volume = Audio.GetComponent<AudioManager>().getSoundEffectsVolume();
+        if (jumpStartSource.isPlaying)
+        {
+            jumpStartSource.Stop();
+            jumpStartSource.Play();
+        }
+        else
+        {
+            jumpStartSource.Play();
+        }
+    }
 
     public void SprintStarted()
     {
