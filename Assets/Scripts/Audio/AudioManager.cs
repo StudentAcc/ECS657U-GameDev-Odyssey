@@ -153,4 +153,9 @@ public class AudioManager : MonoBehaviour
     {
         soundEffectsAudio[9].Play(0);
     }
+
+    public void playInventoryPickUpSFX()
+    {
+        soundEffectsAudio[10].Play(0);
+    }
 }

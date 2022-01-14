@@ -31,6 +31,7 @@ public class Pickup : MonoBehaviour {
             {
                 GameObject obj = hit.transform.gameObject;
                 if (obj.tag == "ShipPart") {
+
                     Destroy(obj);
                     if(obj.name == "Battery") {
                         batteryImage.GetComponent<RawImage>().color = new Color32(255, 255, 255, 255);
@@ -53,6 +54,7 @@ public class Pickup : MonoBehaviour {
                     if(obj.name == "BatteryDark") {
                         if(batteryStatus.GetComponent<Text>().text == "Collected") {
                             Destroy(obj);
+                            audio.playInventoryPickUpSFX();
                             batteryStatus.GetComponent<Text>().text = "Stashed";
                             batteryFinal.SetActive(true);
                             stashedParts += 1;
@@ -74,6 +76,7 @@ public class Pickup : MonoBehaviour {
                     if(obj.name == "GeneratorDark") {
                         if(generatorStatus.GetComponent<Text>().text == "Collected") {
                             Destroy(obj);
+                            audio.playInventoryPickUpSFX();
                             generatorStatus.GetComponent<Text>().text = "Stashed";
                             generatorFinal.SetActive(true);
                             stashedParts += 1;
@@ -95,6 +98,7 @@ public class Pickup : MonoBehaviour {
                     if(obj.name == "RotorDark") {
                         if(rotorStatus.GetComponent<Text>().text == "Collected") {
                             Destroy(obj);
+                            audio.playInventoryPickUpSFX();
                             rotorStatus.GetComponent<Text>().text = "Stashed";
                             rotorFinal.SetActive(true);
                             stashedParts += 1;
@@ -116,6 +120,7 @@ public class Pickup : MonoBehaviour {
                     if(obj.name == "FusionCoreDark") {
                         if(fusionCoreStatus.GetComponent<Text>().text == "Collected") {
                             Destroy(obj);
+                            audio.playInventoryPickUpSFX();
                             fusionCoreStatus.GetComponent<Text>().text = "Stashed";
                             fusionCoreFinal.SetActive(true);
                             stashedParts += 1;
