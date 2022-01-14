@@ -22,6 +22,7 @@ public class Pickup : MonoBehaviour {
     public GameObject secondUpgradeStatus;
     public GameObject thirdUpgradeStatus;
     private int stashedParts = 0;
+    public AudioManager audio;
     
     void Update() {
         if(pickup) {
@@ -134,8 +135,25 @@ public class Pickup : MonoBehaviour {
                         }
                     }
                 }
-                if (obj.tag == "AI") {
-                    Debug.Log("Good luck player!");
+                if (obj.tag == "AI") 
+                {
+                    if (stashedParts == 0)
+                    {
+                        audio.playFirstStashedVoice();
+                    }
+                    if (stashedParts == 1)
+                    {
+                        audio.playSecondStashedVoice();
+                    }
+                    if (stashedParts == 2)
+                    {
+                        audio.playThirdStashedVoice();
+                    }
+                    if (stashedParts == 3)
+                    {
+                        audio.playFourthStashedVoice();
+                    }
+
                 }
             }
             if (stashedParts == 4) {

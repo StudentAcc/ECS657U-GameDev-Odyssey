@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
+    int stashedVoice = 6;
+
     //attempts to see if this run is the player's first time playing
     private static readonly string FirstPlay = "FirstPlay";
     private int firstPlayInt;
@@ -130,5 +132,25 @@ public class AudioManager : MonoBehaviour
     public void playDoorSFX()
     {
         soundEffectsAudio[5].Play(0);
+    }
+
+    public void playFirstStashedVoice()
+    {
+        soundEffectsAudio[6].Play(0);
+    }
+
+    public void playSecondStashedVoice()
+    {
+        soundEffectsAudio[7].Play(0);
+    }
+
+    public void playThirdStashedVoice()
+    {
+        soundEffectsAudio[8].Play(0);
+    }
+
+    public void playFourthStashedVoice()
+    {
+        soundEffectsAudio[9].Play(0);
     }
 }
