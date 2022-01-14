@@ -1,16 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
  
-public class AutomaticDoorRight : MonoBehaviour
+public class AutomaticDoor : MonoBehaviour
 {
 
-    public GameObject movingDoor;
+    public GameObject rotatingDoor;
 
-    public float maximumOpening = 10f;
-    public float maximumClosing = 0f;
+    public float maximumOpening = 0f;
+    public float maximumClosing = 100f;
 
-    public float movementSpeed = 5f;
+    public float movementSpeed = 50f;
 
     bool playerIsHere;
 
@@ -25,16 +23,18 @@ public class AutomaticDoorRight : MonoBehaviour
     {
         if (playerIsHere)
         {
-            if (movingDoor.transform.position.z > maximumOpening)
+            if (rotatingDoor.transform.rotation.z > maximumOpening)
             {
-                movingDoor.transform.Translate(0f, 0f, -movementSpeed * Time.deltaTime);
+                rotatingDoor.transform.Rotate(0f, 0f, -movementSpeed * Time.deltaTime);
+                Debug.Log("HERE");
             }
         }
         else
         {
-            if (movingDoor.transform.position.z < maximumClosing)
+            if (rotatingDoor.transform.rotation.z < maximumClosing)
             {
-                movingDoor.transform.Translate(0f, 0f, movementSpeed * Time.deltaTime);
+                rotatingDoor.transform.Rotate(0f, 0f, movementSpeed * Time.deltaTime);
+                Debug.Log("THERE");
             }
         }
 
