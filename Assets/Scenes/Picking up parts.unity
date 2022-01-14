@@ -4184,7 +4184,7 @@ GameObject:
   - component: {fileID: 466190262}
   m_Layer: 3
   m_Name: AI Sphere
-  m_TagString: Untagged
+  m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4201,6 +4201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e47f4016825b6624b8983c669dcd16e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sphere: {fileID: 466190261}
 --- !u!4 &466469121
 Transform:
   m_ObjectHideFlags: 0
@@ -4209,7 +4210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 466190261}
   m_LocalRotation: {x: 0.000000041635566, y: -0.000000017859472, z: -0.07242732, w: 0.9973737}
-  m_LocalPosition: {x: -9.44, y: -0.99, z: -0.42001343}
+  m_LocalPosition: {x: -9.43, y: -0.9, z: -0.42001343}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 67741338}
@@ -26086,6 +26087,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpRange: 5
+  interactions: {fileID: 0}
   batteryImage: {fileID: 704552821}
   batteryStatus: {fileID: 851338852}
   batteryFinal: {fileID: 22087067}

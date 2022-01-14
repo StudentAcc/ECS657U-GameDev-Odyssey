@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class Pickup : MonoBehaviour {
     public float pickUpRange = 5;
     bool pickup;
+    public GameObject interactions;
     public GameObject batteryImage;
     public GameObject batteryStatus;
     public GameObject batteryFinal;
@@ -129,6 +130,9 @@ public class Pickup : MonoBehaviour {
                             }
                         }
                     }
+                }
+                if (obj.tag == "AI") {
+                    Debug.Log("Good luck player!");
                 }
             }
             if (stashedParts == 4) {
