@@ -2312,8 +2312,8 @@ MonoBehaviour:
   lookRadius: 10
   attackAnimationParticles: {fileID: 867659760}
   wandering: 1
-  centrePoint: {x: 1000, y: 150, z: 1000}
-  boundaryPoint: {x: 0, y: 150, z: 2000}
+  boundaryPointS: {x: 1000, y: 150, z: 1000}
+  boundaryPointL: {x: 0, y: 150, z: 2000}
   agroTimeLimit: 5
 --- !u!114 &278666829
 MonoBehaviour:
@@ -2586,7 +2586,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh165394
+  m_Name: pb_Mesh912540
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2997,6 +2997,133 @@ RectTransform:
   m_AnchoredPosition: {x: 270.01385, y: -30}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &396679506
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 396679507}
+  - component: {fileID: 396679508}
+  m_Layer: 0
+  m_Name: Jump Land
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &396679507
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396679506}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1285736080}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &396679508
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396679506}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 2f02c4269d5a5d843a96215fa3c76a85, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &397836800
 GameObject:
   m_ObjectHideFlags: 0
@@ -3470,6 +3597,8 @@ MonoBehaviour:
   spawnParent:
   - Enemies
   - SpaceshipParts
+  spawnBoundsA: []
+  spawnBoundsB: []
   position: {x: 0, y: 0, z: 0}
 --- !u!1 &446240509
 GameObject:
@@ -3992,7 +4121,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh165258
+  m_Name: pb_Mesh912404
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5335,10 +5464,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a82d031c0b09e54fa62f8d8a454a155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingDoor: {fileID: 1755631497}
-  maximumOpening: 489.9
-  maximumClosing: 487
-  movementSpeed: 12
 --- !u!65 &698035990
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5414,10 +5539,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 507307ab2b2f9b74ab6eea54dd036dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingDoor: {fileID: 982589146}
-  maximumOpening: 480.4
-  maximumClosing: 483.5
-  movementSpeed: 12
 --- !u!1 &707715606
 GameObject:
   m_ObjectHideFlags: 0
@@ -15148,9 +15269,13 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: cef641b6-3653-49f3-ad5a-ef83547fb8b3
     m_ActionName: Game/Inventory[/Keyboard/tab]
-  m_NeverAutoSwitchControlSchemes: 0
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c64dd41c-241c-4bf3-81cc-1ad58d5c7759
+    m_ActionName: Game/ShootAuto[/Mouse/leftButton]
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Keyboard
-  m_DefaultActionMap: Game
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &1038018862
@@ -15174,7 +15299,7 @@ MonoBehaviour:
   sprintingSource: {fileID: 0}
   jumpStartSound: {fileID: 1231224505}
   jumpStartSource: {fileID: 0}
-  jumpLandSound: {fileID: 1129433738}
+  jumpLandSound: {fileID: 396679506}
   jumpLandSource: {fileID: 0}
   Audio: {fileID: 1285736079}
   jumpHeight: 3.5
@@ -15219,7 +15344,6 @@ MonoBehaviour:
   mouseLook: {fileID: 1038018863}
   pickup: {fileID: 2138149392}
   gun: {fileID: 1656666394}
-  lasers: {fileID: 1518008899}
   pauseMenuButtons: {fileID: 171493837}
   inventoryButtons: {fileID: 0}
 --- !u!143 &1038018865
@@ -18053,133 +18177,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124567538}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1129433738
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1129433740}
-  - component: {fileID: 1129433739}
-  m_Layer: 0
-  m_Name: Jump Land
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &1129433739
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1129433738}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2f02c4269d5a5d843a96215fa3c76a85, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!4 &1129433740
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1129433738}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1285736080}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1131392130
 GameObject:
   m_ObjectHideFlags: 0
@@ -18265,7 +18262,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh165648
+  m_Name: pb_Mesh912794
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19946,7 +19943,7 @@ MonoBehaviour:
   - {fileID: 1346788872}
   - {fileID: 778085433}
   - {fileID: 840564774}
-  - {fileID: 1129433739}
+  - {fileID: 396679508}
 --- !u!4 &1285736080
 Transform:
   m_ObjectHideFlags: 0
@@ -19963,7 +19960,7 @@ Transform:
   - {fileID: 1346788873}
   - {fileID: 707715607}
   - {fileID: 1231224506}
-  - {fileID: 1129433740}
+  - {fileID: 396679507}
   - {fileID: 840564775}
   - {fileID: 778085434}
   m_Father: {fileID: 0}
@@ -28620,7 +28617,19 @@ MonoBehaviour:
   m_Value: 10
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1633689172
 GameObject:
   m_ObjectHideFlags: 0
@@ -28865,14 +28874,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656666391}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 0.6, y: -0.56, z: 2.2}
+  m_LocalPosition: {x: 0.6, y: -0.56, z: 1.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1518008898}
   - {fileID: 1094053949}
   m_Father: {fileID: 2138149391}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 262.6, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
 --- !u!64 &1656666393
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -28901,7 +28910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   range: 1000
-  fireRate: 2.5
+  fireRate: 2
   impactForce: 3000
   fpsCam: {fileID: 2138149394}
   muzzleFlash: {fileID: 1518008902}
@@ -28912,6 +28921,7 @@ MonoBehaviour:
   VolumeMenu: {fileID: 1350257332}
   PauseMenu: {fileID: 1898115508}
   ControlsMenu: {fileID: 958650714}
+  gunUpgrade: 0
 --- !u!95 &1656666395
 Animator:
   serializedVersion: 3
@@ -28987,7 +28997,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh164846
+  m_Name: pb_Mesh911998
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -46420,7 +46430,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh164726
+  m_Name: pb_Mesh911878
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

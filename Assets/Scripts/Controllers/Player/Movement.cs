@@ -14,7 +14,6 @@ public class Movement : MonoBehaviour {
     Vector2 movementInput;
 
     //initialises audio and all different sound effects when walking, sprinting and jumping
-    public AudioManager Audio;
     public GameObject walkingSound;
     public AudioSource walkingSource;
 
@@ -26,7 +25,8 @@ public class Movement : MonoBehaviour {
 
     public GameObject jumpLandSound;
     public AudioSource jumpLandSource;
-    
+    public AudioManager Audio;
+
     //determine jump height of character, whether or not they should jump and whether previously they were touching the ground
     [SerializeField] float jumpHeight;
     bool jump;
@@ -67,7 +67,7 @@ public class Movement : MonoBehaviour {
         //determines if the player is touching the floor or not
         isGrounded = Physics.CheckSphere(transform.position - (new Vector3(0, transform.localScale.y, 0)), 1f, groundMask);
 
-        //if the player is touching the ground, 
+        //if the player is touching the ground, make their relative vertical velocity 0
         if (isGrounded) {
             verticalVelocity.y = 0;
         }
@@ -89,17 +89,6 @@ public class Movement : MonoBehaviour {
             }
         }
 
-        //if the player is on the ground and the user asks to jump, play the jumping sound effect and make the player jump
-        if (jump)
-        {
-            if (isGrounded)
-            {
-                playJumpStartSound();
-                previouslyTouchingGround = false;
-                verticalVelocity.y = Mathf.Sqrt(-2f * jumpHeight * gravity);
-            }
-            jump = false;
-        }
 
         //when the player lands on the ground, play the jump landing sound effect
         if (isGrounded && previouslyTouchingGround == false)
@@ -108,27 +97,38 @@ public class Movement : MonoBehaviour {
             previouslyTouchingGround = true;
         }
 
+        //if the player is on the ground and the user asks to jump, play the jumping sound effect and make the player jump
+        if (jump) {
+            if (isGrounded) 
+            {
+                playJumpStartSound();
+                previouslyTouchingGround = false;
+                verticalVelocity.y = Mathf.Sqrt(-2f * jumpHeight * gravity);
+            }
+            jump = false;
+        }
+
         //gravity effect on player
         verticalVelocity.y += gravity * Time.deltaTime;
         controller.Move(verticalVelocity * Time.deltaTime);
 
-        //if player is holding onto sprint button and actually moving (i.e. holding wasd), drain stamina
+        //if player is holding onto sprint button and actually moving (i.e. holding wasd), make player sprint and drain their stamina
         if (sprinting && (movementInput.x!=0 || movementInput.y!=0))
         {
+            timerCode = staminaRegenWaitTime;
             //speed is now sprint speed so player is sprinting
             speed = sprintSpeed;
-
-            timerCode = staminaRegenWaitTime;
             elapsed += Time.deltaTime;
             staminaCode -= Time.deltaTime;
 
-            //
+            //every second the player is sprinting, take one extra o2 level away
             if (elapsed >= 1f)
             {
                 elapsed = elapsed % 1f;
                 GameObject.Find("OxygenBackground").GetComponent<CountDown>().onSprintDecreaseOxygen();
             }
 
+            //if player has ran out of stamina, make player walk
             if (staminaCode <= 0f)
             {
                 speed = walkSpeed;
@@ -138,6 +138,7 @@ public class Movement : MonoBehaviour {
         }
         else
         {
+            //regenerates stamina if user isn't sprinting
             timerCode -= Time.deltaTime;
             if (timerCode <= 0f)
             {
@@ -159,8 +160,7 @@ public class Movement : MonoBehaviour {
 
     }
 
-    
-
+    //plays walking sound effect
     public void playWalkingSound()
     {
         walkingSource.volume = Audio.GetComponent<AudioManager>().getSoundEffectsVolume();
@@ -173,8 +173,9 @@ public class Movement : MonoBehaviour {
         {
             walkingSource.Play();
         }
-    }        
-    
+    }
+
+    //plays sprinting sound effect
     public void playSprintingSound()
     {
         sprintingSource.volume = Audio.GetComponent<AudioManager>().getSoundEffectsVolume();
@@ -187,8 +188,9 @@ public class Movement : MonoBehaviour {
         {
             sprintingSource.Play();
         }
-    }    
-    
+    }
+
+    //plays jump and then landing sound effect
     public void playJumpLandSound()
     {
         jumpLandSource.volume = Audio.GetComponent<AudioManager>().getSoundEffectsVolume();
@@ -201,8 +203,9 @@ public class Movement : MonoBehaviour {
         {
             jumpLandSource.Play();
         }
-    }    
-    
+    }
+
+    //plays jumping sound effect
     public void playJumpStartSound()
     {
         jumpStartSource.volume = Audio.GetComponent<AudioManager>().getSoundEffectsVolume();
@@ -217,19 +220,24 @@ public class Movement : MonoBehaviour {
         }
     }
 
+    //sets sprinting to true
     public void SprintStarted()
     {
         sprinting = true;
     }
+
+    //sets sprinting to false
     public void SprintReleased()
     {
         sprinting = false;
     }
 
+    //receives player's movement input
     public void ReceiveInput(Vector2 _movementInput) {
         movementInput = _movementInput;
     }
 
+    //sets jump to true if player has pressed jump button
     public void OnJumpPressed() {
         jump = true;
     }

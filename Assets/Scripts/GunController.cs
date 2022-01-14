@@ -3,7 +3,6 @@ using UnityEngine.EventSystems;
 
 public class GunController : MonoBehaviour
 {
-
     public int damage = 10;
     public float range = 100f;
     public float fireRate;
@@ -23,6 +22,8 @@ public class GunController : MonoBehaviour
     public GameObject PauseMenu;
     public GameObject ControlsMenu;
 
+    public int gunUpgrade = 0;
+
     Animator m_animator;
 
     bool shoot;
@@ -33,8 +34,15 @@ public class GunController : MonoBehaviour
         InstantiateAudio(fireSound.GetComponent<AudioSource>().clip);
     }
 
+
+
     private void Update()
     {
+        if (gunUpgrade == 1)
+        {
+            fireRate = 3f;
+        }
+
         if (shoot && Time.time >= nextTimeToFire)
         {
             if (m_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle") == true) //allows shooting only when the gun is in "idle" animation
@@ -45,7 +53,12 @@ public class GunController : MonoBehaviour
                 
                     m_animator.SetTrigger("Shoot");
                     nextTimeToFire = Time.time + 1f / fireRate;
-                    GameObject.Find("OxygenBackground").GetComponent<CountDown>().onShootDecreaseOxygen();
+
+                    if (gunUpgrade < 2)
+                    {
+                        GameObject.Find("OxygenBackground").GetComponent<CountDown>().onShootDecreaseOxygen();
+                    }
+
                     RaycastHit hit;
                     if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
                     {
@@ -67,7 +80,10 @@ public class GunController : MonoBehaviour
 
                     }
                 }
-                shoot = false;
+                if (gunUpgrade < 3)
+                { 
+                    shoot = false; 
+                }
             }
         }
 
@@ -104,4 +120,19 @@ public class GunController : MonoBehaviour
         fireRate += 1;
     }
 
+    public void upgradeGun()
+    {
+        gunUpgrade += 1;
+    }
+
+    public void OnShootHold()
+    {
+        shoot = true;
+    }
+
+    public void OnShootStop()
+    {
+        Debug.Log("you have let go of the shoot button");
+        shoot = false;
+    }
 }

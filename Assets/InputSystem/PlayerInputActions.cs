@@ -36,9 +36,9 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Movement"",
-                    ""type"": ""Value"",
+                    ""type"": ""Button"",
                     ""id"": ""4653f63a-701b-4419-90bc-3b57d861aa33"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
@@ -78,6 +78,22 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""name"": ""Sprint"",
                     ""type"": ""Button"",
                     ""id"": ""0446115d-662a-4018-b297-f9074045b969"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold""
+                },
+                {
+                    ""name"": ""Inventory"",
+                    ""type"": ""Button"",
+                    ""id"": ""cef641b6-3653-49f3-ad5a-ef83547fb8b3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""ShootAuto"",
+                    ""type"": ""Button"",
+                    ""id"": ""c64dd41c-241c-4bf3-81cc-1ad58d5c7759"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Hold""
@@ -151,8 +167,19 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
+                    ""name"": """",
+                    ""id"": ""bfd5daa8-ff03-4ebd-af8a-0eaa60d7c385"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": ""StickDeadzone,NormalizeVector2"",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
                     ""name"": ""2D Vector"",
-                    ""id"": ""58534947-3610-4cc9-9597-64e7bda68020"",
+                    ""id"": ""7933a2d5-8497-4269-8b70-d257b6bddeb4"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -163,7 +190,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""0a077fc8-d9c0-41b7-9ef3-b68fa4bf01a4"",
+                    ""id"": ""16759078-35ac-4f0c-854f-fad198a272fe"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -174,7 +201,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""down"",
-                    ""id"": ""0465590c-0e22-4262-8de3-5df34c1509f2"",
+                    ""id"": ""d3f2d021-42a2-4d5f-9c6e-fd4b4ae4f8d1"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -185,7 +212,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""left"",
-                    ""id"": ""b5fbf8f5-aeec-4c70-8707-1454fa198c2a"",
+                    ""id"": ""3ba6fa34-d203-491c-89eb-663f4ad5a645"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -196,7 +223,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""00371b35-0c63-4579-8292-98ff19d711c2"",
+                    ""id"": ""855eff8f-a4b3-42a6-b42b-23880c863c1f"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -204,17 +231,6 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""bfd5daa8-ff03-4ebd-af8a-0eaa60d7c385"",
-                    ""path"": ""<Gamepad>/leftStick"",
-                    ""interactions"": """",
-                    ""processors"": ""StickDeadzone,NormalizeVector2"",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -284,19 +300,8 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""2a864278-48bb-46a7-9d80-3baa09605736"",
-                    ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""Pause"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""e01b9487-cee9-4136-8f18-470c585d3cbc"",
-                    ""path"": ""<Keyboard>/shift"",
+                    ""path"": ""<Keyboard>/leftShift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
@@ -312,6 +317,50 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e79f25b8-372a-4a18-87f8-3aaefc069669"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Inventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ab785671-fc33-4640-81e6-b69036ea5e82"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Inventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3162d5c5-6aa5-420e-a831-3569ff559cff"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""ShootAuto"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""71a3fcee-c295-449f-aefd-486b4bd0562e"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""ShootAuto"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -353,6 +402,8 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
+        m_Player_Inventory = m_Player.FindAction("Inventory", throwIfNotFound: true);
+        m_Player_ShootAuto = m_Player.FindAction("ShootAuto", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -410,6 +461,8 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Shoot;
     private readonly InputAction m_Player_Pause;
     private readonly InputAction m_Player_Sprint;
+    private readonly InputAction m_Player_Inventory;
+    private readonly InputAction m_Player_ShootAuto;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -422,6 +475,8 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
+        public InputAction @Inventory => m_Wrapper.m_Player_Inventory;
+        public InputAction @ShootAuto => m_Wrapper.m_Player_ShootAuto;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -455,6 +510,12 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 @Sprint.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSprint;
                 @Sprint.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSprint;
                 @Sprint.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSprint;
+                @Inventory.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInventory;
+                @Inventory.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInventory;
+                @Inventory.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInventory;
+                @ShootAuto.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShootAuto;
+                @ShootAuto.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShootAuto;
+                @ShootAuto.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShootAuto;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -483,6 +544,12 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 @Sprint.started += instance.OnSprint;
                 @Sprint.performed += instance.OnSprint;
                 @Sprint.canceled += instance.OnSprint;
+                @Inventory.started += instance.OnInventory;
+                @Inventory.performed += instance.OnInventory;
+                @Inventory.canceled += instance.OnInventory;
+                @ShootAuto.started += instance.OnShootAuto;
+                @ShootAuto.performed += instance.OnShootAuto;
+                @ShootAuto.canceled += instance.OnShootAuto;
             }
         }
     }
@@ -515,5 +582,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         void OnShoot(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
+        void OnInventory(InputAction.CallbackContext context);
+        void OnShootAuto(InputAction.CallbackContext context);
     }
 }
