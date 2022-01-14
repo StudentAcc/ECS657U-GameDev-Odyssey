@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
     public Vector3 boundaryPointS = new Vector3(1000f, 150f, 1000f);
     public Vector3 boundaryPointL = new Vector3(0, 150f, 2000);
     public float agroTimeLimit = 5f;
+    public Animator anim;
 
     float baseLookRadius;
     Vector3 wanderPoint;
@@ -24,6 +25,7 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponentInChildren<Animator>();
         baseLookRadius = lookRadius;
         wanderPoint = getRandomCoordinate();
         target = PlayerManager.instance.player.transform;
@@ -36,6 +38,7 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         StartCoroutine(delay(1f));
+        anim.SetFloat("vertical", (agent.velocity.magnitude / agent.speed));
         float distance = Vector3.Distance(target.position, transform.position);
         if (distance <= lookRadius)
         {
