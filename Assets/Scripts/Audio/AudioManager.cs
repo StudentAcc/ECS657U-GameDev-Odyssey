@@ -116,4 +116,14 @@ public class AudioManager : MonoBehaviour
     {
         soundEffectsAudio[3].Play(0);
     }
+
+    public void playDoorSFX()
+    {
+        soundEffectsAudio[5].Play(0);
+    }
+
+    public void stopDoorSFX()
+    {
+        soundEffectsAudio[5].Stop();
+    }
 }
