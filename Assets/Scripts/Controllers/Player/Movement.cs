@@ -1,13 +1,20 @@
 using UnityEngine;
 
 public class Movement : MonoBehaviour {
+    //initialises character controller and the character's walk and sprint speed
     [SerializeField] CharacterController controller;
     [SerializeField] float walkSpeed;
     [SerializeField] float sprintSpeed;
+
+    //initialises characters actual speed
     float speed;
+
+    //determine if character is sprinting or not by holding on the sprint button
     bool sprinting = false;
     Vector2 movementInput;
 
+    //initialises audio and all different sound effects when walking, sprinting and jumping
+    public AudioManager Audio;
     public GameObject walkingSound;
     public AudioSource walkingSource;
 
@@ -19,29 +26,30 @@ public class Movement : MonoBehaviour {
 
     public GameObject jumpLandSound;
     public AudioSource jumpLandSource;
-    public AudioManager Audio;
-
+    
+    //determine jump height of character, whether or not they should jump and whether previously they were touching the ground
     [SerializeField] float jumpHeight;
     bool jump;
     bool previouslyTouchingGround;
-
     [SerializeField] float gravity; // Gravity is -9.81f
     Vector3 verticalVelocity = Vector3.zero;
-
     [SerializeField] LayerMask groundMask;
     bool isGrounded;
+
+    //initialises stamina of character and its regeneration rate
     [SerializeField] public float stamina;
     [SerializeField] float staminaRegenRate;
     [SerializeField] float staminaRegenWaitTime;
-
     public float staminaCode;
     float timerCode;
     float elapsed = 0f;
 
     private void Start(){
+        //character starts with walk speed 
         speed = walkSpeed;
         staminaCode = stamina;
 
+        //instantiates all different type of sound effects for walking, sprinting and jumping
         walkingSource = gameObject.AddComponent<AudioSource>();
         walkingSource.clip = walkingSound.GetComponent<AudioSource>().clip;
 
@@ -56,15 +64,19 @@ public class Movement : MonoBehaviour {
     }
 
     private void Update() {
+        //determines if the player is touching the floor or not
         isGrounded = Physics.CheckSphere(transform.position - (new Vector3(0, transform.localScale.y, 0)), 1f, groundMask);
 
+        //if the player is touching the ground, 
         if (isGrounded) {
             verticalVelocity.y = 0;
         }
 
+        //moves the player in the x and z plane
         Vector3 horizontalVelocity = (transform.right * movementInput.x + transform.forward * movementInput.y) * speed;
         controller.Move(horizontalVelocity * Time.deltaTime);
 
+        //if the player is walking or sprinting, play the sound effects respective to whether they're walking or sprinting
         if (controller.isGrounded == true)
         {
             if (controller.velocity.magnitude < 14f && walkingSource.isPlaying == false)
@@ -77,17 +89,10 @@ public class Movement : MonoBehaviour {
             }
         }
 
-
-
-        if (isGrounded && previouslyTouchingGround == false)
+        //if the player is on the ground and the user asks to jump, play the jumping sound effect and make the player jump
+        if (jump)
         {
-            playJumpLandSound();
-            previouslyTouchingGround = true;
-        }
-
-
-        if (jump) {
-            if (isGrounded) 
+            if (isGrounded)
             {
                 playJumpStartSound();
                 previouslyTouchingGround = false;
@@ -96,16 +101,28 @@ public class Movement : MonoBehaviour {
             jump = false;
         }
 
+        //when the player lands on the ground, play the jump landing sound effect
+        if (isGrounded && previouslyTouchingGround == false)
+        {
+            playJumpLandSound();
+            previouslyTouchingGround = true;
+        }
+
+        //gravity effect on player
         verticalVelocity.y += gravity * Time.deltaTime;
         controller.Move(verticalVelocity * Time.deltaTime);
 
+        //if player is holding onto sprint button and actually moving (i.e. holding wasd), drain stamina
         if (sprinting && (movementInput.x!=0 || movementInput.y!=0))
         {
-            timerCode = staminaRegenWaitTime;
+            //speed is now sprint speed so player is sprinting
             speed = sprintSpeed;
+
+            timerCode = staminaRegenWaitTime;
             elapsed += Time.deltaTime;
             staminaCode -= Time.deltaTime;
 
+            //
             if (elapsed >= 1f)
             {
                 elapsed = elapsed % 1f;
