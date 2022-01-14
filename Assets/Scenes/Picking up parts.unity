@@ -2291,6 +2291,7 @@ MonoBehaviour:
   wandering: 1
   centrePoint: {x: 1000, y: 150, z: 1000}
   boundaryPoint: {x: 0, y: 150, z: 2000}
+  agroTimeLimit: 5
 --- !u!114 &278666829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2352,7 +2353,7 @@ Transform:
   - {fileID: 1276098999}
   - {fileID: 969697915}
   m_Father: {fileID: 543450652593658371}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &307299028
 PrefabInstance:
@@ -14211,6 +14212,7 @@ MonoBehaviour:
   controller: {fileID: 1038018865}
   walkSpeed: 13
   sprintSpeed: 20
+  Audio: {fileID: 2039773389}
   walkingSound: {fileID: 117478927}
   walkingSource: {fileID: 0}
   sprintingSound: {fileID: 1054264580}
@@ -14219,7 +14221,6 @@ MonoBehaviour:
   jumpStartSource: {fileID: 0}
   jumpLandSound: {fileID: 583182418}
   jumpLandSource: {fileID: 0}
-  Audio: {fileID: 2039773389}
   jumpHeight: 3.5
   gravity: -30
   groundMask:
@@ -15455,6 +15456,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1131392130}
   m_CullTransparentMesh: 1
+--- !u!1 &1138093934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1138093935}
+  m_Layer: 3
+  m_Name: Spaceship Door
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1138093935
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138093934}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7198851, w: 0.6940933}
+  m_LocalPosition: {x: 31.43, y: -14.72, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 136108948412501306}
+  - {fileID: 214653315733741495}
+  m_Father: {fileID: 543450652593658371}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 92.09}
 --- !u!1 &1142593055 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 185476, guid: cd918f355f278d740a893b9a8b49a85c, type: 3}
@@ -16562,7 +16595,7 @@ Transform:
   - {fileID: 7418358217099452275}
   - {fileID: 7873748393269872816}
   m_Father: {fileID: 543450652593658371}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1221589771
 PrefabInstance:
@@ -23930,7 +23963,7 @@ Transform:
   - {fileID: 1339179062466395908}
   - {fileID: 1923017077678312508}
   m_Father: {fileID: 543450652593658371}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1530678774
 MeshCollider:
@@ -25167,38 +25200,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1609066156
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1609066157}
-  m_Layer: 3
-  m_Name: Spaceship Door
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1609066157
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1609066156}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 136108948412501306}
-  - {fileID: 214653315733741495}
-  m_Father: {fileID: 543450652593658371}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1611645534
 GameObject:
   m_ObjectHideFlags: 0
@@ -28062,7 +28063,7 @@ Transform:
   - {fileID: 2489159158423455824}
   - {fileID: 1522521827672816021}
   m_Father: {fileID: 543450652593658371}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1872107834 stripped
 GameObject:
@@ -29457,7 +29458,7 @@ Transform:
   - {fileID: 1948442620659358426}
   - {fileID: 755895775718157527}
   m_Father: {fileID: 543450652593658371}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2020716550
 GameObject:
@@ -31376,10 +31377,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 829510954343450671}
   m_LocalRotation: {x: -0.4963722, y: 0.50360185, z: -0.50360173, w: 0.49637204}
-  m_LocalPosition: {x: 31.103455, y: -14.693832, z: -0.51153564}
-  m_LocalScale: {x: 696.0702, y: 696.0703, z: 696.0702}
+  m_LocalPosition: {x: -0.016545225, y: 0.026141083, z: -0.51153564}
+  m_LocalScale: {x: 696.07025, y: 696.0703, z: 696.0702}
   m_Children: []
-  m_Father: {fileID: 1609066157}
+  m_Father: {fileID: 1138093935}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &142703166937677816
@@ -31593,13 +31594,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5630335551449993781}
-  m_LocalRotation: {x: -0.4963722, y: 0.50360185, z: -0.50360173, w: 0.49637204}
-  m_LocalPosition: {x: 31.103455, y: -14.693832, z: -0.51153564}
-  m_LocalScale: {x: 696.0702, y: 696.0703, z: 696.0702}
+  m_LocalRotation: {x: -0.49611038, y: 0.5038596, z: -0.5038596, w: 0.49611038}
+  m_LocalPosition: {x: -0.020002104, y: -0.31001607, z: -0.51153564}
+  m_LocalScale: {x: 696.0704, y: 696.0704, z: 696.0704}
   m_Children: []
-  m_Father: {fileID: 1609066157}
+  m_Father: {fileID: 1138093935}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.888, y: 90, z: -90}
 --- !u!1 &215956101431005802
 GameObject:
   m_ObjectHideFlags: 0
@@ -32355,12 +32356,12 @@ Transform:
   m_Children:
   - {fileID: 498492555}
   - {fileID: 514775386698009263}
-  - {fileID: 1609066157}
   - {fileID: 2004121054}
   - {fileID: 302711817}
   - {fileID: 1863708384}
   - {fileID: 1220837402}
   - {fileID: 1519459508}
+  - {fileID: 1138093935}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
