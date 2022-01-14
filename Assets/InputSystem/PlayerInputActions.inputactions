@@ -1,8 +1,8 @@
 {
-    "name": "Controls",
+    "name": "PlayerInputActions",
     "maps": [
         {
-            "name": "Game",
+            "name": "Player",
             "id": "87e7d64b-3447-4759-91f1-34559dcd5936",
             "actions": [
                 {
@@ -76,6 +76,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "ShootAuto",
+                    "type": "Button",
+                    "id": "c64dd41c-241c-4bf3-81cc-1ad58d5c7759",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold"
                 }
             ],
             "bindings": [
@@ -127,17 +135,6 @@
                     "name": "",
                     "id": "f71b780d-6399-4b34-a395-4cf4bc40766d",
                     "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Shoot",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "42b6f2bb-b3ad-4868-bd8e-d7e22e1beeda",
-                    "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -329,6 +326,28 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Inventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3162d5c5-6aa5-420e-a831-3569ff559cff",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "ShootAuto",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "71a3fcee-c295-449f-aefd-486b4bd0562e",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "ShootAuto",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

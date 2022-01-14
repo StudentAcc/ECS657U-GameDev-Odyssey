@@ -14,7 +14,7 @@ public class InputManager : MonoBehaviour {
 
     //initialises the user's weapon
     [SerializeField] GunController gun;
-    [SerializeField] RayGun lasers;
+
 
     //initialises pause and inventory buttons
     [SerializeField] PauseMenuButtons pauseMenuButtons;
@@ -44,7 +44,9 @@ public class InputManager : MonoBehaviour {
         playerInput.actions["Movement"].performed += context => movementInput = context.ReadValue<Vector2>();
         playerInput.actions["Movement"].canceled += context => movementInput = context.ReadValue<Vector2>();
         playerActions.Shoot.started += _ => gun.OnShootPressed();
-        playerActions.Shoot.started += _ => lasers.OnShootPressed();
+        playerActions.ShootAuto.started += _ => gun.OnShootHold();
+        playerActions.ShootAuto.canceled += _ => gun.OnShootStop();
+
         playerInput.actions["Jump"].performed += _ => movement.OnJumpPressed();
         playerInput.actions["Pickup"].started += _ => pickup.OnPickupPressed();
         playerInput.actions["Pause"].performed += _ => pauseMenuButtons.PauseUnpause();
