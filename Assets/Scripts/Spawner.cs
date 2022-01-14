@@ -9,6 +9,8 @@ public class Spawner : MonoBehaviour
 	public GameObject[] spawnees;
 	public int[] spawnAmount;
 	public string[] spawnParent;
+	public Vector3[] spawnBoundsA;
+	public Vector3[] spawnBoundsB;
 	public Vector3 position;
 	int randomInt;
 
@@ -33,10 +35,11 @@ public class Spawner : MonoBehaviour
 			{
 				randomInt = Random.Range(0, spawnees.Length);
 			}
-			posx = Random.Range(0, 2000);
-			posz = Random.Range(0, 2000);
+			//posx = Random.Range(0, 2000);
+			//posz = Random.Range(0, 2000);
+			Vector3 randomCoord = new Vector3(Random.Range(spawnBoundsA[randomInt].x, spawnBoundsB[randomInt].x), maxHeight, Random.Range(spawnBoundsA[randomInt].z, spawnBoundsB[randomInt].z));
 			RaycastHit hit;
-			Ray ray = new Ray(new Vector3(posx, maxHeight, posz), Vector3.down);
+			Ray ray = new Ray(randomCoord, Vector3.down);
 			if (Physics.Raycast(ray, out hit, maxHeight, layerMask))
 			{
 				//position = new Vector3(Random.Range(5, 200), 70, Random.Range(5, 300));

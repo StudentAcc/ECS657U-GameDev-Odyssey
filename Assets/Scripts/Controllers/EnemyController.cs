@@ -35,8 +35,8 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        StartCoroutine(delay(1f));
         float distance = Vector3.Distance(target.position, transform.position);
-
         if (distance <= lookRadius)
         {
             lastTargetPoint = target.position;
@@ -71,9 +71,10 @@ public class EnemyController : MonoBehaviour
 
             if (idle == false && (Vector3.Distance(lastTargetPoint, transform.position) - 1 <= agent.stoppingDistance))
             {
+                StartCoroutine(delay(1f));
                 idle = true;
                 SetDestination(wanderPoint);
-                Debug.Log("log1" + idle.ToString());
+                //Debug.Log("log1" + idle.ToString());
             }
             else if (idle)
             {
@@ -95,8 +96,8 @@ public class EnemyController : MonoBehaviour
     void SetDestination(Vector3 targetDestination)
     {
         NavMeshHit hit;
-        Debug.Log(targetDestination);
-        if (NavMesh.SamplePosition(targetDestination, out hit, 1000f, NavMesh.AllAreas))
+        //Debug.Log(targetDestination);
+        if (NavMesh.SamplePosition(targetDestination, out hit, 1f, NavMesh.AllAreas))
         {
             //Debug.Log("hit");
             agent.SetDestination(hit.position);
@@ -125,6 +126,11 @@ public class EnemyController : MonoBehaviour
         lookRadius = lookRadiusBuff;
         yield return new WaitForSeconds(Duration);
         lookRadius = baseLookRadius;
+    }
+
+    IEnumerator delay(float Duration)
+    {
+        yield return new WaitForSeconds(Duration);
     }
 
     void OnDrawGizmosSelected() 
