@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -39416,10 +39416,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.92
-  m_Height: 5.52
+  m_Radius: 3.52
+  m_Height: 10.82
   m_Direction: 1
-  m_Center: {x: 0, y: 1.71, z: 0}
+  m_Center: {x: 0.02, y: 2.63, z: 0.7}
 --- !u!195 &754203838
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -45590,10 +45590,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.92
-  m_Height: 5.52
+  m_Radius: 3.52
+  m_Height: 10.82
   m_Direction: 1
-  m_Center: {x: 0, y: 1.71, z: 0}
+  m_Center: {x: 0.02, y: 2.63, z: 0.7}
 --- !u!195 &877450859
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -46365,7 +46365,7 @@ MonoBehaviour:
   - {fileID: 1325252396}
   - {fileID: 919132147554292302}
   - {fileID: 1839908854}
-  spawnAmount: 190000001900000019000000190000000100000001000000010000000100000064000000
+  spawnAmount: 320000003200000032000000320000000100000001000000010000000100000064000000
   spawnParent:
   - Enemies
   - Enemies
@@ -46381,20 +46381,20 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 1000, y: 0, z: 1000}
   - {x: 1000, y: 0, z: 0}
-  - {x: 500, y: 0, z: 1000}
-  - {x: 500, y: 0, z: 500}
+  - {x: 750, y: 0, z: 1000}
+  - {x: 750, y: 0, z: 750}
   - {x: 1000, y: 0, z: 1000}
-  - {x: 1000, y: 0, z: 500}
+  - {x: 1000, y: 0, z: 750}
   - {x: 0, y: 0, z: 0}
   spawnBoundsB:
   - {x: 1000, y: 0, z: 2000}
   - {x: 1000, y: 0, z: 1000}
   - {x: 2000, y: 0, z: 2000}
   - {x: 2000, y: 0, z: 1000}
-  - {x: 1000, y: 0, z: 1500}
+  - {x: 1000, y: 0, z: 1250}
   - {x: 1000, y: 0, z: 1000}
-  - {x: 1500, y: 0, z: 1500}
-  - {x: 1500, y: 0, z: 1000}
+  - {x: 1250, y: 0, z: 1250}
+  - {x: 1250, y: 0, z: 1000}
   - {x: 2000, y: 0, z: 2000}
   position: {x: 0, y: 0, z: 0}
 --- !u!114 &891936329
@@ -56795,7 +56795,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.92
+  m_Radius: 2.09
   m_Height: 5.52
   m_Direction: 1
   m_Center: {x: 0, y: 1.71, z: 0}
@@ -76813,7 +76813,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1325252396}
   m_LocalRotation: {x: -0, y: 0.70710707, z: -0, w: 0.7071066}
-  m_LocalPosition: {x: -124.57, y: 12.817, z: -12.045049}
+  m_LocalPosition: {x: -124.57, y: -7.6329966, z: -12.045049}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 540326834}
@@ -111116,7 +111116,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1927420155}
   m_LocalRotation: {x: -0.003252106, y: -0.004696436, z: -0.05194092, w: 0.99863386}
-  m_LocalPosition: {x: -124.936, y: 12.34, z: 12.13}
+  m_LocalPosition: {x: -124.936, y: -8.11, z: 12.13}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 540326834}
@@ -111897,7 +111897,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1937319377}
   m_LocalRotation: {x: 0.055568427, y: 0.99845487, z: 0.000000033121363, w: 0.0000005951255}
-  m_LocalPosition: {x: -122.461, y: 12.113001, z: 12.224951}
+  m_LocalPosition: {x: -122.461, y: -8.336996, z: 12.224951}
   m_LocalScale: {x: 0.5000001, y: 0.5, z: 0.5000001}
   m_Children: []
   m_Father: {fileID: 540326834}
@@ -121649,7 +121649,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132147554292302}
   m_LocalRotation: {x: -0.0125019085, y: -0, z: -0, w: 0.9999219}
-  m_LocalPosition: {x: -122.432, y: 12.753, z: -12.345049}
+  m_LocalPosition: {x: -122.432, y: -7.6969967, z: -12.345049}
   m_LocalScale: {x: 51.564693, y: 51.564697, z: 51.564697}
   m_Children: []
   m_Father: {fileID: 540326834}
