@@ -5,8 +5,8 @@ public class AutomaticDoor : MonoBehaviour
 
     public GameObject rotatingDoor;
 
-    public float maximumOpening = 0f;
-    public float maximumClosing = 100f;
+    public float maximumOpening = 1f;
+    public float maximumClosing = 92f;
 
     public float movementSpeed = 50f;
 
@@ -23,22 +23,17 @@ public class AutomaticDoor : MonoBehaviour
     {
         if (playerIsHere)
         {
-            if (rotatingDoor.transform.rotation.z > maximumOpening)
+            if (rotatingDoor.transform.rotation.eulerAngles.z > maximumOpening)
             {
                 rotatingDoor.transform.Rotate(0f, 0f, -movementSpeed * Time.deltaTime);
-                Debug.Log("HERE");
             }
         }
-        else
-        {
-            if (rotatingDoor.transform.rotation.z < maximumClosing)
+        else {
+            if (rotatingDoor.transform.rotation.eulerAngles.z < maximumClosing)
             {
                 rotatingDoor.transform.Rotate(0f, 0f, movementSpeed * Time.deltaTime);
-                Debug.Log("THERE");
             }
         }
-
-
     }
 
     private void OnTriggerEnter(Collider col)
