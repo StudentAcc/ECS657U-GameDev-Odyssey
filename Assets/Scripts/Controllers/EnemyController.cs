@@ -62,13 +62,19 @@ public class EnemyController : MonoBehaviour
                 if (targetStats != null)
                 {
                     attackAnimationParticles.Play();
+                    anim.SetBool("attack", true);
                     combat.Attack(targetStats);
                     attackAnimationParticles.Play();
+                    StartCoroutine(delay(2));
+
                 }
 
                 // Face the arget
                 FaceTarget();
 
+            } else
+            {
+                anim.SetBool("attack", false);
             }
         }
         else if (wandering)
