@@ -294,11 +294,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: As the player ventures outside the ship cautiously with their standard
-    issue firearm, they discover there are hostile creatures lurking amongst the
-    land. Find and collect the ship parts back to the ship before oxygen runs out!
-    Don't forget, there are oxygen tanks from the ship's debris to increase your
-    oxygen levels...
+  m_Text: As you venture outside the ship cautiously with your standard issue firearm,
+    you discover there are hostile creatures lurking amongst the land. Find and collect
+    the ship parts back to the ship before oxygen runs out! Don't forget, there are
+    oxygen tanks from the ship's debris to increase your oxygen levels...
 --- !u!222 &81409305
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -499,10 +498,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: After their spaceship crashed onto an unknown planet, the player wakes
-    up as the only survivor. The ship took some damage, unable to fly, but some of
-    the oxygen tanks as well as the ship parts powering the ship have scattered across
-    the planet.
+  m_Text: After your spaceship crashed onto an unknown planet, you wake up as the
+    only survivor. The ship took some damage, unable to fly, but some of the oxygen
+    tanks as well as the ship parts powering the ship have scattered across the planet.
 --- !u!222 &402015831
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1364,7 +1362,7 @@ MonoBehaviour:
   startColour: {r: 1, g: 1, b: 1, a: 0}
   endColour: {r: 1, g: 1, b: 1, a: 1}
   fadeInTime: 20
-  fadeDelay: 28
+  fadeDelay: 28.5
   text: {fileID: 0}
 --- !u!114 &1464887895
 MonoBehaviour:
@@ -1656,7 +1654,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 54049d59ffccdc54091a35129b5a8c83, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3819248c06c745941a55c85444286fa9, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2314,7 +2312,7 @@ MonoBehaviour:
   startColour: {r: 1, g: 1, b: 1, a: 0}
   endColour: {r: 1, g: 0, b: 0, a: 1}
   fadeInTime: 25
-  fadeDelay: 35
+  fadeDelay: 36
   text: {fileID: 0}
 --- !u!114 &2060373955
 MonoBehaviour:

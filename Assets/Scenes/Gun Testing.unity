@@ -2311,6 +2311,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lookRadius: 10
   attackAnimationParticles: {fileID: 867659760}
+  wandering: 1
+  centrePoint: {x: 1000, y: 150, z: 1000}
+  boundaryPoint: {x: 0, y: 150, z: 2000}
+  agroTimeLimit: 5
 --- !u!114 &278666829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3462,7 +3466,7 @@ MonoBehaviour:
   spawnees:
   - {fileID: 278666823}
   - {fileID: 936986330}
-  spawnAmount: e8030000e8030000
+  spawnAmount: 0100000001000000
   spawnParent:
   - Enemies
   - SpaceshipParts
