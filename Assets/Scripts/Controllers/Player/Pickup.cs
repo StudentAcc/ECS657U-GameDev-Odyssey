@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 public class Pickup : MonoBehaviour {
     public float pickUpRange = 5;
     bool pickup;
-    public GameObject interactions;
     public GameObject batteryImage;
     public GameObject batteryStatus;
     public GameObject batteryFinal;
@@ -56,6 +55,7 @@ public class Pickup : MonoBehaviour {
                             batteryStatus.GetComponent<Text>().text = "Stashed";
                             batteryFinal.SetActive(true);
                             stashedParts += 1;
+                            GameObject.Find("Gun").GetComponent<GunController>().upgradeGun();
                             if(stashedParts == 1 ) {
                                 firstUpgradeStatus.GetComponent<Text>().text = "Upgraded";
                                 firstUpgradeStatus.GetComponent<Text>().color = new Color32(0, 255, 0, 255);
@@ -76,7 +76,8 @@ public class Pickup : MonoBehaviour {
                             generatorStatus.GetComponent<Text>().text = "Stashed";
                             generatorFinal.SetActive(true);
                             stashedParts += 1;
-                            if(stashedParts == 1 ) {
+                            GameObject.Find("Gun").GetComponent<GunController>().upgradeGun();
+                            if (stashedParts == 1 ) {
                                 firstUpgradeStatus.GetComponent<Text>().text = "Upgraded";
                                 firstUpgradeStatus.GetComponent<Text>().color = new Color32(0, 255, 0, 255);
                             }
@@ -96,7 +97,8 @@ public class Pickup : MonoBehaviour {
                             rotorStatus.GetComponent<Text>().text = "Stashed";
                             rotorFinal.SetActive(true);
                             stashedParts += 1;
-                            if(stashedParts == 1 ) {
+                            GameObject.Find("Gun").GetComponent<GunController>().upgradeGun();
+                            if (stashedParts == 1 ) {
                                 firstUpgradeStatus.GetComponent<Text>().text = "Upgraded";
                                 firstUpgradeStatus.GetComponent<Text>().color = new Color32(0, 255, 0, 255);
                             }
@@ -116,7 +118,8 @@ public class Pickup : MonoBehaviour {
                             fusionCoreStatus.GetComponent<Text>().text = "Stashed";
                             fusionCoreFinal.SetActive(true);
                             stashedParts += 1;
-                            if(stashedParts == 1 ) {
+                            GameObject.Find("Gun").GetComponent<GunController>().upgradeGun();
+                            if (stashedParts == 1 ) {
                                 firstUpgradeStatus.GetComponent<Text>().text = "Upgraded";
                                 firstUpgradeStatus.GetComponent<Text>().color = new Color32(0, 255, 0, 255);
                             }
