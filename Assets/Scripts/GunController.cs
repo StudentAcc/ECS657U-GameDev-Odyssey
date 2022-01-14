@@ -43,16 +43,30 @@ public class GunController : MonoBehaviour
             fireRate = 3f;
         }
 
+        if (gunUpgrade == 3)
+        {
+            fireRate = 50f;
+        }
+
         if (shoot && Time.time >= nextTimeToFire)
         {
-            if (m_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle") == true) //allows shooting only when the gun is in "idle" animation
-            {
+            //if (m_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle") == true) //allows shooting only when the gun is in "idle" animation
+            //{
                 if (!PauseMenu.activeInHierarchy && !ControlsMenu.activeInHierarchy && !VolumeMenu.activeInHierarchy)
                 {
-                    muzzleFlash.Play();
-                
-                    m_animator.SetTrigger("Shoot");
+
+                    if (gunUpgrade == 3)
+                    {
+                        m_animator.SetTrigger("AutoShoot");
+                    }
+                    else
+                    {
+                        m_animator.SetTrigger("Shoot");
+                    }
+                        
                     nextTimeToFire = Time.time + 1f / fireRate;
+
+
 
                     if (gunUpgrade < 2)
                     {
@@ -62,6 +76,9 @@ public class GunController : MonoBehaviour
                     RaycastHit hit;
                     if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
                     {
+                        GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                        Destroy(impactGO, 2f);
+
                         Debug.Log(hit.transform.name);
 
                         EnemyStats enemy = hit.transform.GetComponent<EnemyStats>();
@@ -75,8 +92,7 @@ public class GunController : MonoBehaviour
                             hit.rigidbody.AddForce(-hit.normal * impactForce);
                         }
 
-                        GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-                        Destroy(impactGO, 2f);
+                        
 
                     }
                 }
@@ -84,7 +100,7 @@ public class GunController : MonoBehaviour
                 { 
                     shoot = false; 
                 }
-            }
+            //}
         }
 
     }
@@ -127,12 +143,19 @@ public class GunController : MonoBehaviour
 
     public void OnShootHold()
     {
+        Debug.Log("This should not be reapeating mate");
         shoot = true;
     }
 
     public void OnShootStop()
     {
         Debug.Log("you have let go of the shoot button");
+        m_animator.SetBool("AutoShoot", false);
         shoot = false;
+    }
+
+    public void playMuzzleFlash()
+    {
+        muzzleFlash.Play();
     }
 }
