@@ -15096,9 +15096,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotatingDoor: {fileID: 1138093934}
-  maximumOpening: 1
-  maximumClosing: 92
-  movementSpeed: 50
+  maximumOpening: 5
+  maximumClosing: 90
+  movementSpeed: 100
 --- !u!65 &1107326615
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15170,8 +15170,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107326613}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 40.820007, y: -12.889999, z: -0.41000366}
-  m_LocalScale: {x: 35, y: 15, z: -25}
+  m_LocalPosition: {x: 44.2, y: -12.889999, z: -0.41000366}
+  m_LocalScale: {x: 50, y: 15, z: 75}
   m_Children: []
   m_Father: {fileID: 543450652593658371}
   m_RootOrder: 8

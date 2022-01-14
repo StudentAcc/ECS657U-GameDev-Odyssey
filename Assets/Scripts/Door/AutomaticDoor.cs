@@ -5,10 +5,10 @@ public class AutomaticDoor : MonoBehaviour
 
     public GameObject rotatingDoor;
 
-    public float maximumOpening = 1f;
-    public float maximumClosing = 92f;
+    public float maximumOpening;
+    public float maximumClosing;
 
-    public float movementSpeed = 50f;
+    public float movementSpeed;
 
     bool playerIsHere;
 
