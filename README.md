@@ -7,32 +7,32 @@ Note, the firearm runs on oxygen which makes reloading unecessary. But shoot spa
 
 You are not expected to survive.
 
-**Keyboard + Mouse (Keyboard keys can be rebinded)**
-Shoot - Left Mouse Button
-Look - Mouse
-Movement - W/A/S/D
-Jump - Space
-Sprint - Left Shift
-Pickup - E
-Inventory - Tab
-Pause - P
-
-**Controller (Xbox / PlayStation)**
-Shoot - Right Trigger
-Look - Right Stick
-Movement - Left Stick
-Jump - A / X
-Sprint - Hold Left Stick
-Pickup - Left Trigger
-Inventory - B / O
-Pause - Start Button
-
-**Assets Used**
-Unity Technologies - Creator Kit: FPS - https://assetstore.unity.com/packages/templates/tutorials/creator-kit-fps-149310
-pdkmusic - Sci-Fi Music Pack 1 - https://assetstore.unity.com/packages/audio/music/sci-fi-music-pack-1-105576
-Nox_Sound - Footsteps - Essentials - https://assetstore.unity.com/packages/audio/sound-fx/foley/footsteps-essentials-189879
-Dustyroom - FREE Casual Game SFX Pack - https://assetstore.unity.com/packages/audio/sound-fx/free-casual-game-sfx-pack-54116
-Rizwan Ashraf - Free Music Tracks For Games - https://assetstore.unity.com/packages/audio/music/free-music-tracks-for-games-156413
-LowlyPoly - Free Stylized Textures - https://assetstore.unity.com/packages/2d/textures-materials/free-stylized-textures-204742
-karboosx - Sci-Fi Styled Modular Pack - https://assetstore.unity.com/packages/3d/environments/sci-fi/sci-fi-styled-modular-pack-82913
-GlowFox Games - Texture Glass Transparent Window - https://assetstore.unity.com/packages/2d/textures-materials/texture-glass-transparent-window-182052
+**Keyboard + Mouse (Keyboard keys can be rebinded)**  
+Shoot - Left Mouse Button  
+Look - Mouse  
+Movement - W/A/S/D  
+Jump - Space  
+Sprint - Left Shift  
+Pickup - E  
+Inventory - Tab  
+Pause - P  
+  
+**Controller (Xbox / PlayStation)**  
+Shoot - Right Trigger  
+Look - Right Stick  
+Movement - Left Stick  
+Jump - A / X  
+Sprint - Hold Left Stick  
+Pickup - Left Trigger  
+Inventory - B / O  
+Pause - Start Button  
+  
+**Assets Used**  
+Unity Technologies - Creator Kit: FPS - https://assetstore.unity.com/packages/templates/tutorials/creator-kit-fps-149310  
+pdkmusic - Sci-Fi Music Pack 1 - https://assetstore.unity.com/packages/audio/music/sci-fi-music-pack-1-105576  
+Nox_Sound - Footsteps - Essentials - https://assetstore.unity.com/packages/audio/sound-fx/foley/footsteps-essentials-189879  
+Dustyroom - FREE Casual Game SFX Pack - https://assetstore.unity.com/packages/audio/sound-fx/free-casual-game-sfx-pack-54116  
+Rizwan Ashraf - Free Music Tracks For Games - https://assetstore.unity.com/packages/audio/music/free-music-tracks-for-games-156413  
+LowlyPoly - Free Stylized Textures - https://assetstore.unity.com/packages/2d/textures-materials/free-stylized-textures-204742  
+karboosx - Sci-Fi Styled Modular Pack - https://assetstore.unity.com/packages/3d/environments/sci-fi/sci-fi-styled-modular-pack-82913  
+GlowFox Games - Texture Glass Transparent Window - https://assetstore.unity.com/packages/2d/textures-materials/texture-glass-transparent-window-182052  
