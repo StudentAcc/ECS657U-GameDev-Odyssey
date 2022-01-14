@@ -23227,7 +23227,7 @@ MonoBehaviour:
   VolumeMenu: {fileID: 1350257332}
   PauseMenu: {fileID: 1898115508}
   ControlsMenu: {fileID: 958650714}
-  gunUpgrade: 3
+  gunUpgrade: 0
 --- !u!95 &1656666395
 Animator:
   serializedVersion: 3
@@ -60054,6 +60054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpRange: 5
+  interactions: {fileID: 0}
   batteryImage: {fileID: 0}
   batteryStatus: {fileID: 0}
   batteryFinal: {fileID: 0}
