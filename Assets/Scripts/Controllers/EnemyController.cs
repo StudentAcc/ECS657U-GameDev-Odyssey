@@ -9,8 +9,8 @@ public class EnemyController : MonoBehaviour
     public float lookRadius = 10f;
     public ParticleSystem attackAnimationParticles;
     public bool wandering = true;
-    public Vector3 centrePoint = new Vector3(1000f, 150f, 1000f);
-    public Vector3 boundaryPoint = new Vector3(0, 150f, 2000);
+    public Vector3 boundaryPointS = new Vector3(1000f, 150f, 1000f);
+    public Vector3 boundaryPointL = new Vector3(0, 150f, 2000);
     public float agroTimeLimit = 5f;
 
     float baseLookRadius;
@@ -25,7 +25,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         baseLookRadius = lookRadius;
-        wanderPoint = new Vector3(Random.Range(centrePoint.x, boundaryPoint.x), 150, Random.Range(centrePoint.z, boundaryPoint.z));
+        wanderPoint = getRandomCoordinate();
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
         combat = GetComponent<CharacterCombat>();
@@ -44,7 +44,7 @@ public class EnemyController : MonoBehaviour
             idle = false;
             //Debug.Log("2");
             if (distance - 1 <= agent.stoppingDistance)
-            { 
+            {
 
                 //Attack the target
                 //Debug.Log("1");
@@ -67,14 +67,16 @@ public class EnemyController : MonoBehaviour
                 FaceTarget();
 
             }
-        } else if (wandering) {
+        }
+        else if (wandering)
+        {
 
             if (idle == false && (Vector3.Distance(lastTargetPoint, transform.position) - 1 <= agent.stoppingDistance))
             {
                 StartCoroutine(delay(1f));
                 idle = true;
                 SetDestination(wanderPoint);
-                //Debug.Log("log1" + idle.ToString());
+                Debug.Log("log1" + idle.ToString());
             }
             else if (idle)
             {
@@ -82,7 +84,7 @@ public class EnemyController : MonoBehaviour
                 if (distanceWander - 1 <= agent.stoppingDistance || !(agent.hasPath))
                 {
                     //Debug.Log("log2");
-                    wanderPoint = new Vector3(Random.Range(centrePoint.x, boundaryPoint.x), 150, Random.Range(centrePoint.z, boundaryPoint.z));
+                    wanderPoint = getRandomCoordinate();
                     SetDestination(wanderPoint);
                     //Debug.Log(wanderPoint);
                 }
@@ -93,11 +95,34 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    Vector3 getRandomCoordinate()
+    {
+        Vector3 randomCoord = new Vector3(0,0,0);
+        bool valid = false;
+        //RaycastHit hit = new RaycastHit();
+        while (!valid)
+        {
+            //randomCoord = new Vector3(Random.Range(boundaryPointS.x, boundaryPointL.x), 500, Random.Range(boundaryPointS.z, boundaryPointL.z));
+            randomCoord = (Random.insideUnitSphere * 100) + transform.position;
+            
+            if (boundaryPointS.x < randomCoord.x && randomCoord.x < boundaryPointL.x && boundaryPointS.z < randomCoord.x && randomCoord.x < boundaryPointL.z)
+            {
+                valid = true;
+            }
+            //Ray ray = new Ray(randomCoord, Vector3.down);
+            //valid = Physics.Raycast(ray, out hit, 500, LayerMask.GetMask("Ground"));
+        }
+        //Debug.Log("hit");
+        //Debug.Log(randomCoord);
+        //return hit.point;
+        return randomCoord;
+    }
+
     void SetDestination(Vector3 targetDestination)
     {
         NavMeshHit hit;
         //Debug.Log(targetDestination);
-        if (NavMesh.SamplePosition(targetDestination, out hit, 1f, NavMesh.AllAreas))
+        if (NavMesh.SamplePosition(targetDestination, out hit, 50f, NavMesh.AllAreas))
         {
             //Debug.Log("hit");
             agent.SetDestination(hit.position);
@@ -107,7 +132,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    void FaceTarget ()
+    void FaceTarget()
     {
         Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
@@ -133,7 +158,7 @@ public class EnemyController : MonoBehaviour
         yield return new WaitForSeconds(Duration);
     }
 
-    void OnDrawGizmosSelected() 
+    void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
