@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class Pickup : MonoBehaviour {
     public float pickUpRange = 5;
@@ -16,6 +18,10 @@ public class Pickup : MonoBehaviour {
     public GameObject fusionCoreImage;
     public GameObject fusionCoreStatus;
     public GameObject fusionCoreFinal;
+    public GameObject firstUpgradeStatus;
+    public GameObject secondUpgradeStatus;
+    public GameObject thirdUpgradeStatus;
+    private int stashedParts = 0;
     
     void Update() {
         if(pickup) {
@@ -48,6 +54,19 @@ public class Pickup : MonoBehaviour {
                             Destroy(obj);
                             batteryStatus.GetComponent<Text>().text = "Stashed";
                             batteryFinal.SetActive(true);
+                            stashedParts += 1;
+                            if(stashedParts == 1 ) {
+                                firstUpgradeStatus.GetComponent<Text>().text = "Upgraded";
+                                firstUpgradeStatus.GetComponent<Text>().color = new Color32(0, 255, 0, 255);
+                            }
+                            if(stashedParts == 2 ) {
+                                secondUpgradeStatus.GetComponent<Text>().text = "Upgraded";
+                                secondUpgradeStatus.GetComponent<Text>().color = new Color32(0, 255, 0, 255);
+                            }
+                            if(stashedParts == 3 ) {
+                                thirdUpgradeStatus.GetComponent<Text>().text = "Upgraded";
+                                thirdUpgradeStatus.GetComponent<Text>().color = new Color32(0, 255, 0, 255);
+                            }
                         }
                     }
                     if(obj.name == "GeneratorDark") {
@@ -55,6 +74,19 @@ public class Pickup : MonoBehaviour {
                             Destroy(obj);
                             generatorStatus.GetComponent<Text>().text = "Stashed";
                             generatorFinal.SetActive(true);
+                            stashedParts += 1;
+                            if(stashedParts == 1 ) {
+                                firstUpgradeStatus.GetComponent<Text>().text = "Upgraded";
+                                firstUpgradeStatus.GetComponent<Text>().color = new Color32(0, 255, 0, 255);
+                            }
+                            if(stashedParts == 2 ) {
+                                secondUpgradeStatus.GetComponent<Text>().text = "Upgraded";
+                                secondUpgradeStatus.GetComponent<Text>().color = new Color32(0, 255, 0, 255);
+                            }
+                            if(stashedParts == 3 ) {
+                                thirdUpgradeStatus.GetComponent<Text>().text = "Upgraded";
+                                thirdUpgradeStatus.GetComponent<Text>().color = new Color32(0, 255, 0, 255);
+                            }
                         }
                     }
                     if(obj.name == "RotorDark") {
@@ -62,6 +94,19 @@ public class Pickup : MonoBehaviour {
                             Destroy(obj);
                             rotorStatus.GetComponent<Text>().text = "Stashed";
                             rotorFinal.SetActive(true);
+                            stashedParts += 1;
+                            if(stashedParts == 1 ) {
+                                firstUpgradeStatus.GetComponent<Text>().text = "Upgraded";
+                                firstUpgradeStatus.GetComponent<Text>().color = new Color32(0, 255, 0, 255);
+                            }
+                            if(stashedParts == 2 ) {
+                                secondUpgradeStatus.GetComponent<Text>().text = "Upgraded";
+                                secondUpgradeStatus.GetComponent<Text>().color = new Color32(0, 255, 0, 255);
+                            }
+                            if(stashedParts == 3 ) {
+                                thirdUpgradeStatus.GetComponent<Text>().text = "Upgraded";
+                                thirdUpgradeStatus.GetComponent<Text>().color = new Color32(0, 255, 0, 255);
+                            }
                         }
                     }
                     if(obj.name == "FusionCoreDark") {
@@ -69,9 +114,25 @@ public class Pickup : MonoBehaviour {
                             Destroy(obj);
                             fusionCoreStatus.GetComponent<Text>().text = "Stashed";
                             fusionCoreFinal.SetActive(true);
+                            stashedParts += 1;
+                            if(stashedParts == 1 ) {
+                                firstUpgradeStatus.GetComponent<Text>().text = "Upgraded";
+                                firstUpgradeStatus.GetComponent<Text>().color = new Color32(0, 255, 0, 255);
+                            }
+                            if(stashedParts == 2 ) {
+                                secondUpgradeStatus.GetComponent<Text>().text = "Upgraded";
+                                secondUpgradeStatus.GetComponent<Text>().color = new Color32(0, 255, 0, 255);
+                            }
+                            if(stashedParts == 3 ) {
+                                thirdUpgradeStatus.GetComponent<Text>().text = "Upgraded";
+                                thirdUpgradeStatus.GetComponent<Text>().color = new Color32(0, 255, 0, 255);
+                            }
                         }
                     }
                 }
+            }
+            if (stashedParts == 4) {
+                SceneManager.LoadScene("WinScreen");
             }
             pickup = false;
         }
