@@ -137,7 +137,6 @@ public class Pickup : MonoBehaviour {
                 }
                 if (obj.tag == "AI") 
                 {
-                    Debug.Log("pussio");
                     if (stashedParts == 0)
                     {
                         audio.playFirstStashedVoice();
