@@ -117,8 +117,8 @@ public class EnemyController : MonoBehaviour
             //Debug.Log(randomCoord);
             //Debug.Log(boundaryPointS.x < randomCoord.x);
             //Debug.Log(randomCoord.x < boundaryPointL.x);
-            //Debug.Log(boundaryPointS.z < randomCoord);
-            //Debug.Log(randomCoord.x < boundaryPointL.z);
+            //Debug.Log(boundaryPointS.z < randomCoord.z);
+            //Debug.Log(randomCoord.z < boundaryPointL.z);
             //valid = true;
             //Ray ray = new Ray(randomCoord, Vector3.down);
             //valid = Physics.Raycast(ray, out hit, 500, LayerMask.GetMask("Ground"));
