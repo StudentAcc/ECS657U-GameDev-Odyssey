@@ -36,6 +36,12 @@ ModelImporter:
   - first:
       74: -6544428077046268240
     second: Armature|Walk.001
+  - first:
+      74: -1978303741906493279
+    second: Armature|idle
+  - first:
+      74: 1472749881304621239
+    second: Armature|idle.001
   externalObjects: {}
   materials:
     materialImportMode: 2

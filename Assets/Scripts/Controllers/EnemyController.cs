@@ -71,7 +71,7 @@ public class EnemyController : MonoBehaviour
         else if (wandering)
         {
 
-            if (idle == false && (Vector3.Distance(lastTargetPoint, transform.position) - 1 <= agent.stoppingDistance))
+            if (idle == false && (Vector3.Distance(lastTargetPoint, transform.position) - 15 <= agent.stoppingDistance))
             {
                 StartCoroutine(delay(1f));
                 idle = true;
@@ -81,7 +81,7 @@ public class EnemyController : MonoBehaviour
             else if (idle)
             {
                 float distanceWander = Vector3.Distance(wanderPoint, transform.position);
-                if (distanceWander - 1 <= agent.stoppingDistance || !(agent.hasPath))
+                if (distanceWander - 15 <= agent.stoppingDistance || !(agent.hasPath))
                 {
                     //Debug.Log("log2");
                     wanderPoint = getRandomCoordinate();
@@ -105,10 +105,21 @@ public class EnemyController : MonoBehaviour
             //randomCoord = new Vector3(Random.Range(boundaryPointS.x, boundaryPointL.x), 500, Random.Range(boundaryPointS.z, boundaryPointL.z));
             randomCoord = (Random.insideUnitSphere * 100) + transform.position;
             
-            if (boundaryPointS.x < randomCoord.x && randomCoord.x < boundaryPointL.x && boundaryPointS.z < randomCoord.x && randomCoord.x < boundaryPointL.z)
+            if (boundaryPointS.x < randomCoord.x && randomCoord.x < boundaryPointL.x && boundaryPointS.z < randomCoord.z && randomCoord.z < boundaryPointL.z)
             {
                 valid = true;
             }
+            //Debug.Log("start");
+            //Debug.Log(boundaryPointS.x);
+            //Debug.Log(boundaryPointS.z);
+            //Debug.Log(boundaryPointL.x);
+            //Debug.Log(boundaryPointL.z);
+            //Debug.Log(randomCoord);
+            //Debug.Log(boundaryPointS.x < randomCoord.x);
+            //Debug.Log(randomCoord.x < boundaryPointL.x);
+            //Debug.Log(boundaryPointS.z < randomCoord);
+            //Debug.Log(randomCoord.x < boundaryPointL.z);
+            //valid = true;
             //Ray ray = new Ray(randomCoord, Vector3.down);
             //valid = Physics.Raycast(ray, out hit, 500, LayerMask.GetMask("Ground"));
         }
