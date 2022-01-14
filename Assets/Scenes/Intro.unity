@@ -621,7 +621,7 @@ MonoBehaviour:
   startColour: {r: 0.19607845, g: 0.19607845, b: 0.19607845, a: 0}
   endColour: {r: 0.19607845, g: 0.19607845, b: 0.19607845, a: 1}
   fadeInTime: 20
-  fadeDelay: 36.5
+  fadeDelay: 37
   text: {fileID: 0}
 --- !u!1 &493153539
 GameObject:
@@ -1306,7 +1306,7 @@ MonoBehaviour:
   startColour: {r: 1, g: 1, b: 1, a: 0}
   endColour: {r: 1, g: 1, b: 1, a: 1}
   fadeInTime: 20
-  fadeDelay: 36.5
+  fadeDelay: 37
   image: {fileID: 0}
   primaryButton: {fileID: 1452136994}
 --- !u!1 &1464887892
