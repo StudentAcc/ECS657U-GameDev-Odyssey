@@ -17,6 +17,8 @@ public class AutomaticDoor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audio.playDoorSFX();
+        audio.pauseDoorSFX();
         playerIsHere = false;
     }
 
@@ -28,15 +30,22 @@ public class AutomaticDoor : MonoBehaviour
             if (rotatingDoor.transform.rotation.eulerAngles.z > maximumOpening)
             {
                 rotatingDoor.transform.Rotate(0f, 0f, -movementSpeed * Time.deltaTime);
-                audio.playDoorSFX();
+                audio.resumeDoorSFX();
             }
-
+            else
+            {
+                audio.pauseDoorSFX();
+            }
         }
         else {
             if (rotatingDoor.transform.rotation.eulerAngles.z < maximumClosing)
             {
                 rotatingDoor.transform.Rotate(0f, 0f, movementSpeed * Time.deltaTime);
-                audio.playDoorSFX();
+                audio.resumeDoorSFX();
+            }
+            else
+            {
+                audio.pauseDoorSFX();
             }
         }
     }
