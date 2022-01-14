@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class MenuButtons : MonoBehaviour
 {
-    public GameObject MainMenuCanvas, ControlsMenuCanvas, VolumeMenuCanvas, MainCanvasFirstButton, ControlsCanvasFirstButton, ControlsCanvasClosedButton, VolumeCanvasFirstButton, VolumeCanvasClosedButton;
+    public GameObject MainMenuCanvas, ControlsMenuCanvas, VolumeMenuCanvas, DifficultyMenuCanvas,  MainCanvasFirstButton, ControlsCanvasFirstButton, ControlsCanvasClosedButton, VolumeCanvasFirstButton, VolumeCanvasClosedButton, DifficultyCanvasFirstButton, DifficultyCanvasClosedButton;
 
     public void RestartGame()
     {
@@ -66,6 +66,29 @@ public class MenuButtons : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(VolumeCanvasClosedButton);
         MainMenuCanvas.SetActive(true);
+    }
+
+    public void OpenDifficultyCanvas()
+    {
+        DifficultyMenuCanvas.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(DifficultyCanvasFirstButton);
+        MainMenuCanvas.SetActive(false);
+        // Cursor.visible = true;
+        // Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void CloseDifficultyCanvas()
+    {
+        DifficultyMenuCanvas.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(DifficultyCanvasClosedButton);
+        MainMenuCanvas.SetActive(true);
+    }
+
+    public void ChosenDifficulty()
+    {
+        // it's ok
     }
 
     public void StartGame()
