@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class MouseLook : MonoBehaviour {
 
     //initialises user's mouse sensitivty
-    public float sensitivityX;
-    public float sensitivityY;
+    public float sensitivityX = 5f;
+    public float sensitivityY = 5f;
     float mouseX, mouseY;
 
     //initialises sensitivity slider in controls menu
