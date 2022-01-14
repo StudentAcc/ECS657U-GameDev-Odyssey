@@ -117,13 +117,18 @@ public class AudioManager : MonoBehaviour
         soundEffectsAudio[3].Play(0);
     }
 
+    public void resumeDoorSFX()
+    {
+        soundEffectsAudio[5].UnPause();
+    }
+
+    public void pauseDoorSFX()
+    {
+        soundEffectsAudio[5].Pause();
+    }
+
     public void playDoorSFX()
     {
         soundEffectsAudio[5].Play(0);
-    }
-
-    public void stopDoorSFX()
-    {
-        soundEffectsAudio[5].Stop();
     }
 }
