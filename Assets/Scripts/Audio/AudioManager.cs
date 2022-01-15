@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
-    int stashedVoice = 6;
-
     //attempts to see if this run is the player's first time playing
     private static readonly string FirstPlay = "FirstPlay";
     private int firstPlayInt;

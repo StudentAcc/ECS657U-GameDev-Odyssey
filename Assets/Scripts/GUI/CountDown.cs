@@ -9,7 +9,7 @@ public class CountDown : MonoBehaviour
     // Oxygen timer goes red and plays sound when time is low
     [SerializeField] Image timeImage;
     [SerializeField] Text timeText;
-    [SerializeField] float duration;
+    public float duration;
     public float currentTime;
     [SerializeField] float decreaseByShooting;
     [SerializeField] float decreaseBySprinting;

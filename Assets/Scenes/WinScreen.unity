@@ -453,17 +453,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 433487028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a420fa607a2fe1b42b720f3bfda574fd, type: 3}
+  m_Script: {fileID: 11500000, guid: cda602f908af91940950f5a2e8cab7bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenuCanvas: {fileID: 0}
-  ControlsMenuCanvas: {fileID: 0}
-  VolumeMenuCanvas: {fileID: 0}
-  MainCanvasFirstButton: {fileID: 0}
-  ControlsCanvasFirstButton: {fileID: 0}
-  ControlsCanvasClosedButton: {fileID: 0}
-  VolumeCanvasFirstButton: {fileID: 0}
-  VolumeCanvasClosedButton: {fileID: 0}
 --- !u!1 &521140569
 GameObject:
   m_ObjectHideFlags: 0
@@ -910,7 +902,6 @@ GameObject:
   - component: {fileID: 1177050430}
   - component: {fileID: 1177050429}
   - component: {fileID: 1177050428}
-  - component: {fileID: 1177050431}
   m_Layer: 5
   m_Name: PlayAgainButton
   m_TagString: Untagged
@@ -982,9 +973,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1177050431}
-        m_TargetAssemblyTypeName: LoseScreen, Assembly-CSharp
-        m_MethodName: RestartGame
+      - m_Target: {fileID: 433487033}
+        m_TargetAssemblyTypeName: IntroStartGame, Assembly-CSharp
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1044,26 +1035,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177050426}
   m_CullTransparentMesh: 1
---- !u!114 &1177050431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1177050426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a420fa607a2fe1b42b720f3bfda574fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainMenuCanvas: {fileID: 0}
-  ControlsMenuCanvas: {fileID: 0}
-  VolumeMenuCanvas: {fileID: 0}
-  MainCanvasFirstButton: {fileID: 0}
-  ControlsCanvasFirstButton: {fileID: 0}
-  ControlsCanvasClosedButton: {fileID: 0}
-  VolumeCanvasFirstButton: {fileID: 0}
-  VolumeCanvasClosedButton: {fileID: 0}
 --- !u!1 &1226951698
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,7 +1406,6 @@ GameObject:
   - component: {fileID: 1580851267}
   - component: {fileID: 1580851266}
   - component: {fileID: 1580851265}
-  - component: {fileID: 1580851264}
   m_Layer: 5
   m_Name: MainMenuButton
   m_TagString: Untagged
@@ -1463,26 +1433,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.000061035156, y: -113}
   m_SizeDelta: {x: 200.0227, y: 40.9153}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1580851264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1580851262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a420fa607a2fe1b42b720f3bfda574fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainMenuCanvas: {fileID: 0}
-  ControlsMenuCanvas: {fileID: 0}
-  VolumeMenuCanvas: {fileID: 0}
-  MainCanvasFirstButton: {fileID: 0}
-  ControlsCanvasFirstButton: {fileID: 0}
-  ControlsCanvasClosedButton: {fileID: 0}
-  VolumeCanvasFirstButton: {fileID: 0}
-  VolumeCanvasClosedButton: {fileID: 0}
 --- !u!114 &1580851265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1527,8 +1477,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1580851264}
-        m_TargetAssemblyTypeName: MenuButtons, Assembly-CSharp
+      - m_Target: {fileID: 433487033}
+        m_TargetAssemblyTypeName: IntroStartGame, Assembly-CSharp
         m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:

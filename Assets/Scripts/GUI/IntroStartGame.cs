@@ -11,4 +11,9 @@ public class IntroStartGame : MonoBehaviour {
         {
             SceneManager.LoadScene("Prototype");
         }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
