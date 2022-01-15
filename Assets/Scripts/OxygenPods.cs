@@ -7,6 +7,7 @@ public class OxygenPods : MonoBehaviour
     [SerializeField] int OxygenReplenish;
 
     bool playerIsHere;
+    public AudioManager Audio;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,7 @@ public class OxygenPods : MonoBehaviour
         if (playerIsHere)
         {
             GameObject.Find("OxygenBackground").GetComponent<CountDown>().onCollisionOxygenPodsReplenishOxygen(OxygenReplenish);
-
+            Audio.playPickUpOxygenTanksSFX();
             Destroy(gameObject);
         }
     }
