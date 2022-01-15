@@ -13,12 +13,12 @@ public class CountDown : MonoBehaviour
     public float currentTime;
     [SerializeField] float decreaseByShooting;
     [SerializeField] float decreaseBySprinting;
-
+    public AudioManager Audio;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
         currentTime = duration;
         timeText.text = currentTime.ToString();
         StartCoroutine(TimeIEn());
@@ -44,8 +44,6 @@ public class CountDown : MonoBehaviour
             timeText.text = currentTime.ToString();
             yield return new WaitForSeconds(1f);
             currentTime--;
-
-
 
         }
         Cursor.visible = true;

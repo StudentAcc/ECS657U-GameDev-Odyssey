@@ -21,6 +21,7 @@ public class GunController : MonoBehaviour
     public GameObject VolumeMenu;
     public GameObject PauseMenu;
     public GameObject ControlsMenu;
+    public GameObject DifficultyMenu;
 
     public int gunUpgrade = 0;
 
@@ -52,7 +53,7 @@ public class GunController : MonoBehaviour
         {
             //if (m_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle") == true) //allows shooting only when the gun is in "idle" animation
             //{
-                if (!PauseMenu.activeInHierarchy && !ControlsMenu.activeInHierarchy && !VolumeMenu.activeInHierarchy)
+                if (!PauseMenu.activeInHierarchy && !ControlsMenu.activeInHierarchy && !VolumeMenu.activeInHierarchy && !DifficultyMenu.activeInHierarchy)
                 {
 
                     if (gunUpgrade == 3)
@@ -146,13 +147,11 @@ public class GunController : MonoBehaviour
 
     public void OnShootHold()
     {
-        Debug.Log("This should not be reapeating mate");
         shoot = true;
     }
 
     public void OnShootStop()
     {
-        Debug.Log("you have let go of the shoot button");
         m_animator.SetBool("AutoShoot", false);
         shoot = false;
     }
