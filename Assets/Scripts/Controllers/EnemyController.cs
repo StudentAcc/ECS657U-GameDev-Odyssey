@@ -33,6 +33,33 @@ public class EnemyController : MonoBehaviour
         combat = GetComponent<CharacterCombat>();
         idle = true;
         SetDestination(wanderPoint);
+
+        if (PlayerPrefs.GetString("Difficulty") == "Easy")
+        {
+            Debug.Log("Easy");
+            agent.speed = 12;
+            lookRadius = 10;
+
+        }
+        else if (PlayerPrefs.GetString("Difficulty") == "Normal")
+        {
+            Debug.Log("Normal");
+            agent.speed = 20;
+            lookRadius = 20;
+
+        }
+        else if (PlayerPrefs.GetString("Difficulty") == "Hard")
+        {
+            Debug.Log("Hard");
+            agent.speed = 30;
+            lookRadius = 30;
+
+        }
+        else
+        {
+            Debug.Log(PlayerPrefs.GetString("Difficulty"));
+        }
+
     }
 
     // Update is called once per frame

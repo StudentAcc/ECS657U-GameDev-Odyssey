@@ -30,7 +30,7 @@ public class Spawner : MonoBehaviour
         }
         else if (PlayerPrefs.GetString("Difficulty") == "Normal")
         {
-            Debug.Log("Medium");
+            Debug.Log("Normal");
             spawnAmount[0] = 1;
             spawnAmount[1] = 1;
             spawnAmount[2] = 1;
