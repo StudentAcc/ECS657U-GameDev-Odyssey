@@ -36,21 +36,21 @@ public class EnemyController : MonoBehaviour
 
         if (PlayerPrefs.GetString("Difficulty") == "Easy")
         {
-            Debug.Log("Easy");
+            //Debug.Log("Easy");
             agent.speed = 12;
             lookRadius = 10;
 
         }
         else if (PlayerPrefs.GetString("Difficulty") == "Normal")
         {
-            Debug.Log("Normal");
+            //Debug.Log("Normal");
             agent.speed = 17;
             lookRadius = 20;
 
         }
         else if (PlayerPrefs.GetString("Difficulty") == "Hard")
         {
-            Debug.Log("Hard");
+            //Debug.Log("Hard");
             agent.speed = 25;
             lookRadius = 40;
 
