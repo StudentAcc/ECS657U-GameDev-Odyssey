@@ -12,6 +12,7 @@ public class Spawner : MonoBehaviour
 	public Vector3[] spawnBoundsA;
 	public Vector3[] spawnBoundsB;
 	public Vector3 position;
+	public bool hideOriginal = true;
 	int randomInt;
 
 
@@ -46,6 +47,14 @@ public class Spawner : MonoBehaviour
 				Instantiate(spawnees[randomInt], hit.point + new Vector3(0, 2, 0), Quaternion.identity, GameObject.Find(spawnParent[randomInt]).GetComponent<Transform>());
 				spawnAmount[randomInt]--;
 				spawned++;
+			}
+		}
+
+		if (hideOriginal)
+        {
+			foreach (GameObject spawnee in spawnees)
+			{
+				spawnee.SetActive(false);
 			}
 		}
 	}
