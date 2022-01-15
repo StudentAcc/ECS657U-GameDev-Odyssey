@@ -36,4 +36,4 @@ Rizwan Ashraf - Free Music Tracks For Games - https://assetstore.unity.com/packa
 LowlyPoly - Free Stylized Textures - https://assetstore.unity.com/packages/2d/textures-materials/free-stylized-textures-204742  
 karboosx - Sci-Fi Styled Modular Pack - https://assetstore.unity.com/packages/3d/environments/sci-fi/sci-fi-styled-modular-pack-82913  
 GlowFox Games - Texture Glass Transparent Window - https://assetstore.unity.com/packages/2d/textures-materials/texture-glass-transparent-window-182052  
-Score and Times - Game Sound Solutions - https://assetstore.unity.com/packages/audio/sound-fx/score-and-time-59255  
+Game Sound Solutions - Score and Times - https://assetstore.unity.com/packages/audio/sound-fx/score-and-time-59255  
