@@ -85,6 +85,7 @@ public class EnemyController : MonoBehaviour
             if (idle == false && Vector3.Distance(lastTargetPoint, transform.position) - 1 <= agent.stoppingDistance)
             {
                 agent.Stop();
+                agent.ResetPath();
                 StartCoroutine(delay(1f));
                 idle = true;
                 wanderPoint = getRandomCoordinate();
@@ -117,6 +118,13 @@ public class EnemyController : MonoBehaviour
         {
             //randomCoord = new Vector3(Random.Range(boundaryPointS.x, boundaryPointL.x), 500, Random.Range(boundaryPointS.z, boundaryPointL.z));
             randomCoord = (Random.insideUnitSphere * 50) + transform.position;
+            
+            if (transform.position.x < boundaryPointS.x)
+            {
+                randomCoord.x += boundaryPointS.x - transform.position.x;
+            } else if (transform.position.z < boundaryPointS.z) {
+                randomCoord.z += boundaryPointS.z - transform.position.z;
+            }
             
             if (boundaryPointS.x < randomCoord.x && randomCoord.x < boundaryPointL.x && boundaryPointS.z < randomCoord.z && randomCoord.z < boundaryPointL.z)
             {
