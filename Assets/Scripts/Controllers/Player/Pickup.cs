@@ -163,6 +163,8 @@ public class Pickup : MonoBehaviour {
             }
             if (stashedParts == 4) {
                 SceneManager.LoadScene("WinScreen");
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
             }
             pickup = false;
         }
