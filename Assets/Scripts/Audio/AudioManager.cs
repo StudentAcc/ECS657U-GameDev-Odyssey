@@ -27,6 +27,7 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        backgroundAudio.Play(0);
         firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
         //if this is player's first time playing, sets volume to default values and sets them in 'PlayerPrefs' variable
         if (firstPlayInt == 0)
@@ -99,12 +100,18 @@ public class AudioManager : MonoBehaviour
     public void pauseMusic()
     {
         backgroundAudio.Pause();
+        Debug.Log("uh oh");
     }
 
     //unpauses the music
     public void unpauseMusic()
     {
         backgroundAudio.UnPause();
+    }
+
+    public void playGunShotSFX()
+    {
+        soundEffectsAudio[0].Play(0);
     }
 
     //plays the menu click sound effect
