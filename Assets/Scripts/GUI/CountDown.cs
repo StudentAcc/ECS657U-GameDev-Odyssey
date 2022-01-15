@@ -18,9 +18,22 @@ public class CountDown : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         currentTime = duration;
         timeText.text = currentTime.ToString();
         StartCoroutine(TimeIEn());
+    }
+
+    void Update()
+    {
+        if (currentTime <= 60)
+        {
+            timeImage.GetComponent<Image>().color = new Color32(255, 0, 0, 225);
+        }
+        else
+        {
+            timeImage.GetComponent<Image>().color = new Color32(255, 255, 255, 225);
+        }
     }
 
     IEnumerator TimeIEn()
@@ -33,11 +46,7 @@ public class CountDown : MonoBehaviour
             currentTime--;
 
 
-            if (currentTime <= 20)
-            {
-                timeImage.GetComponent<Image>().color = new Color32(255, 0, 0, 225);
 
-            }
         }
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
