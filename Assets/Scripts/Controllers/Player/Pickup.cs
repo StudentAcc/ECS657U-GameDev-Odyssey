@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
 public class Pickup : MonoBehaviour {
+    // Collecting and stashing spaceship parts
     public float pickUpRange = 5;
     bool pickup;
     public GameObject batteryImage;
@@ -196,6 +197,7 @@ public class Pickup : MonoBehaviour {
                         }
                     }
                 }
+                // When player interacts with AI sphere, different dialogue is spoken based on how many parts stashed
                 if (obj.tag == "AI") 
                 {
                     if (stashedParts == 0)

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerStats : CharacterStats
 {
+    // Stats for player component, child of CharacterStats
     int regeneration = 1;
     float regenerationRate; //time in seconds
     private float second;

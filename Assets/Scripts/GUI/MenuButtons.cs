@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class MenuButtons : MonoBehaviour
 {
+    // Main menu actions
     public GameObject MainMenuCanvas, ControlsMenuCanvas, VolumeMenuCanvas, DifficultyMenuCanvas,  MainCanvasFirstButton, ControlsCanvasFirstButton, ControlsCanvasClosedButton, VolumeCanvasFirstButton, VolumeCanvasClosedButton, DifficultyCanvasFirstButton, DifficultyCanvasClosedButton;
     public Slider mouseSensitivitySlider;
     public Text DifficultyStatusText;
@@ -19,7 +20,7 @@ public class MenuButtons : MonoBehaviour
     void Start()
     {
         firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
-        //if this is player's first time playing, initialises difficulty to 'Easy' and mouse sensitivity to '2f'
+        // If this is first time playing, initialises difficulty to 'Easy' and mouse sensitivity to '2f'
         if (firstPlayInt == 0)
         {
             PlayerPrefs.SetString("Difficulty", "Normal");
@@ -29,6 +30,7 @@ public class MenuButtons : MonoBehaviour
         else
         {
             mouseSensitivitySlider.value = PlayerPrefs.GetFloat("Mouse Sensitivity");
+            // Debug.Log(PlayerPrefs.GetString("Difficulty"));
         }
     }
 
@@ -59,11 +61,6 @@ public class MenuButtons : MonoBehaviour
         //UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
-
-    // public void Controls()
-    // {
-    //     SceneManager.LoadScene("Controls");
-    // }
 
     public void MainMenu()
     {

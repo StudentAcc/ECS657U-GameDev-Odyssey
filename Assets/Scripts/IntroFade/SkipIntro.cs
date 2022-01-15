@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SkipIntro : MonoBehaviour
 {
+    // Ability to skip intro
     public void SkipIntroFunc()
     {
         GameObject.Find("OdysseyText").GetComponent<TextFade>().skipFade();

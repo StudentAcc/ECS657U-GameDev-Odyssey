@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class OxygenPods : MonoBehaviour
 {
+    // Script for replenishing oxygen from pods around map
     [SerializeField] int OxygenReplenish;
 
     bool playerIsHere;

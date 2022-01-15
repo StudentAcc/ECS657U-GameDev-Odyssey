@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-
+	// Spawner system for NPCs around the map
 	public GameObject[] spawnees;
 	public int[] spawnAmount;
 	public string[] spawnParent;
@@ -46,7 +46,7 @@ public class Spawner : MonoBehaviour
         }
         else
         {
-			Debug.Log(PlayerPrefs.GetString("Difficulty"));
+			// Debug.Log(PlayerPrefs.GetString("Difficulty"));
 			spawnAmount[0] = 5;
             spawnAmount[1] = 5;
             spawnAmount[2] = 5;
@@ -59,13 +59,13 @@ public class Spawner : MonoBehaviour
 		int posz;
 		int maxHeight = 500;
 		int layerMask = LayerMask.GetMask("Ground");
-		Debug.Log(numToSpawn);
+		// Debug.Log(numToSpawn);
 		randomInt = 0;
 
 		while (spawned < numToSpawn)
 		{
-			Debug.Log(spawnees.Length);
-			Debug.Log(numToSpawn);
+			// Debug.Log(spawnees.Length);
+			// Debug.Log(numToSpawn);
 			while (spawnAmount[randomInt] == 0)
 			{
 				randomInt = Random.Range(0, spawnees.Length);

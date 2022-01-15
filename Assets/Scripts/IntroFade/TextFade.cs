@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class TextFade : MonoBehaviour
 {
+    // Fade transition for text in game
     public Color startColour;
     public Color endColour;
 

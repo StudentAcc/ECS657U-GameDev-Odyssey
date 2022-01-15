@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class CountDown : MonoBehaviour
 {
-
+    // Oxygen timer goes red and plays sound when time is low
     [SerializeField] Image timeImage;
     [SerializeField] Text timeText;
     [SerializeField] float duration;
@@ -20,10 +20,6 @@ public class CountDown : MonoBehaviour
     {
         Audio.playCountdownSFX();
         Audio.pauseCountdownSFX();
-
-        currentTime = duration;
-        timeText.text = currentTime.ToString();
-        StartCoroutine(TimeIEn());
 
         if (PlayerPrefs.GetString("Difficulty") == "Easy")
         {
@@ -39,8 +35,12 @@ public class CountDown : MonoBehaviour
         }
         else
         {
-            Debug.Log(PlayerPrefs.GetString("Difficulty"));
+            // Debug.Log(PlayerPrefs.GetString("Difficulty"));
         }
+
+        currentTime = duration;
+        timeText.text = currentTime.ToString();
+        StartCoroutine(TimeIEn());
     }
 
     void Update()

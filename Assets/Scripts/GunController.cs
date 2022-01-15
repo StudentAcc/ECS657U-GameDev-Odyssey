@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 
 public class GunController : MonoBehaviour
 {
+    // Controller script for the gun
     public int damage = 10;
     public float range;
     public float fireRate;
@@ -55,7 +56,7 @@ public class GunController : MonoBehaviour
             //{
                 if (!PauseMenu.activeInHierarchy && !ControlsMenu.activeInHierarchy && !VolumeMenu.activeInHierarchy && !DifficultyMenu.activeInHierarchy)
                 {
-
+                    // Different input action depending on gun upgrades
                     if (gunUpgrade == 3)
                     {
                         m_animator.SetBool("AutoShoot", true);
@@ -68,7 +69,7 @@ public class GunController : MonoBehaviour
                     nextTimeToFire = Time.time + 1f / fireRate;
 
 
-
+                    // Decrease oxygen on shoot
                     if (gunUpgrade < 2)
                     {
                         GameObject.Find("OxygenBackground").GetComponent<CountDown>().onShootDecreaseOxygen();
@@ -80,7 +81,7 @@ public class GunController : MonoBehaviour
                         GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
                         Destroy(impactGO, 2f);
 
-                        Debug.Log(hit.transform.name);
+                        // Debug.Log(hit.transform.name);
 
                         EnemyStats enemy = hit.transform.GetComponent<EnemyStats>();
                         if (enemy != null)

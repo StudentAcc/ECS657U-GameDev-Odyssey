@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyStats : CharacterStats
 {
+    // Stats for enemy NPCs, child of CharacterStats
 
     //public ParticleSystem takeDamageAnimation;
 

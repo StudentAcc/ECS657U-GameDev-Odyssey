@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class PauseMenuButtons : MonoBehaviour
 {
+    // Pause menu actions
     public GameObject PauseMenu, ControlsMenu, VolumeMenu, DifficultyMenu, PauseFirstButton, ControlsFirstButton, ControlsClosedButton, VolumeFirstButton, VolumeClosedButton, DifficultyFirstButton, DifficultyClosedButton;
     public Text DifficultyStatusText;
     [SerializeField] Image DifficultyStatus;
@@ -37,12 +38,14 @@ public class PauseMenuButtons : MonoBehaviour
             
             ControlsMenu.SetActive(false);
             VolumeMenu.SetActive(false);
+            DifficultyMenu.SetActive(false);
             PauseMenu.SetActive(true);
             Time.timeScale = 0f;
 
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
 
+            // Highlight first button to use in menu
             EventSystem.current.SetSelectedGameObject(null);
             EventSystem.current.SetSelectedGameObject(PauseFirstButton);
         }
@@ -53,6 +56,7 @@ public class PauseMenuButtons : MonoBehaviour
             Time.timeScale = 1f;
             ControlsMenu.SetActive(false);
             VolumeMenu.SetActive(false);
+            DifficultyMenu.SetActive(false);
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }

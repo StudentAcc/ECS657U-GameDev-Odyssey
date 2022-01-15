@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-
+    // Controller script for enemies in the world
     public float lookRadius = 10f;
     public ParticleSystem attackAnimationParticles;
     public bool wandering = true;
@@ -57,7 +57,7 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            Debug.Log(PlayerPrefs.GetString("Difficulty"));
+            // Debug.Log(PlayerPrefs.GetString("Difficulty"));
         }
 
     }

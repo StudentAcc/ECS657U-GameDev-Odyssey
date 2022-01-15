@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
+    // Slider bar for health
     public Slider sliderUI;
 
     private Text textSliderValue;

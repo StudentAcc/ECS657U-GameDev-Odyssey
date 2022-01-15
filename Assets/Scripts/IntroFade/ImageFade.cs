@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class ImageFade : MonoBehaviour
 {
+    // Fade transition for images in game
     public Color startColour;
     public Color endColour;
 
@@ -34,7 +35,6 @@ public class ImageFade : MonoBehaviour
         coroutine = imageFadeLerpIn();
         StartCoroutine(coroutine);
     }
-
 
     IEnumerator imageFadeLerpIn()
     {

@@ -6,6 +6,7 @@ using UnityEngine;
 [System.Serializable]
 public class Stat
 {
+    // Serialized field for stats
     [SerializeField]
     public int baseValue;
 

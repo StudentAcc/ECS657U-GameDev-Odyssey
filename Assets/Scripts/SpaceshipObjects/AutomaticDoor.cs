@@ -2,7 +2,7 @@ using UnityEngine;
  
 public class AutomaticDoor : MonoBehaviour
 {
-
+    // Script for rotating spaceship door
     public GameObject rotatingDoor;
 
     public float maximumOpening;
@@ -14,7 +14,6 @@ public class AutomaticDoor : MonoBehaviour
 
     bool playerIsHere;
 
-    // Start is called before the first frame update
     void Start()
     {
         audio.playDoorSFX();
@@ -22,7 +21,6 @@ public class AutomaticDoor : MonoBehaviour
         playerIsHere = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (playerIsHere)
@@ -50,6 +48,7 @@ public class AutomaticDoor : MonoBehaviour
         }
     }
 
+    // Uses box collider to check if player is near the door
     private void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player")
