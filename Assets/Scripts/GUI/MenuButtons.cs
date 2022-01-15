@@ -22,7 +22,7 @@ public class MenuButtons : MonoBehaviour
         //if this is player's first time playing, initialises difficulty to 'Easy' and mouse sensitivity to '2f'
         if (firstPlayInt == 0)
         {
-            PlayerPrefs.SetString("Difficulty", "Easy");
+            PlayerPrefs.SetString("Difficulty", "Normal");
             PlayerPrefs.SetFloat("Mouse Sensitivity", 2f);
             PlayerPrefs.SetInt(FirstPlay, -1);
         }
