@@ -2,11 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class PauseMenuButtons : MonoBehaviour
 {
-    public GameObject PauseMenu, ControlsMenu, VolumeMenu, PauseFirstButton, ControlsFirstButton, ControlsClosedButton, VolumeFirstButton, VolumeClosedButton;
+    public GameObject PauseMenu, ControlsMenu, VolumeMenu, DifficultyMenu, PauseFirstButton, ControlsFirstButton, ControlsClosedButton, VolumeFirstButton, VolumeClosedButton, DifficultyFirstButton, DifficultyClosedButton;
+    public Text DifficultyStatusText;
+    [SerializeField] Image DifficultyStatus;
     public AudioManager Audio;
+
+    void Update()
+    {
+        DifficultyStatusText.text = "Difficulty: " + PlayerPrefs.GetString("Difficulty");
+        if (PlayerPrefs.GetString("Difficulty") == "Easy")
+        {
+            DifficultyStatus.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+        if (PlayerPrefs.GetString("Difficulty") == "Normal")
+        {
+            DifficultyStatus.GetComponent<Image>().color = new Color32(255, 255, 0, 255);
+        }
+        if (PlayerPrefs.GetString("Difficulty") == "Hard")
+        {
+            DifficultyStatus.GetComponent<Image>().color = new Color32(255, 0, 0, 225);
+        }
+    }
 
     public void PauseUnpause()
     {
@@ -67,6 +87,22 @@ public class PauseMenuButtons : MonoBehaviour
         VolumeMenu.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(VolumeClosedButton);
+        PauseMenu.SetActive(true);
+    }
+
+    public void OpenDifficulty()
+    {
+        DifficultyMenu.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(DifficultyFirstButton);
+        PauseMenu.SetActive(false);
+    }
+
+    public void CloseDifficulty()
+    {
+        DifficultyMenu.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(DifficultyClosedButton);
         PauseMenu.SetActive(true);
     }
 }

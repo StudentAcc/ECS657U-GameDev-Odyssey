@@ -100,7 +100,6 @@ public class AudioManager : MonoBehaviour
     public void pauseMusic()
     {
         backgroundAudio.Pause();
-        Debug.Log("uh oh");
     }
 
     //unpauses the music
