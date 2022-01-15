@@ -184,4 +184,9 @@ public class AudioManager : MonoBehaviour
     {
         soundEffectsAudio[12].UnPause();
     }
+
+    public void playPickUpOxygenTanksSFX()
+    {
+        soundEffectsAudio[13].Play(0);
+    }
 }
