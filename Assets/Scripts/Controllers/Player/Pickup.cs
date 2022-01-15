@@ -161,10 +161,10 @@ public class Pickup : MonoBehaviour {
 
                 }
             }
-            if (stashedParts == 4) {
-                SceneManager.LoadScene("WinScreen");
+            if (stashedParts == 4)
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
+                SceneManager.LoadScene("WinScreen");
             }
             pickup = false;
         }
