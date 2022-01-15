@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5317650121958433680}
   - component: {fileID: 5211540345478865409}
   - component: {fileID: -8294692702266334367}
+  - component: {fileID: 95576826027846232}
   m_Layer: 0
   m_Name: BlackRock1
   m_TagString: Untagged
@@ -97,3 +98,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 7702779526387289552, guid: eae4c24c3dcaed14dabbb68fe97b520c, type: 3}
+--- !u!208 &95576826027846232
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6275250435974448099}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.38, y: 0.78000003, z: 0.68}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.10300001, y: -0.023000002, z: 0.008}
+  m_TimeToStationary: 0.5

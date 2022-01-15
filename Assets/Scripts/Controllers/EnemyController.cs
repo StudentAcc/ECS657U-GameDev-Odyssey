@@ -32,6 +32,7 @@ public class EnemyController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         combat = GetComponent<CharacterCombat>();
         idle = true;
+        SetDestination(wanderPoint);
     }
 
     // Update is called once per frame
@@ -80,17 +81,18 @@ public class EnemyController : MonoBehaviour
         else if (wandering)
         {
 
-            if ((idle == false && (Vector3.Distance(lastTargetPoint, transform.position) - 10 <= agent.stoppingDistance)))
+            float distanceWander = Vector3.Distance(wanderPoint, transform.position);
+            if (idle == false)
             {
                 StartCoroutine(delay(1f));
                 idle = true;
+                wanderPoint = getRandomCoordinate();
                 SetDestination(wanderPoint);
                // Debug.Log("log1" + idle.ToString());
             }
             else if (idle)
             {
-                float distanceWander = Vector3.Distance(wanderPoint, transform.position);
-                if (distanceWander - 15 <= agent.stoppingDistance || !(agent.hasPath))
+                if (distanceWander + 1 <= agent.stoppingDistance)
                 {
                     //Debug.Log("log2");
                     wanderPoint = getRandomCoordinate();

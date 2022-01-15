@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1086199189411221862}
   - component: {fileID: 1452540464731671306}
   - component: {fileID: 5021572157413829504}
+  - component: {fileID: -8858892175441949362}
   m_Layer: 0
   m_Name: GreyRock3
   m_TagString: Untagged
@@ -97,3 +98,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 9210220926252573025, guid: 68f5a4eb731ea8b4293ab10f249be3d0, type: 3}
+--- !u!208 &-8858892175441949362
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6533451886801934701}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.38, y: 0.78000003, z: 0.68}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.021000002, y: 0.034, z: 0.066}
+  m_TimeToStationary: 0.5

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1086199189411221862}
   - component: {fileID: 1452540464731671306}
   - component: {fileID: -1691565262522650050}
+  - component: {fileID: 8493358725924646547}
   m_Layer: 0
   m_Name: RedRock3
   m_TagString: Untagged
@@ -97,3 +98,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1248825591813338859, guid: 87dfa17b5b94026488ea1477e16cfdb2, type: 3}
+--- !u!208 &8493358725924646547
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6533451886801934701}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.38, y: 0.78000003, z: 0.68}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.021000002, y: 0.034, z: 0.066}
+  m_TimeToStationary: 0.5
