@@ -15,11 +15,45 @@ public class Spawner : MonoBehaviour
 	public bool hideOriginal = true;
 	int randomInt;
 
-
 	// Update is called once per frame
 	void Start()
 	{
-		int spawned = 0;
+
+        if (PlayerPrefs.GetString("Difficulty") == "Easy")
+        {
+            Debug.Log("Easy");
+            spawnAmount[0] = 0;
+            spawnAmount[1] = 0;
+            spawnAmount[2] = 0;
+            spawnAmount[3] = 0;
+
+        }
+        else if (PlayerPrefs.GetString("Difficulty") == "Normal")
+        {
+            Debug.Log("Medium");
+            spawnAmount[0] = 1;
+            spawnAmount[1] = 1;
+            spawnAmount[2] = 1;
+            spawnAmount[3] = 1;
+        }
+        else if (PlayerPrefs.GetString("Difficulty") == "Hard")
+        {
+            Debug.Log("Hard");
+            spawnAmount[0] = 20;
+            spawnAmount[1] = 20;
+            spawnAmount[2] = 20;
+            spawnAmount[3] = 20;
+        }
+        else
+        {
+			Debug.Log(PlayerPrefs.GetString("Difficulty"));
+			spawnAmount[0] = 5;
+            spawnAmount[1] = 5;
+            spawnAmount[2] = 5;
+            spawnAmount[3] = 5;
+        }
+
+        int spawned = 0;
 		int numToSpawn = spawnAmount.Sum();
 		int posx;
 		int posz;
