@@ -23,9 +23,65 @@ public class Pickup : MonoBehaviour {
     public GameObject thirdUpgradeStatus;
     private int stashedParts = 0;
     public AudioManager audio;
+
+    public GameObject PauseMenu;
+    public GameObject ControlsMenu;
+    public GameObject DifficultyMenu;
+    public GameObject VolumeMenu;
+
+    bool audioPlaying;
+
+    void Start()
+    {
+        //audio.playFirstStashedVoice();
+        //audio.pauseFirstStashedVoice();
+
+        //audio.playSecondStashedVoice();
+        //audio.pauseSecondStashedVoice();
+
+        //audio.playThirdStashedVoice();
+        //audio.pauseThirdStashedVoice();
+
+        //audio.playFourthStashedVoice();
+        //audio.pauseFourthStashedVoice();
+    }
     
     void Update() {
-        if(pickup) {
+        if (PauseMenu.activeInHierarchy || ControlsMenu.activeInHierarchy || VolumeMenu.activeInHierarchy || DifficultyMenu.activeInHierarchy)
+        {
+            if (audio.firstStashedVoiceIsPlaying())
+            {
+                audio.pauseFirstStashedVoice();
+            }
+            if (audio.secondStashedVoiceIsPlaying())
+            {
+                audio.pauseSecondStashedVoice();
+            }
+            if (audio.thirdStashedVoiceIsPlaying())
+            {
+                audio.pauseThirdStashedVoice();
+            }
+            if (audio.fourthStashedVoiceIsPlaying())
+            {
+                audio.pauseFourthStashedVoice();
+            }
+        }
+        else
+        {
+            if (audioPlaying)
+            {
+                audio.unpauseFirstStashedVoice();
+                audio.unpauseSecondStashedVoice();
+                audio.unpauseThirdStashedVoice();
+                audio.unpauseFourthStashedVoice();
+            }
+
+                
+            
+        }
+
+        if (pickup) 
+        {
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickUpRange))
             {
@@ -145,20 +201,23 @@ public class Pickup : MonoBehaviour {
                     if (stashedParts == 0)
                     {
                         audio.playFirstStashedVoice();
+                        audioPlaying = true;
                     }
                     if (stashedParts == 1)
                     {
                         audio.playSecondStashedVoice();
+                        audioPlaying = true;
                     }
                     if (stashedParts == 2)
                     {
                         audio.playThirdStashedVoice();
+                        audioPlaying = true;
                     }
                     if (stashedParts == 3)
                     {
                         audio.playFourthStashedVoice();
+                        audioPlaying = true;
                     }
-
                 }
             }
             if (stashedParts == 4)
@@ -169,6 +228,8 @@ public class Pickup : MonoBehaviour {
             }
             pickup = false;
         }
+
+
     }
 
     public void OnPickupPressed() {

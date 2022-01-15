@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthRegen : MonoBehaviour
 {
-    [SerializeField] int regenRate;
+    [SerializeField] int newRegeneration;
 
     bool playerIsHere;
 
@@ -12,6 +12,23 @@ public class HealthRegen : MonoBehaviour
     void Start()
     {
         playerIsHere = false;
+        if (PlayerPrefs.GetString("Difficulty") == "Easy")
+        {
+            newRegeneration = 1;
+        }
+        else if (PlayerPrefs.GetString("Difficulty") == "Normal")
+        {
+            newRegeneration = 1;
+        }
+        else if (PlayerPrefs.GetString("Difficulty") == "Hard")
+        {
+            newRegeneration = 0;
+        }
+        else
+        {
+            newRegeneration = 1;
+            Debug.Log(PlayerPrefs.GetString("Difficulty"));
+        }
     }
 
     // Update is called once per frame
@@ -19,7 +36,7 @@ public class HealthRegen : MonoBehaviour
     {
         if (playerIsHere)
         {
-            GameObject.Find("Player").GetComponent<PlayerStats>().healthRegen();
+            GameObject.Find("Player").GetComponent<PlayerStats>().healthRegen(newRegeneration);
         }
     }
 

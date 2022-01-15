@@ -24,6 +24,23 @@ public class CountDown : MonoBehaviour
         currentTime = duration;
         timeText.text = currentTime.ToString();
         StartCoroutine(TimeIEn());
+
+        if (PlayerPrefs.GetString("Difficulty") == "Easy")
+        {
+            duration = 900f;
+        }
+        else if (PlayerPrefs.GetString("Difficulty") == "Normal")
+        {
+            duration = 600f;
+        }
+        else if (PlayerPrefs.GetString("Difficulty") == "Hard")
+        {
+            duration = 600f;
+        }
+        else
+        {
+            Debug.Log(PlayerPrefs.GetString("Difficulty"));
+        }
     }
 
     void Update()

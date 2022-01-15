@@ -160,6 +160,60 @@ public class AudioManager : MonoBehaviour
         soundEffectsAudio[9].Play(0);
     }
 
+    public void pauseFirstStashedVoice()
+    {
+        soundEffectsAudio[6].Pause();
+    }
+
+    public void pauseSecondStashedVoice()
+    {
+        soundEffectsAudio[7].Pause();
+    }
+
+    public void pauseThirdStashedVoice()
+    {
+        soundEffectsAudio[8].Pause();
+    }
+
+    public void pauseFourthStashedVoice()
+    {
+        soundEffectsAudio[9].Pause();
+    }
+
+    public void unpauseFirstStashedVoice()
+    {
+        soundEffectsAudio[6].UnPause();
+    }
+    public void unpauseSecondStashedVoice()
+    {
+        soundEffectsAudio[7].UnPause();
+    }
+    public void unpauseThirdStashedVoice()
+    {
+        soundEffectsAudio[8].UnPause();
+    }
+    public void unpauseFourthStashedVoice()
+    {
+        soundEffectsAudio[9].UnPause();
+    }
+
+    public bool firstStashedVoiceIsPlaying()
+    {
+        return soundEffectsAudio[6].isPlaying;
+    }
+    public bool secondStashedVoiceIsPlaying()
+    {
+        return soundEffectsAudio[7].isPlaying;
+    }
+    public bool thirdStashedVoiceIsPlaying()
+    {
+        return soundEffectsAudio[8].isPlaying;
+    }
+    public bool fourthStashedVoiceIsPlaying()
+    {
+        return soundEffectsAudio[9].isPlaying;
+    }
+
     public void partsCollectedSFX()
     {
         soundEffectsAudio[10].Play(0);

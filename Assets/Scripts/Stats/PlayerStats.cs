@@ -17,8 +17,9 @@ public class PlayerStats : CharacterStats
         SceneManager.LoadScene("DiedScreen");
     }
 
-    public void healthRegen()
+    public void healthRegen(int newRegeneration)
     {
+        regeneration = newRegeneration;
         if (currentHealth < maxHealth)
         {
             second += Time.deltaTime;
