@@ -48,7 +48,7 @@ public class InputManager : MonoBehaviour {
         playerActions.ShootAuto.canceled += _ => gun.OnShootStop();
 
         playerInput.actions["Jump"].performed += _ => movement.OnJumpPressed();
-        playerInput.actions["Pickup"].started += _ => pickup.OnPickupPressed();
+        playerInput.actions["Pickup and Interact"].started += _ => pickup.OnPickupPressed();
         playerInput.actions["Pause"].performed += _ => pauseMenuButtons.PauseUnpause();
         playerInput.actions["Inventory"].performed += _ => inventoryButtons.OpenClose();
             // playerActions.Jump.performed += _ => movement.OnJumpPressed();

@@ -32,9 +32,9 @@ public class AudioManager : MonoBehaviour
         //if this is player's first time playing, sets volume to default values and sets them in 'PlayerPrefs' variable
         if (firstPlayInt == 0)
         {
-            masterFloat = 0.5f;
-            backgroundFloat = 0.205f;
-            soundEffectsFloat = 0.605f;
+            masterFloat = 1.0f;
+            backgroundFloat = 0.4f;
+            soundEffectsFloat = 0.3f;
 
             masterSlider.value = masterFloat;
             backgroundSlider.value = backgroundFloat;

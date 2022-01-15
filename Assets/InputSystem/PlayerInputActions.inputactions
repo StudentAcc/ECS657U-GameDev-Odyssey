@@ -38,7 +38,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Pickup",
+                    "name": "Pickup and Interact",
                     "type": "Button",
                     "id": "c2246a16-119b-461c-a646-db54b7ade0dd",
                     "expectedControlType": "Button",
@@ -116,7 +116,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Pickup",
+                    "action": "Pickup and Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -127,7 +127,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Pickup",
+                    "action": "Pickup and Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

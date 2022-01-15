@@ -3,10 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class MenuButtons : MonoBehaviour
 {
     public GameObject MainMenuCanvas, ControlsMenuCanvas, VolumeMenuCanvas, DifficultyMenuCanvas,  MainCanvasFirstButton, ControlsCanvasFirstButton, ControlsCanvasClosedButton, VolumeCanvasFirstButton, VolumeCanvasClosedButton, DifficultyCanvasFirstButton, DifficultyCanvasClosedButton;
+    public Slider mouseSensitivitySlider;
+
+    
+    private static readonly string FirstPlay = "FirstPlay";
+    int firstPlayInt;
+
+    void Start()
+    {
+        firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
+        //if this is player's first time playing, initialises difficulty to 'Easy' and mouse sensitivity to '2f'
+        if (firstPlayInt == 0)
+        {
+            PlayerPrefs.SetString("Difficulty", "Easy");
+            PlayerPrefs.SetFloat("Mouse Sensitivity", 2f);
+            PlayerPrefs.SetString(FirstPlay, "false");
+        }
+        else
+        {
+            mouseSensitivitySlider.value = PlayerPrefs.GetFloat("Mouse Sensitivity");
+        }
+
+        
+    }
 
     public void RestartGame()
     {
@@ -86,9 +110,19 @@ public class MenuButtons : MonoBehaviour
         MainMenuCanvas.SetActive(true);
     }
 
-    public void ChosenDifficulty()
+    public void setDifficultyEasy()
     {
-        // it's ok
+        PlayerPrefs.SetString("Difficulty", "Easy");
+    }
+
+    public void setDifficultyNormal()
+    {
+        PlayerPrefs.SetString("Difficulty", "Normal");
+    }
+
+    public void setDifficultyHard()
+    {
+        PlayerPrefs.SetString("Difficulty", "Hard");
     }
 
     public void StartGame()
@@ -96,4 +130,8 @@ public class MenuButtons : MonoBehaviour
         SceneManager.LoadScene("Intro");
     }
 
+    public void changeMouseSensitivity()
+    {
+        PlayerPrefs.SetFloat("Mouse Sensitivity", mouseSensitivitySlider.value);
+    }
 }

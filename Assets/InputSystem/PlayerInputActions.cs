@@ -51,7 +51,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Pickup"",
+                    ""name"": ""Pickup and Interact"",
                     ""type"": ""Button"",
                     ""id"": ""c2246a16-119b-461c-a646-db54b7ade0dd"",
                     ""expectedControlType"": ""Button"",
@@ -129,7 +129,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""Pickup"",
+                    ""action"": ""Pickup and Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -140,7 +140,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""Pickup"",
+                    ""action"": ""Pickup and Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -398,7 +398,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         m_Player_MouseY = m_Player.FindAction("MouseY", throwIfNotFound: true);
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
-        m_Player_Pickup = m_Player.FindAction("Pickup", throwIfNotFound: true);
+        m_Player_PickupandInteract = m_Player.FindAction("Pickup and Interact", throwIfNotFound: true);
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
@@ -457,7 +457,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_MouseY;
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_Jump;
-    private readonly InputAction m_Player_Pickup;
+    private readonly InputAction m_Player_PickupandInteract;
     private readonly InputAction m_Player_Shoot;
     private readonly InputAction m_Player_Pause;
     private readonly InputAction m_Player_Sprint;
@@ -471,7 +471,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         public InputAction @MouseY => m_Wrapper.m_Player_MouseY;
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
-        public InputAction @Pickup => m_Wrapper.m_Player_Pickup;
+        public InputAction @PickupandInteract => m_Wrapper.m_Player_PickupandInteract;
         public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
@@ -498,9 +498,9 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 @Jump.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
-                @Pickup.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPickup;
-                @Pickup.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPickup;
-                @Pickup.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPickup;
+                @PickupandInteract.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPickupandInteract;
+                @PickupandInteract.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPickupandInteract;
+                @PickupandInteract.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPickupandInteract;
                 @Shoot.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
                 @Shoot.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
                 @Shoot.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
@@ -532,9 +532,9 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
-                @Pickup.started += instance.OnPickup;
-                @Pickup.performed += instance.OnPickup;
-                @Pickup.canceled += instance.OnPickup;
+                @PickupandInteract.started += instance.OnPickupandInteract;
+                @PickupandInteract.performed += instance.OnPickupandInteract;
+                @PickupandInteract.canceled += instance.OnPickupandInteract;
                 @Shoot.started += instance.OnShoot;
                 @Shoot.performed += instance.OnShoot;
                 @Shoot.canceled += instance.OnShoot;
@@ -578,7 +578,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         void OnMouseY(InputAction.CallbackContext context);
         void OnMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
-        void OnPickup(InputAction.CallbackContext context);
+        void OnPickupandInteract(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);

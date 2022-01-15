@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class AudioManagerMainMenu : MonoBehaviour
 {
     //attempts to see if this run is the player's first time playing
-    private static readonly string FirstPlay = "FirstPlay";
+    private static readonly string FirstPlayAudio = "FirstPlay";
     private int firstPlayInt;
 
     //initialises user's volume settings preferences
@@ -25,7 +25,7 @@ public class AudioManagerMainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
+        firstPlayInt = PlayerPrefs.GetInt(FirstPlayAudio);
         //if this is player's first time playing, sets volume to default values and sets them in 'PlayerPrefs' variable
         if (firstPlayInt == 0)
         {
@@ -43,7 +43,7 @@ public class AudioManagerMainMenu : MonoBehaviour
             PlayerPrefs.SetFloat(SoundEffectsPref, soundEffectsFloat);
 
 
-            PlayerPrefs.SetInt(FirstPlay, -1);
+            PlayerPrefs.SetInt(FirstPlayAudio, -1);
         }
         //this isn't the player's first time playing, so load their volume settings
         else
