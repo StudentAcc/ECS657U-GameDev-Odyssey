@@ -33,19 +33,19 @@ public class Pickup : MonoBehaviour {
                 if (obj.tag == "ShipPart") {
 
                     Destroy(obj);
-                    if(obj.name == "Battery") {
+                    if(obj.name.Contains("Battery")) {
                         batteryImage.GetComponent<RawImage>().color = new Color32(255, 255, 255, 255);
                         batteryStatus.GetComponent<Text>().text = "Collected";
                     }
-                    if(obj.name == "Generator") {
+                    if(obj.name.Contains("Generator")) {
                         generatorImage.GetComponent<RawImage>().color = new Color32(255, 255, 255, 255);
                         generatorStatus.GetComponent<Text>().text = "Collected";
                     }
-                    if(obj.name == "Rotor") {
+                    if(obj.name.Contains("Rotor")) {
                         rotorImage.GetComponent<RawImage>().color = new Color32(255, 255, 255, 255);
                         rotorStatus.GetComponent<Text>().text = "Collected";
                     }
-                    if(obj.name == "FusionCore") {
+                    if(obj.name.Contains("FusionCore")) {
                         fusionCoreImage.GetComponent<RawImage>().color = new Color32(255, 255, 255, 255);
                         fusionCoreStatus.GetComponent<Text>().text = "Collected";
                     }
