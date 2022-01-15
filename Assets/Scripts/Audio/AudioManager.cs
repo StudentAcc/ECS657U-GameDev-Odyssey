@@ -169,4 +169,19 @@ public class AudioManager : MonoBehaviour
     {
         soundEffectsAudio[11].Play(0);
     }
+
+    public void playCountdownSFX()
+    {
+        soundEffectsAudio[12].Play(0);
+    }
+
+    public void pauseCountdownSFX()
+    {
+        soundEffectsAudio[12].Pause();
+    }
+
+    public void unpauseCountdownSFX()
+    {
+        soundEffectsAudio[12].UnPause();
+    }
 }

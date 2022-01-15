@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 public class GunController : MonoBehaviour
 {
     public int damage = 10;
-    public float range = 100f;
+    public float range;
     public float fireRate;
     public float impactForce = 30f;
 
@@ -92,9 +92,6 @@ public class GunController : MonoBehaviour
                         {
                             hit.rigidbody.AddForce(-hit.normal * impactForce);
                         }
-
-                        
-
                     }
                 }
                 if (gunUpgrade < 3)

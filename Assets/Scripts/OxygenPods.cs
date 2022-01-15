@@ -20,6 +20,7 @@ public class OxygenPods : MonoBehaviour
         if (playerIsHere)
         {
             GameObject.Find("OxygenBackground").GetComponent<CountDown>().onCollisionOxygenPodsReplenishOxygen(OxygenReplenish);
+
             Destroy(gameObject);
         }
     }

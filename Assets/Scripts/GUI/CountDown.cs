@@ -18,7 +18,9 @@ public class CountDown : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Audio.playCountdownSFX();
+        Audio.pauseCountdownSFX();
+
         currentTime = duration;
         timeText.text = currentTime.ToString();
         StartCoroutine(TimeIEn());
@@ -28,10 +30,12 @@ public class CountDown : MonoBehaviour
     {
         if (currentTime <= 60)
         {
+            Audio.unpauseCountdownSFX();
             timeImage.GetComponent<Image>().color = new Color32(255, 0, 0, 225);
         }
         else
         {
+            Audio.pauseCountdownSFX();
             timeImage.GetComponent<Image>().color = new Color32(255, 255, 255, 225);
         }
     }
