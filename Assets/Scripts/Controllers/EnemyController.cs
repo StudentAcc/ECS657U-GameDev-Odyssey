@@ -82,8 +82,9 @@ public class EnemyController : MonoBehaviour
         {
 
             float distanceWander = Vector3.Distance(wanderPoint, transform.position);
-            if (idle == false)
+            if (idle == false && Vector3.Distance(lastTargetPoint, transform.position) - 1 <= agent.stoppingDistance)
             {
+                agent.Stop();
                 StartCoroutine(delay(1f));
                 idle = true;
                 wanderPoint = getRandomCoordinate();
