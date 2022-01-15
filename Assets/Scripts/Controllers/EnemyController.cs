@@ -80,12 +80,12 @@ public class EnemyController : MonoBehaviour
         else if (wandering)
         {
 
-            if (idle == false && (Vector3.Distance(lastTargetPoint, transform.position) - 15 <= agent.stoppingDistance))
+            if ((idle == false && (Vector3.Distance(lastTargetPoint, transform.position) - 10 <= agent.stoppingDistance)))
             {
                 StartCoroutine(delay(1f));
                 idle = true;
                 SetDestination(wanderPoint);
-                Debug.Log("log1" + idle.ToString());
+               // Debug.Log("log1" + idle.ToString());
             }
             else if (idle)
             {
@@ -108,15 +108,19 @@ public class EnemyController : MonoBehaviour
     {
         Vector3 randomCoord = new Vector3(0,0,0);
         bool valid = false;
+        //NavMeshPath path = new NavMeshPath();
         //RaycastHit hit = new RaycastHit();
         while (!valid)
         {
             //randomCoord = new Vector3(Random.Range(boundaryPointS.x, boundaryPointL.x), 500, Random.Range(boundaryPointS.z, boundaryPointL.z));
-            randomCoord = (Random.insideUnitSphere * 100) + transform.position;
+            randomCoord = (Random.insideUnitSphere * 50) + transform.position;
             
             if (boundaryPointS.x < randomCoord.x && randomCoord.x < boundaryPointL.x && boundaryPointS.z < randomCoord.z && randomCoord.z < boundaryPointL.z)
             {
+                //if (agent.CalculatePath(randomCoord, path))
+                //{
                 valid = true;
+                //}
             }
             //Debug.Log("start");
             //Debug.Log(boundaryPointS.x);

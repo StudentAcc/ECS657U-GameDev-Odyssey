@@ -57,7 +57,7 @@ public class GunController : MonoBehaviour
 
                     if (gunUpgrade == 3)
                     {
-                        m_animator.SetTrigger("AutoShoot");
+                        m_animator.SetBool("AutoShoot", true);
                     }
                     else
                     {
@@ -101,6 +101,9 @@ public class GunController : MonoBehaviour
                     shoot = false; 
                 }
             //}
+        } else
+        {
+            m_animator.SetBool("AutoShoot", false);
         }
 
     }
