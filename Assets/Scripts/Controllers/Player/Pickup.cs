@@ -31,9 +31,9 @@ public class Pickup : MonoBehaviour {
             {
                 GameObject obj = hit.transform.gameObject;
                 if (obj.tag == "ShipPart") {
-
                     Destroy(obj);
-                    if(obj.name.Contains("Battery")) {
+                    audio.partsCollectedSFX();
+                    if (obj.name.Contains("Battery")) {
                         batteryImage.GetComponent<RawImage>().color = new Color32(255, 255, 255, 255);
                         batteryStatus.GetComponent<Text>().text = "Collected";
                     }
@@ -54,7 +54,7 @@ public class Pickup : MonoBehaviour {
                     if(obj.name == "BatteryDark") {
                         if(batteryStatus.GetComponent<Text>().text == "Collected") {
                             Destroy(obj);
-                            //audio.playInventoryPickUpSFX();
+                            audio.partsStashedSFX();
                             batteryStatus.GetComponent<Text>().text = "Stashed";
                             batteryFinal.SetActive(true);
                             stashedParts += 1;
@@ -76,7 +76,7 @@ public class Pickup : MonoBehaviour {
                     if(obj.name == "GeneratorDark") {
                         if(generatorStatus.GetComponent<Text>().text == "Collected") {
                             Destroy(obj);
-                            //audio.playInventoryPickUpSFX();
+                            audio.partsStashedSFX();
                             generatorStatus.GetComponent<Text>().text = "Stashed";
                             generatorFinal.SetActive(true);
                             stashedParts += 1;
@@ -98,7 +98,7 @@ public class Pickup : MonoBehaviour {
                     if(obj.name == "RotorDark") {
                         if(rotorStatus.GetComponent<Text>().text == "Collected") {
                             Destroy(obj);
-                            //audio.playInventoryPickUpSFX();
+                            audio.partsStashedSFX();
                             rotorStatus.GetComponent<Text>().text = "Stashed";
                             rotorFinal.SetActive(true);
                             stashedParts += 1;
@@ -120,7 +120,7 @@ public class Pickup : MonoBehaviour {
                     if(obj.name == "FusionCoreDark") {
                         if(fusionCoreStatus.GetComponent<Text>().text == "Collected") {
                             Destroy(obj);
-                            //audio.playInventoryPickUpSFX();
+                            audio.partsStashedSFX();
                             fusionCoreStatus.GetComponent<Text>().text = "Stashed";
                             fusionCoreFinal.SetActive(true);
                             stashedParts += 1;
@@ -162,6 +162,7 @@ public class Pickup : MonoBehaviour {
                 }
             }
             if (stashedParts == 4)
+            {
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
                 SceneManager.LoadScene("WinScreen");

@@ -154,8 +154,13 @@ public class AudioManager : MonoBehaviour
         soundEffectsAudio[9].Play(0);
     }
 
-    public void playInventoryPickUpSFX()
+    public void partsCollectedSFX()
     {
         soundEffectsAudio[10].Play(0);
+    }
+
+    public void partsStashedSFX()
+    {
+        soundEffectsAudio[11].Play(0);
     }
 }
