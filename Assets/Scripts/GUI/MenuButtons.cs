@@ -9,6 +9,8 @@ public class MenuButtons : MonoBehaviour
 {
     public GameObject MainMenuCanvas, ControlsMenuCanvas, VolumeMenuCanvas, DifficultyMenuCanvas,  MainCanvasFirstButton, ControlsCanvasFirstButton, ControlsCanvasClosedButton, VolumeCanvasFirstButton, VolumeCanvasClosedButton, DifficultyCanvasFirstButton, DifficultyCanvasClosedButton;
     public Slider mouseSensitivitySlider;
+    public Text DifficultyStatusText;
+    [SerializeField] Image DifficultyStatus;
 
     
     private static readonly string FirstPlay = "FirstPlay";
@@ -22,14 +24,29 @@ public class MenuButtons : MonoBehaviour
         {
             PlayerPrefs.SetString("Difficulty", "Easy");
             PlayerPrefs.SetFloat("Mouse Sensitivity", 2f);
-            PlayerPrefs.SetString(FirstPlay, "false");
+            PlayerPrefs.SetInt(FirstPlay, -1);
         }
         else
         {
             mouseSensitivitySlider.value = PlayerPrefs.GetFloat("Mouse Sensitivity");
         }
+    }
 
-        
+    void Update()
+    {
+        DifficultyStatusText.text = "Difficulty: " + PlayerPrefs.GetString("Difficulty");
+        if (PlayerPrefs.GetString("Difficulty") == "Easy")
+        {
+            DifficultyStatus.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+        if (PlayerPrefs.GetString("Difficulty") == "Normal")
+        {
+            DifficultyStatus.GetComponent<Image>().color = new Color32(255, 255, 0, 255);
+        }
+        if (PlayerPrefs.GetString("Difficulty") == "Hard")
+        {
+            DifficultyStatus.GetComponent<Image>().color = new Color32(255, 0, 0, 225);
+        }
     }
 
     public void RestartGame()
@@ -134,4 +151,6 @@ public class MenuButtons : MonoBehaviour
     {
         PlayerPrefs.SetFloat("Mouse Sensitivity", mouseSensitivitySlider.value);
     }
+
+
 }

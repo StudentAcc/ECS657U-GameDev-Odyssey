@@ -36,6 +36,7 @@ public class CountDown : MonoBehaviour
             if (currentTime <= 20)
             {
                 timeImage.GetComponent<Image>().color = new Color32(255, 0, 0, 225);
+
             }
         }
         Cursor.visible = true;
