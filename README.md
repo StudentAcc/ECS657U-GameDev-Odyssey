@@ -13,7 +13,7 @@ Look - Mouse
 Movement - W/A/S/D  
 Jump - Space  
 Sprint - Left Shift  
-Pickup - E  
+Pickup / Interact - E  
 Inventory - Tab  
 Pause - P  
   
@@ -23,7 +23,7 @@ Look - Right Stick
 Movement - Left Stick  
 Jump - A / X  
 Sprint - Hold Left Stick  
-Pickup - Left Trigger  
+Pickup / Interact - Left Trigger  
 Inventory - B / O  
 Pause - Start Button  
   
