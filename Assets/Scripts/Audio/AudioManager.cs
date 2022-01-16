@@ -123,41 +123,49 @@ public class AudioManager : MonoBehaviour
         soundEffectsAudio[3].Play(0);
     }
 
+    //resumes door opening sound effect when door is opening
     public void resumeDoorSFX()
     {
         soundEffectsAudio[5].UnPause();
     }
 
+    //pauses door opening sound effect
     public void pauseDoorSFX()
     {
         soundEffectsAudio[5].Pause();
     }
 
+    //starts door opening sound effect
     public void playDoorSFX()
     {
         soundEffectsAudio[5].Play(0);
     }
 
+    //voice of AI sphere when first ship repair part is stashed
     public void playFirstStashedVoice()
     {
         soundEffectsAudio[6].Play(0);
     }
 
+    //voice of AI sphere when second ship repair part is stashed
     public void playSecondStashedVoice()
     {
         soundEffectsAudio[7].Play(0);
     }
 
+    //voice of AI sphere when third ship repair part is stashed
     public void playThirdStashedVoice()
     {
         soundEffectsAudio[8].Play(0);
     }
 
+    //voice of AI sphere when fourth ship repair part is stashed
     public void playFourthStashedVoice()
     {
         soundEffectsAudio[9].Play(0);
     }
 
+    //pauses voice of AI sphere when user pauses the game
     public void pauseFirstStashedVoice()
     {
         soundEffectsAudio[6].Pause();
@@ -178,6 +186,7 @@ public class AudioManager : MonoBehaviour
         soundEffectsAudio[9].Pause();
     }
 
+    //resumes voice of AI sphere when user unpauses the game
     public void unpauseFirstStashedVoice()
     {
         soundEffectsAudio[6].UnPause();
@@ -195,6 +204,7 @@ public class AudioManager : MonoBehaviour
         soundEffectsAudio[9].UnPause();
     }
 
+    //validates if the AI sphere is being interacted or not
     public bool firstStashedVoiceIsPlaying()
     {
         return soundEffectsAudio[6].isPlaying;
@@ -212,33 +222,57 @@ public class AudioManager : MonoBehaviour
         return soundEffectsAudio[9].isPlaying;
     }
 
+    //sound effect of collecting ship repair parts
     public void partsCollectedSFX()
     {
         soundEffectsAudio[10].Play(0);
     }
 
+    //sound effect of stashins the ship repair parts inside the spaceship
     public void partsStashedSFX()
     {
         soundEffectsAudio[11].Play(0);
     }
 
+    //plays countdown sound effect when user's oxygen level drops to 60
     public void playCountdownSFX()
     {
         soundEffectsAudio[12].Play(0);
     }
 
+    //pauses countdown sound effect of oxygen level
     public void pauseCountdownSFX()
     {
         soundEffectsAudio[12].Pause();
     }
-
+    
+    //resumes countdown sound effect of oxygen level
     public void unpauseCountdownSFX()
     {
         soundEffectsAudio[12].UnPause();
     }
 
+    //plays sound effect when user picks up oxygen tanks
     public void playPickUpOxygenTanksSFX()
     {
         soundEffectsAudio[13].Play(0);
+    }
+
+    //plays sound effect when golem attacks player
+    public void playGolemAttackSFX()
+    {
+        soundEffectsAudio[14].Play(0);
+    }
+
+    //plays sound effect when dark knight attacks player
+    public void playDarkKnightAttackSFX()
+    {
+        soundEffectsAudio[15].Play(0);
+    }
+
+    //plays sound effect when dragon attacks player
+    public void playDragonAttackSFX()
+    {
+        soundEffectsAudio[16].Play(0);
     }
 }

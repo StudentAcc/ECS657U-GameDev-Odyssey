@@ -7,6 +7,7 @@ public class Pickup : MonoBehaviour {
     // Collecting and stashing spaceship parts
     public float pickUpRange = 5;
     bool pickup;
+    //initialising ship repair parts and its different states
     public GameObject batteryImage;
     public GameObject batteryStatus;
     public GameObject batteryFinal;
@@ -22,15 +23,21 @@ public class Pickup : MonoBehaviour {
     public GameObject firstUpgradeStatus;
     public GameObject secondUpgradeStatus;
     public GameObject thirdUpgradeStatus;
-    private int stashedParts = 0;
-    public AudioManager audio;
 
+    //initialise variable to determine how many ship repair parts have been stashed
+    private int stashedParts = 0;
+
+    //initialise audio to play sound effects
+    public AudioManager audio;
+    bool audioPlaying;
+
+    //initialise different menus so that game doesn't run when player is in pause menu
     public GameObject PauseMenu;
     public GameObject ControlsMenu;
     public GameObject DifficultyMenu;
     public GameObject VolumeMenu;
 
-    bool audioPlaying;
+    
 
     void Start()
     {
@@ -48,6 +55,7 @@ public class Pickup : MonoBehaviour {
     }
     
     void Update() {
+        //if the user is in the main menu, pause the AI sphere talking
         if (PauseMenu.activeInHierarchy || ControlsMenu.activeInHierarchy || VolumeMenu.activeInHierarchy || DifficultyMenu.activeInHierarchy)
         {
             if (audio.firstStashedVoiceIsPlaying())
@@ -67,6 +75,7 @@ public class Pickup : MonoBehaviour {
                 audio.pauseFourthStashedVoice();
             }
         }
+        //otherwise resume the AI sphere talking
         else
         {
             if (audioPlaying)
@@ -76,14 +85,13 @@ public class Pickup : MonoBehaviour {
                 audio.unpauseThirdStashedVoice();
                 audio.unpauseFourthStashedVoice();
             }
-
-                
-            
         }
 
+        //if the user clicks the pickup/interact button, check to see what the user is attempting to pick up or interact with
         if (pickup) 
         {
             RaycastHit hit;
+            //if the user clicks the pickup/interact button next to the ship repair parts, destroy the object and change the inventory menu to show the updated status
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickUpRange))
             {
                 GameObject obj = hit.transform.gameObject;
@@ -107,6 +115,7 @@ public class Pickup : MonoBehaviour {
                         fusionCoreStatus.GetComponent<Text>().text = "Collected";
                     }
                 }
+                //if the user clicks the pickup/interact button next to the ship repair parts 'redded' out inside the ship and the user has collected the parts, stash it onto the table and update the inventory menu to show the updated status
                 if (obj.tag == "ShipPartDark") {
                     if(obj.name == "BatteryDark") {
                         if(batteryStatus.GetComponent<Text>().text == "Collected") {
@@ -222,6 +231,7 @@ public class Pickup : MonoBehaviour {
                     }
                 }
             }
+            //if the user has stashed all the ship repair parts, load up the "WinScreen" scene and unlock the mouse
             if (stashedParts == 4)
             {
                 Cursor.visible = true;
@@ -230,10 +240,9 @@ public class Pickup : MonoBehaviour {
             }
             pickup = false;
         }
-
-
     }
 
+    //setter method that sets pickup to true when the user has pressed the pickup/interact button
     public void OnPickupPressed() {
         pickup = true;
     }

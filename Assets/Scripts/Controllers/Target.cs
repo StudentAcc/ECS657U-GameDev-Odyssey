@@ -2,9 +2,8 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    // If health is 0 destroy target object
     public float health = 50f;
-
+    // If health is 0 destroy target object
     public void TakeDamage(float amount)
     {
         health -= amount;
@@ -12,6 +11,7 @@ public class Target : MonoBehaviour
             Die();
     }
 
+    //method that destroys game object
     void Die()
     {
         Destroy(gameObject);

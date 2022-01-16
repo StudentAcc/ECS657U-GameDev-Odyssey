@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-
+    //initialises enemy stats to control their movement
     public float lookRadius = 10f;
     public ParticleSystem attackAnimationParticles;
     public bool wandering = true;

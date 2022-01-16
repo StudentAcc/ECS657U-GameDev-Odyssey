@@ -10,7 +10,7 @@ public class MouseLook : MonoBehaviour {
     public float sensitivityY;
     float mouseX, mouseY;
 
-
+    //initialises variables to see if player if playing game for first time
     private static readonly string FirstPlayMouse = "FirstPlay";
     private int firstPlayInt;
 
@@ -22,9 +22,9 @@ public class MouseLook : MonoBehaviour {
     [SerializeField] float xClamp = 85f;
     float xRotation = 0f;
 
-    //when script is loaded, cursor is locked 
     void Start() 
     {
+        //if this is player's first time playing, set default mouse sensitivity and remember it
         firstPlayInt = PlayerPrefs.GetInt(FirstPlayMouse);
         if (firstPlayInt == 0)
         {
@@ -32,6 +32,7 @@ public class MouseLook : MonoBehaviour {
 
             PlayerPrefs.SetInt(FirstPlayMouse, -1);
         }
+        //otherwise, set the sensitivity to what the player previously set it as
         else
         {
             sensitivitySlider.value = PlayerPrefs.GetFloat("Mouse Sensitivity");
@@ -59,6 +60,7 @@ public class MouseLook : MonoBehaviour {
         mouseY = mouseInput.y * sensitivityY * Time.deltaTime;
     }
 
+    //method that changes mouse sensitivity based on player's preferences
     public void changeMouseSensitivity()
     {
         PlayerPrefs.SetFloat("Mouse Sensitivity", sensitivitySlider.value);
