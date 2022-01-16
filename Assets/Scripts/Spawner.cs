@@ -23,27 +23,27 @@ public class Spawner : MonoBehaviour
         if (PlayerPrefs.GetString("Difficulty") == "Easy")
         {
             //Debug.Log("Easy");
-            spawnAmount[0] = 10;
-            spawnAmount[1] = 10;
-            spawnAmount[2] = 10;
-            spawnAmount[3] = 10;
+            spawnAmount[0] = 40;
+            spawnAmount[1] = 40;
+            spawnAmount[2] = 40;
+            spawnAmount[3] = 40;
 
         }
         else if (PlayerPrefs.GetString("Difficulty") == "Normal")
         {
             //Debug.Log("Normal");
-            spawnAmount[0] = 30;
-            spawnAmount[1] = 30;
-            spawnAmount[2] = 30;
-            spawnAmount[3] = 30;
-        }
-        else if (PlayerPrefs.GetString("Difficulty") == "Hard")
-        {
-            //Debug.Log("Hard");
             spawnAmount[0] = 50;
             spawnAmount[1] = 50;
             spawnAmount[2] = 50;
             spawnAmount[3] = 50;
+        }
+        else if (PlayerPrefs.GetString("Difficulty") == "Hard")
+        {
+            //Debug.Log("Hard");
+            spawnAmount[0] = 60;
+            spawnAmount[1] = 60;
+            spawnAmount[2] = 60;
+            spawnAmount[3] = 60;
         }
         else
         {

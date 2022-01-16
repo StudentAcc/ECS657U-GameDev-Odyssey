@@ -25,11 +25,12 @@ public class EnemyController : MonoBehaviour
     CharacterCombat combat;
     bool idle;
     string prevDebug;
-    float delayAmount = 1;
+    float delayAmount;
 
     // Start is called before the first frame update
     void Start()
     {
+        delayAmount  = Random.Range(1f, 2f);
         anim = GetComponentInChildren<Animator>();
         baseLookRadius = lookRadius;
         wanderPoint = getRandomCoordinate();
@@ -129,7 +130,7 @@ public class EnemyController : MonoBehaviour
             }
             else if (wandering)
             {
-                delayAmount = Random.Range(0.8f,1f);
+                //delayAmount = Random.Range(0.8f,1f);
                 float distanceWander = Vector3.Distance(wanderPoint, transform.position);
                 if (idle == false && Vector3.Distance(lastTargetPoint, transform.position) - 2 <= agent.stoppingDistance)
                 {
