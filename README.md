@@ -37,3 +37,4 @@ LowlyPoly - Free Stylized Textures - https://assetstore.unity.com/packages/2d/te
 karboosx - Sci-Fi Styled Modular Pack - https://assetstore.unity.com/packages/3d/environments/sci-fi/sci-fi-styled-modular-pack-82913  
 GlowFox Games - Texture Glass Transparent Window - https://assetstore.unity.com/packages/2d/textures-materials/texture-glass-transparent-window-182052  
 Game Sound Solutions - Score and Time - https://assetstore.unity.com/packages/audio/sound-fx/score-and-time-59255  
+Attack Jump & Hit Damage Human Sounds - https://assetstore.unity.com/packages/audio/sound-fx/voices/attack-jump-hit-damage-human-sounds-32785
