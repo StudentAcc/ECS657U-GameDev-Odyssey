@@ -15,6 +15,8 @@ public class CountDown : MonoBehaviour
     [SerializeField] float decreaseBySprinting;
     public AudioManager Audio;
 
+    public GameObject PauseMenu, ControlsMenu, VolumeMenu, DifficultyMenu;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,13 +49,20 @@ public class CountDown : MonoBehaviour
     {
         if (currentTime <= 60)
         {
-            Audio.unpauseCountdownSFX();
             timeImage.GetComponent<Image>().color = new Color32(255, 0, 0, 225);
         }
         else
         {
-            Audio.pauseCountdownSFX();
             timeImage.GetComponent<Image>().color = new Color32(255, 255, 255, 225);
+        }
+
+        if (currentTime <= 60 && !PauseMenu.activeInHierarchy && !ControlsMenu.activeInHierarchy && !VolumeMenu.activeInHierarchy && !DifficultyMenu.activeInHierarchy)
+        {
+            Audio.unpauseCountdownSFX();
+        }
+        else
+        {
+            Audio.pauseCountdownSFX();
         }
     }
 
