@@ -43,21 +43,21 @@ public class EnemyController : MonoBehaviour
         {
             //Debug.Log("Easy");
             agent.speed = 12;
-            lookRadius = 10;
+            lookRadius = 15;
 
         }
         else if (PlayerPrefs.GetString("Difficulty") == "Normal")
         {
             //Debug.Log("Normal");
             agent.speed = 17;
-            lookRadius = 20;
+            lookRadius = 25;
 
         }
         else if (PlayerPrefs.GetString("Difficulty") == "Hard")
         {
             //Debug.Log("Hard");
             agent.speed = 25;
-            lookRadius = 40;
+            lookRadius = 50;
 
         }
         else
@@ -91,7 +91,7 @@ public class EnemyController : MonoBehaviour
             float distance = Vector3.Distance(target.position, transform.position);
             if (distance <= lookRadius)
             {
-                delayAmount = 0.05f;
+                delayAmount = Random.Range(0.04f, 0.06f);
                 lastTargetPoint = target.position;
                 SetDestination(lastTargetPoint);
                 idle = false;
@@ -129,14 +129,14 @@ public class EnemyController : MonoBehaviour
             }
             else if (wandering)
             {
-                delayAmount = 1f;
+                delayAmount = Random.Range(0.8f,1f);
                 float distanceWander = Vector3.Distance(wanderPoint, transform.position);
                 if (idle == false && Vector3.Distance(lastTargetPoint, transform.position) - 2 <= agent.stoppingDistance)
                 {
                     debug = "not-idle";
                     //agent.isStopped = true;
                     agent.ResetPath();
-                    StartCoroutine(delay(1f));
+                    StartCoroutine(delay(Random.Range(0.9f,1.1f)));
                     idle = true;
                     wanderPoint = getRandomCoordinate();
                     SetDestination(wanderPoint);
