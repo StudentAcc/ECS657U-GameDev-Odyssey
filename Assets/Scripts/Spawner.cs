@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Spawner : MonoBehaviour
 {
@@ -73,14 +74,18 @@ public class Spawner : MonoBehaviour
 			//posx = Random.Range(0, 2000);
 			//posz = Random.Range(0, 2000);
 			Vector3 randomCoord = new Vector3(Random.Range(spawnBoundsA[randomInt].x, spawnBoundsB[randomInt].x), maxHeight, Random.Range(spawnBoundsA[randomInt].z, spawnBoundsB[randomInt].z));
-			RaycastHit hit;
+			RaycastHit hit2;
+			NavMeshHit hit;
 			Ray ray = new Ray(randomCoord, Vector3.down);
-			if (Physics.Raycast(ray, out hit, maxHeight, layerMask))
+			if (Physics.Raycast(ray, out hit2, maxHeight, layerMask))
 			{
-				//position = new Vector3(Random.Range(5, 200), 70, Random.Range(5, 300));
-				Instantiate(spawnees[randomInt], hit.point + new Vector3(0, 2, 0), Quaternion.identity, GameObject.Find(spawnParent[randomInt]).GetComponent<Transform>());
-				spawnAmount[randomInt]--;
-				spawned++;
+				if (NavMesh.SamplePosition(hit2.point + new Vector3(0, 2, 0), out hit, 2f, NavMesh.AllAreas))
+                {
+					//position = new Vector3(Random.Range(5, 200), 70, Random.Range(5, 300));
+					Instantiate(spawnees[randomInt], hit.position + new Vector3(0, 2, 0), Quaternion.identity, GameObject.Find(spawnParent[randomInt]).GetComponent<Transform>());
+					spawnAmount[randomInt]--;
+					spawned++;
+				}
 			}
 		}
 

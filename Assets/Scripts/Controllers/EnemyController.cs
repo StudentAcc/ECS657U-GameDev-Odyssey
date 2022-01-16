@@ -25,6 +25,7 @@ public class EnemyController : MonoBehaviour
     CharacterCombat combat;
     bool idle;
     string prevDebug;
+    float delayAmount = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -76,7 +77,7 @@ public class EnemyController : MonoBehaviour
         {
             //Debug.Log("OnCoroutine: " + (int)Time.time);
             agentUpdate();
-            yield return new WaitForSeconds(Random.Range(1f,2f));
+            yield return new WaitForSeconds(delayAmount);
         }
     }
 
@@ -90,13 +91,13 @@ public class EnemyController : MonoBehaviour
             float distance = Vector3.Distance(target.position, transform.position);
             if (distance <= lookRadius)
             {
+                delayAmount = 0.05f;
                 lastTargetPoint = target.position;
                 SetDestination(lastTargetPoint);
                 idle = false;
                 //Debug.Log("2");
                 if (distance - 1 <= agent.stoppingDistance)
                 {
-
                     //Attack the target
                     //Debug.Log("1");
                     CharacterStats targetStats = target.GetComponent<CharacterStats>();
@@ -114,7 +115,7 @@ public class EnemyController : MonoBehaviour
                         combat.Attack(targetStats);
                         attackAnimationParticles.Play();
                         //attackAnimationParticles2.Play();
-                        //StartCoroutine(delay(Random.Range(0.3f,0.4f)));
+                        //StartCoroutine(delay(1f));
 
                     }
 
@@ -128,7 +129,7 @@ public class EnemyController : MonoBehaviour
             }
             else if (wandering)
             {
-
+                delayAmount = 1f;
                 float distanceWander = Vector3.Distance(wanderPoint, transform.position);
                 if (idle == false && Vector3.Distance(lastTargetPoint, transform.position) - 2 <= agent.stoppingDistance)
                 {
