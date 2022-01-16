@@ -64,12 +64,26 @@ public class EnemyController : MonoBehaviour
             Debug.Log(PlayerPrefs.GetString("Difficulty"));
         }
 
+        StartCoroutine(delay(3f));
+        StartCoroutine(onCoroutine());
+
     }
 
-    // Update is called once per frame
-    void Update()
+
+    IEnumerator onCoroutine()
     {
-        StartCoroutine(delay(Random.Range(3,5)));
+        while (true)
+        {
+            //Debug.Log("OnCoroutine: " + (int)Time.time);
+            agentUpdate();
+            yield return new WaitForSeconds(Random.Range(1f,2f));
+        }
+    }
+
+    // Update is called once per 1-2 seconds
+    void agentUpdate()
+    {
+        //StartCoroutine(delay(Random.Range(3,5)));
         anim.SetFloat("vertical", (agent.velocity.magnitude / agent.speed));
         if (agent.isActiveAndEnabled) 
         {
@@ -100,6 +114,7 @@ public class EnemyController : MonoBehaviour
                         combat.Attack(targetStats);
                         attackAnimationParticles.Play();
                         //attackAnimationParticles2.Play();
+                        //StartCoroutine(delay(Random.Range(0.3f,0.4f)));
 
                     }
 
