@@ -240,6 +240,11 @@ public class AudioManager : MonoBehaviour
         soundEffectsAudio[12].Play(0);
     }
 
+    public void stopCountdownSFX()
+    {
+        soundEffectsAudio[12].Stop();
+    }
+
     //pauses countdown sound effect of oxygen level
     public void pauseCountdownSFX()
     {

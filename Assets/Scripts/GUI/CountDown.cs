@@ -78,6 +78,7 @@ public class CountDown : MonoBehaviour
         }
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        Audio.stopCountdownSFX();
         SceneManager.LoadScene("LoseScreen");
     }
 
