@@ -5,7 +5,8 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    //initialises enemy stats to control their movement
+
+    // Initialise enemy controller variables
     public float lookRadius = 10f;
     public ParticleSystem attackAnimationParticles;
     public bool wandering = true;
@@ -13,6 +14,8 @@ public class EnemyController : MonoBehaviour
     public Vector3 boundaryPointL = new Vector3(0, 150f, 2000);
     public float agroTimeLimit = 5f;
     public Animator anim;
+    public string debug;
+    public int wanderLookRadius = 50;
 
     float baseLookRadius;
     Vector3 wanderPoint;
@@ -21,6 +24,7 @@ public class EnemyController : MonoBehaviour
     NavMeshAgent agent;
     CharacterCombat combat;
     bool idle;
+    string prevDebug;
 
     // Start is called before the first frame update
     void Start()
@@ -65,74 +69,101 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(delay(1f));
+        StartCoroutine(delay(Random.Range(3,5)));
         anim.SetFloat("vertical", (agent.velocity.magnitude / agent.speed));
-        float distance = Vector3.Distance(target.position, transform.position);
-        if (distance <= lookRadius)
+        if (agent.isActiveAndEnabled) 
         {
-            lastTargetPoint = target.position;
-            SetDestination(lastTargetPoint);
-            idle = false;
-            //Debug.Log("2");
-            if (distance - 1 <= agent.stoppingDistance)
+            float distance = Vector3.Distance(target.position, transform.position);
+            if (distance <= lookRadius)
             {
-
-                //Attack the target
-                //Debug.Log("1");
-                CharacterStats targetStats = target.GetComponent<CharacterStats>();
-                //if (combat == null)
-                //{
-                //    Debug.Log(combat);
-                //} else
-                //{
-                //    Debug.Log(combat);
-                //}
-                if (targetStats != null)
+                lastTargetPoint = target.position;
+                SetDestination(lastTargetPoint);
+                idle = false;
+                //Debug.Log("2");
+                if (distance - 1 <= agent.stoppingDistance)
                 {
-                    attackAnimationParticles.Play();
-                    anim.SetBool("attack", true);
-                    combat.Attack(targetStats);
-                    attackAnimationParticles.Play();
-                    StartCoroutine(delay(2));
 
+                    //Attack the target
+                    //Debug.Log("1");
+                    CharacterStats targetStats = target.GetComponent<CharacterStats>();
+                    //if (combat == null)
+                    //{
+                    //    Debug.Log(combat);
+                    //} else
+                    //{
+                    //    Debug.Log(combat);
+                    //}
+                    if (targetStats != null)
+                    {
+                        attackAnimationParticles.Play();
+                        anim.SetBool("attack", true);
+                        combat.Attack(targetStats);
+                        attackAnimationParticles.Play();
+                        //attackAnimationParticles2.Play();
+
+                    }
+
+                    // Face the arget
+                    FaceTarget();
+
+                } else
+                {
+                    anim.SetBool("attack", false);
                 }
-
-                // Face the arget
-                FaceTarget();
-
-            } else
-            {
-                anim.SetBool("attack", false);
             }
-        }
-        else if (wandering)
-        {
+            else if (wandering)
+            {
 
-            float distanceWander = Vector3.Distance(wanderPoint, transform.position);
-            if (idle == false && Vector3.Distance(lastTargetPoint, transform.position) - 2 <= agent.stoppingDistance)
-            {
-                agent.isStopped = true;
-                agent.ResetPath();
-                StartCoroutine(delay(1f));
-                idle = true;
-                wanderPoint = getRandomCoordinate();
-                SetDestination(wanderPoint);
-               // Debug.Log("log1" + idle.ToString());
-            }
-            else if (idle)
-            {
-                if (distanceWander - 2 <= agent.stoppingDistance)
+                float distanceWander = Vector3.Distance(wanderPoint, transform.position);
+                if (idle == false && Vector3.Distance(lastTargetPoint, transform.position) - 2 <= agent.stoppingDistance)
                 {
-                    //Debug.Log("log2");
-                    agent.isStopped = true;
+                    debug = "not-idle";
+                    //agent.isStopped = true;
                     agent.ResetPath();
+                    StartCoroutine(delay(1f));
+                    idle = true;
                     wanderPoint = getRandomCoordinate();
                     SetDestination(wanderPoint);
-                    //Debug.Log(wanderPoint);
+                   // Debug.Log("log1" + idle.ToString());
                 }
-                //Debug.Log("log3");
-                //Debug.Log(wanderPoint);
-                //Debug.Log(transform.position);
+                else if (idle)
+                {
+                    if (distanceWander - 1 <= agent.stoppingDistance)
+                    {
+                        debug = "idle";
+                        //Debug.Log("log2");
+                        //agent.isStopped = true;
+                        //agent.ResetPath();
+                        wanderPoint = getRandomCoordinate();
+                        SetDestination(wanderPoint);
+                        //Debug.Log(wanderPoint);
+                    } else
+                    {
+                        //StartCoroutine(delay(1));
+                        debug = "idle - 2 - " + distanceWander + " | " + agent.stoppingDistance + " | " ;
+                        //if (debug == prevDebug)
+                        //{
+                        //    debug = "idle - 3 - " + distanceWander + " | " + agent.stoppingDistance + " | ";
+                        //    //agent.isStopped = true;
+                        //    //agent.ResetPath();
+                        //    wanderLookRadius *= 4;
+                        //    wanderPoint = getRandomCoordinate();
+                        //    SetDestination(wanderPoint);
+                        //    wanderLookRadius /= 4;
+                        //}
+
+                        //prevDebug = debug;
+                        if (agent.pathStatus == NavMeshPathStatus.PathComplete)
+                        {
+                            debug = "idle - 3 - " + distanceWander + " | " + agent.stoppingDistance + " | ";
+                            wanderPoint = getRandomCoordinate();
+                            SetDestination(wanderPoint);
+                        }
+                    }
+                    //Debug.Log("log3");
+                    //Debug.Log(wanderPoint);
+                    //Debug.Log(transform.position);
+                }
             }
         }
     }
