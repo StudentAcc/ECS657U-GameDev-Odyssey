@@ -109,9 +109,9 @@ public class EnemyController : MonoBehaviour
         {
 
             float distanceWander = Vector3.Distance(wanderPoint, transform.position);
-            if (idle == false && Vector3.Distance(lastTargetPoint, transform.position) - 1 <= agent.stoppingDistance)
+            if (idle == false && Vector3.Distance(lastTargetPoint, transform.position) - 2 <= agent.stoppingDistance)
             {
-                agent.Stop();
+                agent.isStopped = true;
                 agent.ResetPath();
                 StartCoroutine(delay(1f));
                 idle = true;
@@ -121,9 +121,11 @@ public class EnemyController : MonoBehaviour
             }
             else if (idle)
             {
-                if (distanceWander + 1 <= agent.stoppingDistance)
+                if (distanceWander - 2 <= agent.stoppingDistance)
                 {
                     //Debug.Log("log2");
+                    agent.isStopped = true;
+                    agent.ResetPath();
                     wanderPoint = getRandomCoordinate();
                     SetDestination(wanderPoint);
                     //Debug.Log(wanderPoint);
